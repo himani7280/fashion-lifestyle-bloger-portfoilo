@@ -3,115 +3,23 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import ScrollReveal from "@/components/ScrollReveal";
+import { aboutHero, aboutPageData, contact, Pillar, CuratedSphere } from "@/data/fashionData";
 
-interface Pillar {
-  id: string;
-  number: string;
-  roman: string;
-  title: string;
-  tagline: string;
-  description: string;
-  quote: string;
-  image: string;
-  palette?: { name: string; hex: string }[];
-}
-
-const PILLARS: Pillar[] = [
-  {
-    id: "minimalist",
-    number: "01",
-    roman: "I",
-    title: "Minimalist Elegance",
-    tagline: "Quiet Luxury & Clean Lines",
-    description:
-      "True sophistication lies in restraint. We strip away decorative excess to celebrate the pure architecture of garments, impeccable tailoring, and the unforced confidence of the woman wearing them.",
-    quote: "Simplicity is not the lack of clutter; it is the presence of absolute intention.",
-    image: "/images/model-studio.jpg",
-  },
-  {
-    id: "tailoring",
-    number: "02",
-    roman: "II",
-    title: "Tailoring & Draped Silk",
-    tagline: "Fluid Feminine Movement",
-    description:
-      "A deliberate dialogue between masculine sharpness and feminine fluidity. Pairing razor-sharp double-breasted blazers with liquid silk slip drapes creates an unforgettable sartorial tension.",
-    quote: "Contrast creates character: structured strength softened by fluid grace.",
-    image: "/images/model-suit.jpg",
-  },
-  {
-    id: "chromatics",
-    number: "03",
-    roman: "III",
-    title: "Gold & Noir Chromatics",
-    tagline: "Timeless Chromatic Dialogue",
-    description:
-      "Obsidian noir forms the timeless canvas, brought to life through luminous champagne golds, warm ivory, and rich desert neutrals that flatter every skin tone in any lighting.",
-    quote: "Color is psychological; the right tonal harmony gives commanding presence.",
-    image: "/images/tara-pillar-chromatics.jpg",
-    palette: [
-      { name: "Obsidian Noir", hex: "#0A0A0A" },
-      { name: "Champagne Gold", hex: "#C9A96E" },
-      { name: "Antique Bronze", hex: "#8A6E3D" },
-      { name: "Warm Ivory", hex: "#F5EDE5" },
-    ],
-  },
-  {
-    id: "global",
-    number: "04",
-    roman: "IV",
-    title: "Global Fashion Bases",
-    tagline: "Paris · Milan · New Delhi",
-    description:
-      "Bridging the storied haute couture ateliers of Europe with India's rich artisanal heritage. Bringing international front-row perspectives to everyday wardrobe curation.",
-    quote: "Global aesthetic awareness translates runways into wearable personal style.",
-    image: "/images/tara-pillar-global.jpg",
-  },
-];
-
-interface CuratedSphere {
-  title: string;
-  tagline: string;
-  image: string;
-  desc: string;
-  link: string;
-}
-
-const TARA_SPHERES: CuratedSphere[] = [
-  {
-    title: "Bespoke Capsule Architecture",
-    tagline: "PERSONAL WARDROBE CURATION",
-    image: "/images/model-roses.jpg",
-    desc: "Deconstructing seasonal clutter to engineer 15-piece signature capsule wardrobes defined by razor-sharp tailoring, fluid silks, and effortless metropolitan ease.",
-    link: "/services/bespoke-styling",
-  },
-  {
-    title: "Red Carpet & Gala Styling",
-    tagline: "HAUTE COUTURE DIRECTION",
-    image: "/images/model-red-gown-clean.jpg",
-    desc: "Directing high-visibility red carpet appearances and gala silhouettes with commanding posture, architectural train pacing, and dramatic jewel-toned luxury.",
-    link: "/portfolio",
-  },
-  {
-    title: "Editorial Creative Direction",
-    tagline: "CAMPAIGN & LOOKBOOK CONCEPTS",
-    image: "/images/model-suit.jpg",
-    desc: "Bridging storied European fashion houses with contemporary visual storytelling, sculpting on-set garment tension and cinematic lighting for major lookbooks.",
-    link: "/services/editorial-direction",
-  },
-];
+const PILLARS: Pillar[] = aboutPageData.pillarsSection.items;
+const TARA_SPHERES: CuratedSphere[] = aboutPageData.spheresSection.items;
 
 export default function AboutContent() {
   return (
-    <div className="bg-[#0A0A0A] text-[#F5F0E8] min-h-screen overflow-x-hidden font-[family-name:var(--font-poppins)]">
+    <div className="bg-[#0A0A0A] text-[#F5F0E8] min-h-screen overflow-x-hidden">
       
-      {/* ── 01: FULL WIDTH PROMINENT HERO BANNER ── */}
+      {/* Hero Banner */}
       <section className="relative w-full py-2 sm:py-3 border-b border-[#1A1A1A]">
         <div className="relative w-full overflow-hidden h-[280px] sm:h-[340px] md:h-[380px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/model-hero.jpg"
-              alt="About Tara Verma — Fashion & Lifestyle"
+              src={aboutHero.image}
+              alt={`${aboutHero.title} — ${aboutHero.subtitle}`}
               fill
               priority
               sizes="100vw"
@@ -124,43 +32,43 @@ export default function AboutContent() {
 
           <div className="relative z-10 max-w-4xl mx-auto w-full px-6 text-center space-y-2">
             <div className="inline-flex items-center gap-2 text-[14px] uppercase tracking-[0.2em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#C9A96E]/40">
-              <Link href="/" className="hover:text-white transition-colors">Home</Link>
+              <Link href="/" className="hover:text-white transition-colors">{aboutHero.homeText}</Link>
               <span className="text-[#555]">/</span>
-              <span className="text-white font-semibold">About Tara</span>
+              <span className="text-white font-semibold">{aboutHero.breadcrumb}</span>
             </div>
 
-            <h1 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
-              About{" "}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+              {aboutHero.titleStart}{" "}
               <em className="font-normal italic bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] bg-clip-text text-transparent">
-                Tara Verma
+                {aboutHero.titleHighlight}
               </em>
             </h1>
           </div>
         </div>
       </section>
 
-      {/* ── 02: ABOUT ME & MY MISSION SECTION ── */}
+      {/* About & Mission */}
       <section className="relative py-10 sm:py-12 md:py-14 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto border-b border-[#1C1C1C]">
         
-        {/* Centered Heading */}
-        <div className="text-center mb-10 sm:mb-14 space-y-1.5">
-          <span className="text-[14px] uppercase font-mono tracking-[0.22em] text-[#C9A96E] font-medium block">
-            ✦ Haute Couture Atelier · The Stylist
+        {/* Section Header */}
+        <ScrollReveal variant="fade-up" className="text-center mb-10 sm:mb-14 space-y-1.5">
+          <span className="text-[14px] uppercase tracking-[0.22em] text-[#C9A96E] font-medium block">
+            {aboutPageData.sectionBadge}
           </span>
-          <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
-            About Me
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
+            {aboutPageData.sectionTitle}
           </h2>
-        </div>
+        </ScrollReveal>
 
-        {/* 2-Column Split: Left Image + Right Mission */}
+        {/* Mission Split */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 xl:gap-20 items-center">
           
-          {/* Left: Tara Verma Monochrome Portrait */}
-          <div className="lg:col-span-5 flex justify-start">
+          {/* Left Portrait */}
+          <ScrollReveal variant="fade-left" className="lg:col-span-5 flex justify-start">
             <div className="relative w-full aspect-[4/3] sm:aspect-[1/1] overflow-hidden rounded-2xl bg-[#111111] border border-[#262626] shadow-[0_16px_50px_rgba(0,0,0,0.85)] group">
               <Image
-                src="/images/model-blazer.jpg"
-                alt="Tara Verma — Fashion Stylist & Atelier Creative Director"
+                src={aboutPageData.image}
+                alt={aboutPageData.imageAlt}
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 42vw"
@@ -169,65 +77,64 @@ export default function AboutContent() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
             </div>
-          </div>
+          </ScrollReveal>
 
-          {/* Right: My Mission Narrative (Content & Buttons Only) */}
-          <div className="lg:col-span-7 space-y-5 text-left">
-            <h3 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight">
-              My Mission
+          {/* Right Narrative */}
+          <ScrollReveal variant="fade-right" delay={120} className="lg:col-span-7 space-y-5 text-left">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight">
+              {aboutPageData.missionTitle}
             </h3>
 
-            <p className="text-[14px] sm:text-base text-[#C4BCB3] leading-relaxed font-light">
-              Personal style is an architectural language — an intentional harmony of structural cut, draped silk, and proportion that commands presence without uttering a word. Guided by quiet luxury and restraint, each curation cuts through ephemeral micro-trends to cultivate an enduring sartorial identity.
-            </p>
+            {aboutPageData.paragraphs.map((para, idx) => (
+              <p key={idx} className="text-[14px] sm:text-base text-[#C4BCB3] leading-relaxed font-light">
+                {para}
+              </p>
+            ))}
 
-            <p className="text-[14px] sm:text-base text-[#C4BCB3] leading-relaxed font-light">
-              Bridging European haute couture ateliers with handcrafted artisanal textiles, I curate bespoke capsule wardrobes and red-carpet appearances for discerning clientele worldwide, elevating everyday presence into an effortless work of art.
-            </p>
-
-            <p className="text-[14px] sm:text-base text-[#C4BCB3] leading-relaxed font-light">
-              Every collaboration is underpinned by bespoke fabric sourcing, precise silhouette architecture, and a commitment to timeless elegance that transcends fleeting seasonal fads.
-            </p>
-
-            {/* 2 Buttons Aligned with Column */}
+            {/* CTA Buttons */}
             <div className="pt-2 flex flex-wrap items-center gap-3.5">
               <Link
-                href="/contact"
+                href={aboutPageData.primaryButtonLink}
                 className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-[13px] sm:text-[14px] uppercase tracking-[0.14em] px-7 py-3.5 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer whitespace-nowrap"
               >
-                <span>Book Consultation ✦</span>
+                <span>{aboutPageData.primaryButtonText}</span>
                 <span>→</span>
               </Link>
               <Link
-                href="/services"
+                href={aboutPageData.secondaryButtonLink}
                 className="inline-flex items-center justify-center gap-2 bg-[#141414] hover:bg-[#1C1C1C] text-[#E5C583] hover:text-white border border-[#C9A96E]/40 font-semibold text-[13px] sm:text-[14px] uppercase tracking-[0.14em] px-7 py-3.5 rounded-full transition-all duration-300 hover:scale-[1.02] cursor-pointer whitespace-nowrap"
               >
-                <span>Explore Services</span>
+                <span>{aboutPageData.secondaryButtonText}</span>
                 <span>→</span>
               </Link>
             </div>
 
-          </div>
+          </ScrollReveal>
 
         </div>
 
-        {/* ── 3 CIRCULAR DISCIPLINES (BLACK & WHITE DEFAULT -> COLORFUL ON HOVER) ── */}
+        {/* Curated Spheres */}
         <div className="pt-12 sm:pt-16 border-t border-[#1C1C1C] space-y-8 mt-12">
           
-          <div className="text-center max-w-xl mx-auto space-y-1">
-            <span className="text-[14px] uppercase font-mono tracking-[0.28em] text-[#C9A96E] font-medium block">
-              ✦ Sartorial Signatures · Three Disciplines
+          <ScrollReveal variant="fade-up" className="text-center max-w-xl mx-auto space-y-1">
+            <span className="text-[14px] uppercase tracking-[0.28em] text-[#C9A96E] font-medium block">
+              {aboutPageData.spheresSection.badge}
             </span>
-            <h3 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl font-bold text-white tracking-tight">
-              The Tara Verma Atelier
+            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              {aboutPageData.spheresSection.title}
             </h3>
-          </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 text-center">
-            {TARA_SPHERES.map((sphere) => (
-              <div key={sphere.title} className="flex flex-col items-center group">
+            {TARA_SPHERES.map((sphere, idx) => (
+              <ScrollReveal
+                key={sphere.title}
+                variant="zoom-in"
+                delay={idx * 120}
+                className="flex flex-col items-center group"
+              >
                 
-                {/* Circular Portrait: B&W by default -> Colorful on hover */}
+                {/* Circular Portrait */}
                 <div className="relative w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-full overflow-hidden bg-[#161616] border-2 border-[#242424] group-hover:border-[#C9A96E] transition-all duration-500 shadow-[0_10px_35px_rgba(0,0,0,0.85)] cursor-pointer">
                   <Image
                     src={sphere.image}
@@ -239,13 +146,13 @@ export default function AboutContent() {
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 pointer-events-none" />
                 </div>
 
-                {/* Name / Title */}
-                <h4 className="font-[family-name:var(--font-playfair)] text-xl sm:text-2xl font-bold text-white mt-5 mb-1.5 tracking-tight group-hover:text-[#E5C583] transition-colors">
+                {/* Title */}
+                <h4 className="text-xl sm:text-2xl font-bold text-white mt-5 mb-1.5 tracking-tight group-hover:text-[#E5C583] transition-colors">
                   {sphere.title}
                 </h4>
 
-                {/* Subtitle / Tagline */}
-                <span className="text-[14px] uppercase font-mono tracking-[0.2em] text-[#C9A96E] font-semibold mb-2.5 block">
+                {/* Tagline */}
+                <span className="text-[14px] uppercase tracking-[0.2em] text-[#C9A96E] font-semibold mb-2.5 block">
                   ✦ {sphere.tagline}
                 </span>
 
@@ -257,7 +164,7 @@ export default function AboutContent() {
                 {/* Social Icons */}
                 <div className="flex items-center justify-center gap-4 mt-auto pt-1">
                   <a
-                    href="https://twitter.com"
+                    href={contact.socialLinks.twitter}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Tara Verma Twitter"
@@ -268,7 +175,7 @@ export default function AboutContent() {
                     </svg>
                   </a>
                   <a
-                    href="https://instagram.com"
+                    href={contact.socialLinks.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Tara Verma Instagram"
@@ -279,7 +186,7 @@ export default function AboutContent() {
                     </svg>
                   </a>
                   <a
-                    href="https://facebook.com"
+                    href={contact.socialLinks.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Tara Verma Facebook"
@@ -291,7 +198,7 @@ export default function AboutContent() {
                   </a>
                 </div>
 
-              </div>
+              </ScrollReveal>
             ))}
           </div>
 
@@ -299,27 +206,27 @@ export default function AboutContent() {
 
       </section>
 
-      {/* ── 03: THE FOUR STYLE PILLARS (STYLE UNCHANGED) ── */}
+      {/* Four Style Pillars */}
       <section className="relative w-full py-10 sm:py-12 md:py-14 px-4 sm:px-6 md:px-8 border-b border-[#1C1C1C] bg-[#0A0A0A]">
         <div className="max-w-7xl mx-auto space-y-10 sm:space-y-14">
           
-          {/* Section Introduction */}
-          <div className="text-center max-w-3xl mx-auto space-y-2">
-            <span className="text-[9.5px] uppercase tracking-[0.3em] text-[#C9A96E] font-bold font-[family-name:var(--font-inter)] block">
-              ✦ Aesthetic Architecture · Lookbook Philosophy
+          {/* Section Header */}
+          <ScrollReveal variant="fade-up" className="text-center max-w-3xl mx-auto space-y-2">
+            <span className="text-[9.5px] uppercase tracking-[0.3em] text-[#C9A96E] font-bold block">
+              {aboutPageData.pillarsSection.badge}
             </span>
-            <h2 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-4xl md:text-5xl font-bold text-white">
-              The Four Style{" "}
-              <em className="font-[family-name:var(--font-cormorant)] italic font-light text-[#E5C583]">
-                Pillars
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
+              {aboutPageData.pillarsSection.titleStart}
+              <em className="italic font-light text-[#E5C583]">
+                {aboutPageData.pillarsSection.titleHighlight}
               </em>
             </h2>
-            <p className="font-[family-name:var(--font-cormorant)] text-base sm:text-lg italic text-[#B0A696] font-light max-w-2xl mx-auto">
-              Every outfit, wardrobe curation, and creative direction is anchored in four foundational design codes.
+            <p className="text-base sm:text-lg italic text-[#B0A696] font-light max-w-2xl mx-auto">
+              {aboutPageData.pillarsSection.subtitle}
             </p>
-          </div>
+          </ScrollReveal>
 
-          {/* 4 Alternating Magazine Spreads */}
+          {/* Alternating Pillar Spreads */}
           <div className="space-y-10 sm:space-y-14">
             {PILLARS.map((pillar, idx) => {
               const isEven = idx % 2 === 1;
@@ -332,7 +239,10 @@ export default function AboutContent() {
                 >
                   
                   {/* Image Column */}
-                  <div className={`lg:col-span-6 relative ${isEven ? "lg:order-2" : "lg:order-1"}`}>
+                  <ScrollReveal
+                    variant={isEven ? "fade-right" : "fade-left"}
+                    className={`lg:col-span-6 relative ${isEven ? "lg:order-2" : "lg:order-1"}`}
+                  >
                     <div className="relative aspect-[16/11] sm:aspect-[16/10] lg:aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,0.8)] border border-[#C9A96E]/30 group">
                       <Image
                         src={pillar.image}
@@ -343,51 +253,54 @@ export default function AboutContent() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/70 via-transparent to-transparent opacity-80" />
                       
-                      {/* Floating Gold Code Badge */}
-                      <div className="absolute top-4 left-4 z-10 bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#C9A96E]/50 text-[10px] uppercase font-mono tracking-[0.2em] text-[#E5C583]">
-                        ✦ CODE {pillar.number}
+                      {/* Code Badge */}
+                      <div className="absolute top-4 left-4 z-10 bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#C9A96E]/50 text-[10px] uppercase tracking-[0.2em] text-[#E5C583]">
+                        {aboutPageData.pillarsSection.codePrefix} {pillar.number}
                       </div>
 
-                      {/* Floating Subtitle in Image */}
+                      {/* Tagline Badge */}
                       <div className="absolute bottom-4 left-4 z-10 max-w-fit">
                         <span className="text-[11px] uppercase tracking-[0.2em] font-medium text-[#C9A96E] bg-[#0A0A0A]/85 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#333] inline-block whitespace-nowrap">
                           {pillar.tagline}
                         </span>
                       </div>
                     </div>
-                  </div>
+                  </ScrollReveal>
 
-                  {/* Editorial Typography & Narrative Column */}
-                  <div className={`lg:col-span-6 space-y-5 relative ${isEven ? "lg:order-1" : "lg:order-2"}`}>
+                  {/* Narrative Column */}
+                  <ScrollReveal
+                    variant={isEven ? "fade-left" : "fade-right"}
+                    delay={120}
+                    className={`lg:col-span-6 space-y-5 relative ${isEven ? "lg:order-1" : "lg:order-2"}`}
+                  >
                     
-                    {/* Giant Watermark Roman Numeral */}
+                    {/* Roman Numeral Watermark */}
                     <div className="relative">
-                      <span className="text-7xl sm:text-8xl lg:text-9xl font-black font-[family-name:var(--font-playfair)] text-white/5 select-none absolute -top-12 -left-4 pointer-events-none">
+                      <span className="text-7xl sm:text-8xl lg:text-9xl font-black text-white/5 select-none absolute -top-12 -left-4 pointer-events-none">
                         {pillar.roman}
                       </span>
                       
                       <div className="relative z-10 space-y-2">
-                        <span className="text-[14px] uppercase tracking-[0.25em] text-[#C9A96E] font-mono font-bold block">
-                          Pillar {pillar.number} ✦ Architecture
+                        <span className="text-[14px] uppercase tracking-[0.25em] text-[#C9A96E] font-bold block">
+                          {aboutPageData.pillarsSection.pillarPrefix} {pillar.number} {aboutPageData.pillarsSection.pillarSuffix}
                         </span>
-                        <h3 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+                        <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
                           {pillar.title}
                         </h3>
                       </div>
                     </div>
 
-                    {/* Italic Philosophy Quote */}
-                    <p className="font-[family-name:var(--font-cormorant)] text-xl sm:text-2xl italic text-[#DFC18A] font-light leading-relaxed border-l-2 border-[#C9A96E] pl-4">
+                    {/* Philosophy Quote */}
+                    <p className="text-xl sm:text-2xl italic text-[#DFC18A] font-light leading-relaxed border-l-2 border-[#C9A96E] pl-4">
                       &ldquo;{pillar.quote}&rdquo;
                     </p>
 
-                    {/* Deep Narrative Description */}
+                    {/* Description */}
                     <p className="text-sm sm:text-base text-[#B8AEA3] font-light leading-relaxed">
                       {pillar.description}
                     </p>
 
-
-                  </div>
+                  </ScrollReveal>
 
                 </div>
               );

@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
+
 import Link from "next/link";
 import Image from "next/image";
+import { navigation } from "@/data/fashionData";
 
 interface BrandLogoProps {
   name?: string;
@@ -10,12 +11,11 @@ interface BrandLogoProps {
   size?: "sm" | "md" | "lg" | "xl";
   href?: string;
   className?: string;
-  theme?: "dark" | "light";
 }
 
 export default function BrandLogo({
-  name = "Tara Verma",
-  subtitle = "FASHION & LIFESTYLE",
+  name = navigation.brandName,
+  subtitle = navigation.brandTagline,
   size = "md",
   href = "/",
   className = "",
@@ -32,7 +32,7 @@ export default function BrandLogo({
       className={`inline-flex items-center select-none group transition-transform duration-300 hover:scale-[1.02] ${className}`}
     >
       <Image
-        src="/logo-metallic.png"
+        src={navigation.logo}
         alt={`${name} — ${subtitle}`}
         width={380}
         height={120}

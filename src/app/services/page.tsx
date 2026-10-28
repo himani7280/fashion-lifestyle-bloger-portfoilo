@@ -1,4 +1,4 @@
-import React from "react";
+
 import ServicesContent from "@/components/ServicesContent";
 
 export const metadata = {

@@ -4,14 +4,12 @@ import React, { useState, useEffect } from "react";
 import BrandLogo from "@/components/BrandLogo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { navigation } from "@/data/fashionData";
 
-const NAV_LINKS = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Portfolio", href: "/portfolio" },
-  { name: "Services", href: "/services" },
-  { name: "Blog", href: "/blog" },
-];
+const NAV_LINKS = navigation.navLinks.map((item) => ({
+  name: item.name,
+  href: item.path,
+}));
 
 export default function Header() {
   const pathname = usePathname();
@@ -36,7 +34,7 @@ export default function Header() {
     }
   };
 
-  // Prevent background scroll when mobile menu is open
+  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -48,11 +46,10 @@ export default function Header() {
     };
   }, [mobileMenuOpen]);
 
-  // Reset scroll position to top and restore body overflow on route change
+  // Reset scroll on route change
   useEffect(() => {
     scrollToTopImmediately();
 
-    // Multi-stage timers ensure Next.js App Router does not restore previous scroll offset
     const t0 = setTimeout(() => {
       setMobileMenuOpen(false);
       scrollToTopImmediately();
@@ -84,13 +81,13 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between w-full">
           
-          {/* Brand Logo Image with Tara */}
+          {/* Brand Logo */}
           <div className="shrink-0 flex items-center">
             <BrandLogo size="md" href="/" />
           </div>
 
-          {/* Desktop Navigation Links — 14px font size for SEO & Accessibility with Generous Spacing */}
-          <nav className="hidden xl:flex items-center gap-8 xl:gap-9 2xl:gap-12 text-[14px] uppercase tracking-[0.14em] font-[family-name:var(--font-poppins)] font-medium">
+          {/* Desktop Navigation */}
+          <nav className="hidden xl:flex items-center gap-8 xl:gap-9 2xl:gap-12 text-[14px] uppercase tracking-[0.14em] font-medium">
             {NAV_LINKS.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -113,18 +110,18 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Right Action: Direct Contact Button (Desktop) — 14px font size */}
+          {/* Desktop CTA Button */}
           <div className="hidden sm:flex items-center shrink-0">
             <Link
-              href="/contact"
+              href={navigation.button.link}
               onClick={handleNavClick}
-              className="inline-flex items-center justify-center bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] px-5 sm:px-6 py-2 rounded-full text-[13px] sm:text-[14px] uppercase tracking-[0.14em] font-bold font-[family-name:var(--font-poppins)] transition-all duration-300 shadow-[0_4px_15px_rgba(201,169,110,0.25)] hover:shadow-[0_6px_25px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
+              className="inline-flex items-center justify-center bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] px-5 sm:px-6 py-2 rounded-full text-[13px] sm:text-[14px] uppercase tracking-[0.14em] font-bold transition-all duration-300 shadow-[0_4px_15px_rgba(201,169,110,0.25)] hover:shadow-[0_6px_25px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
             >
-              Contact Us ✦
+              {navigation.button.text}
             </Link>
           </div>
 
-          {/* Mobile Menu Hamburger (Visible below xl) */}
+          {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="xl:hidden p-2 text-[#C9A96E] hover:text-[#E5C583] transition-colors focus:outline-none shrink-0 cursor-pointer"
@@ -141,19 +138,19 @@ export default function Header() {
         </div>
       </header>
 
-      {/* ── MOBILE MENU SIDE DRAWER (Below xl) ── */}
+      {/* Mobile Side Drawer */}
       {mobileMenuOpen && (
         <>
-          {/* Backdrop Overlay */}
+          {/* Backdrop */}
           <div
             className="xl:hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm transition-opacity"
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
 
-          {/* Off-canvas Side Drawer (Right side) */}
+          {/* Side Drawer */}
           <div className="xl:hidden fixed top-0 bottom-0 right-0 z-50 w-72 sm:w-80 bg-[#0E0E0E] border-l border-[#262626] p-6 flex flex-col justify-between shadow-[-10px_0_35px_rgba(0,0,0,0.85)] overflow-y-auto">
-            {/* Drawer Header with Visual Brand Logo and Close Button */}
+            {/* Drawer Header */}
             <div>
               <div className="flex items-center justify-between pb-4 border-b border-[#222]">
                 <BrandLogo size="sm" href="/" />
@@ -166,8 +163,8 @@ export default function Header() {
                 </button>
               </div>
 
-              {/* Navigation links — 14px minimum font size for SEO */}
-              <nav className="flex flex-col gap-1 pt-4 text-[14px] uppercase tracking-[0.14em] font-[family-name:var(--font-poppins)]">
+              {/* Mobile Nav Links */}
+              <nav className="flex flex-col gap-1 pt-4 text-[14px] uppercase tracking-[0.14em]">
                 {NAV_LINKS.map((item) => (
                   <Link
                     key={item.href}
@@ -186,17 +183,17 @@ export default function Header() {
               </nav>
             </div>
 
-            {/* Drawer Footer with Contact Us CTA — 14px font size */}
+            {/* Drawer Footer */}
             <div className="pt-6 border-t border-[#222] space-y-3">
               <Link
-                href="/contact"
+                href={navigation.button.link}
                 onClick={handleNavClick}
                 className="w-full inline-flex items-center justify-center bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] py-3.5 rounded-full text-center text-[14px] uppercase tracking-[0.14em] font-bold shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_25px_rgba(201,169,110,0.5)] transition-all cursor-pointer"
               >
-                Contact Us ✦
+                {navigation.button.text}
               </Link>
-              <p className="text-[14px] text-[#888] text-center font-mono">
-                PARIS · MILAN · NEW YORK
+              <p className="text-[14px] text-[#888] text-center">
+                {navigation.locationsText}
               </p>
             </div>
           </div>

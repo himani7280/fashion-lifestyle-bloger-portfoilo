@@ -3,25 +3,21 @@
 import React, { useEffect, useRef, useState } from "react";
 
 interface AnimatedCounterProps {
-  value: string; // e.g. "7+", "200+", "50+", "100%", "250K+", "14+", "120+"
+  value: string;
   className?: string;
-  duration?: number; // duration in ms, default 1800ms
+  duration?: number;
 }
 
 export default function AnimatedCounter({
   value,
-  className = "font-[family-name:var(--font-playfair)] text-xl font-bold text-[#E5C583] block",
+  className = "text-xl font-bold text-[#E5C583] block",
   duration = 1800,
 }: AnimatedCounterProps) {
   const [displayValue, setDisplayValue] = useState("0");
   const [hasAnimated, setHasAnimated] = useState(false);
   const elementRef = useRef<HTMLSpanElement>(null);
 
-  // Parse numeric target and suffix/prefix from string
-  // Examples:
-  // "7+" -> target: 7, prefix: "", suffix: "+"
-  // "100%" -> target: 100, prefix: "", suffix: "%"
-  // "250K+" -> target: 250, prefix: "", suffix: "K+"
+  // Parse numeric target and prefix/suffix
   const match = value.match(/^([^\d]*)(\d+)([^\d]*)$/);
   const prefix = match ? match[1] : "";
   const targetNumber = match ? parseInt(match[2], 10) : 0;

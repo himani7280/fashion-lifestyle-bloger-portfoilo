@@ -1,7 +1,19 @@
 {
   "Fashion": {
+    "fonts": {
+      "heading": "Playfair Display, serif",
+      "body": "Poppins, sans-serif",
+      "accent": "Cormorant Garamond, serif",
+      "mono": "monospace"
+    },
     "templateComponents": {
       "template-1": {
+        "fonts": {
+          "heading": "Playfair Display, serif",
+          "body": "Poppins, sans-serif",
+          "accent": "Cormorant Garamond, serif",
+          "mono": "monospace"
+        },
         "shared": {
           "Header": "FashionHeader1",
           "Footer": "FashionFooter1"
@@ -22,16 +34,8 @@
                 "component": "FashionGallery1"
               },
               {
-                "key": "Services",
-                "component": "FashionServices1"
-              },
-              {
                 "key": "Testimonials",
                 "component": "FashionTestimonials1"
-              },
-              {
-                "key": "Blog",
-                "component": "FashionBlog1"
               }
             ]
           },
@@ -66,7 +70,7 @@
                 "component": "FashionServicesHero1"
               },
               {
-                "key": "ServicesPage",
+                "key": "Services",
                 "component": "FashionServicesPage1"
               }
             ]
@@ -74,11 +78,7 @@
           "serviceDetail": {
             "components": [
               {
-                "key": "Hero",
-                "component": "FashionServicesHero1"
-              },
-              {
-                "key": "ServiceDetail",
+                "key": "Services",
                 "component": "FashionServiceDetail1"
               }
             ]
@@ -90,7 +90,7 @@
                 "component": "FashionBlogHero1"
               },
               {
-                "key": "BlogPage",
+                "key": "Blog",
                 "component": "FashionBlogPage1"
               }
             ]
@@ -98,11 +98,7 @@
           "blogDetail": {
             "components": [
               {
-                "key": "Hero",
-                "component": "FashionBlogDetailHero1"
-              },
-              {
-                "key": "BlogDetail",
+                "key": "Blog",
                 "component": "FashionBlogDetail1"
               }
             ]
@@ -114,17 +110,13 @@
                 "component": "FashionContactHero1"
               },
               {
-                "key": "ContactForm",
+                "key": "Contact",
                 "component": "FashionContactForm1"
               }
             ]
           },
           "thankYou": {
             "components": [
-              {
-                "key": "Hero",
-                "component": "FashionHomeHero1"
-              },
               {
                 "key": "ThankYou",
                 "component": "FashionThankYou1"
@@ -138,133 +130,104 @@
       "Hero": {
         "variants": {
           "FashionHomeHero1": {
-            "badge": "✦ HAUTE EDITORIAL 2026",
-            "topText": "✦ HAUTE EDITORIAL 2026",
-            "titleStart": "Tara",
-            "headingLine1": "Tara",
-            "titleHighlight": "Verma",
-            "headingLine2": "Verma",
-            "subtitle": "Timeless Wardrobe Direction · Luxury Brand Partnerships · Lifestyle Aesthetics",
-            "description": "Where high-fashion sophistication meets effortless everyday living.",
-            "heroImage": "/images/model-hero.jpg",
-            "primaryButton": "Explore Portfolio",
-            "primaryLink": "/portfolio",
-            "secondaryButton": "Styling Inquiries",
-            "secondaryLink": "/contact",
-            "location": "Paris · Milan · New Delhi · New York"
+            "slides": [
+              {
+                "image": "/images/model-hero.webp",
+                "alt": "Tara Verma — Midnight Noir Off-Shoulder Gown",
+                "line1": "Hi,",
+                "line2": "I'm Tara",
+                "objectPosition": "64% 4%"
+              },
+              {
+                "image": "/images/model-red-gown-clean.webp",
+                "alt": "Tara Verma — Crimson Haute Couture Gown",
+                "line1": "Haute",
+                "line2": "Couture",
+                "objectPosition": "50% 25%"
+              },
+              {
+                "image": "/hero-slide-1.webp",
+                "alt": "Tara Verma — Emerald Green Silk Parisian Gown",
+                "line1": "Gala",
+                "line2": "Opulence",
+                "objectPosition": "50% 15%"
+              }
+            ]
           },
           "FashionAboutHero1": {
-            "badge": "✦ ABOUT THE CURATOR",
             "title": "About Tara Verma",
             "subtitle": "Editorial Stylist & Creative Director",
-            "image": "/images/model-blazer.jpg"
+            "image": "/images/model-hero.webp",
+            "homeText": "Home",
+            "breadcrumb": "About Tara",
+            "titleStart": "About",
+            "titleHighlight": "Tara Verma"
           },
           "FashionPortfolioHero1": {
-            "badge": "✦ SARTORIAL ARCHIVE",
-            "title": "Curated Portfolio",
-            "subtitle": "Haute Couture & Editorial Archives",
-            "image": "/images/model-hero.jpg"
+            "image": "/images/tara-pillar-global.webp",
+            "homeText": "Home",
+            "breadcrumb": "Gallery",
+            "titleStart": "Fashion & Lifestyle",
+            "titleHighlight": "Gallery"
           },
           "FashionServicesHero1": {
-            "badge": "✦ BESPOKE STYLING",
             "title": "Bespoke Services",
             "subtitle": "High-Fashion Styling & Brand Direction",
-            "image": "/images/model-suit.jpg"
+            "image": "/images/model-suit.webp",
+            "homeText": "Home",
+            "breadcrumb": "Services",
+            "titleStart": "Fashion Styling &",
+            "titleHighlight": "Creative Direction"
           },
           "FashionBlogHero1": {
-            "badge": "✦ EDITORIAL JOURNAL",
-            "title": "Fashion & Lifestyle Journal",
-            "subtitle": "Editorial Insights, Runway Trends & Style Notes",
-            "image": "/images/model-roses.jpg"
-          },
-          "FashionBlogDetailHero1": {
-            "badge": "✦ STYLE STORY",
-            "title": "Editorial Story",
-            "image": "/images/model-roses.jpg"
+            "image": "/images/model-roses.webp",
+            "homeText": "Home",
+            "breadcrumb": "Journal",
+            "titleStart": "Style Chronicles &",
+            "titleHighlight": "Lifestyle Journal"
           },
           "FashionContactHero1": {
-            "badge": "✦ GET IN TOUCH",
-            "title": "Consultation Desk",
-            "subtitle": "Let's Create Unforgettable Style Moments",
-            "image": "/images/tara-contact-hero.jpg"
+            "title": "Contact",
+            "image": "/images/model-blazer.webp",
+            "homeText": "Home",
+            "breadcrumb": "Contact"
           }
         }
       },
       "About": {
         "variants": {
           "FashionAbout1": {
-            "badge": "✦ EDITORIAL STYLIST & CREATIVE CONSULTANT",
-            "topText": "✦ EDITORIAL STYLIST & CREATIVE CONSULTANT",
-            "titleStart": "Curating Modern ",
-            "heading1": "Curating Modern ",
-            "titleHighlight": "Feminine Style",
-            "heading2": "Feminine Style",
-            "description": "Tara Verma is a premier fashion and lifestyle curator, known for her elevated wardrobe direction, effortless personal style, and visionary brand collaborations.",
-            "bioExtended": "Tara Verma curates a modern dialogue between timeless luxury fashion and vibrant everyday living. From front-row styling at Paris and Milan Fashion Weeks to directing bespoke capsule wardrobe edits and international travel diaries, Tara brings an effortless grace to contemporary fashion. She partners with the world's most prestigious luxury houses, translating aspirational high fashion into wearable, inspiring lifestyle narratives.",
-            "mission": "Inspiring women globally to discover confidence, celebrate craftsmanship, and cultivate a deeply authentic personal style.",
-            "vision": "Curating a future where high-fashion aesthetics, conscious wardrobe building, and soulful lifestyle storytelling live in seamless harmony.",
-            "image": "/images/model-blazer.jpg",
-            "buttonText": "Discover Tara's Story",
-            "buttonLink": "/about",
-            "pillars": {
-              "Aesthetic": "Modern Minimalist Elegance",
-              "Signature": "Architectural Blazers & Draped Silk",
-              "Palette": "Champagne Gold, Noir, Warm Neutrals",
-              "Locations": "Paris · Milan · New Delhi · New York"
-            },
-            "stats": [
+            "name": "TARA VERMA",
+            "heroImage": "/images/model-hero.webp",
+            "badge": "✦ Editorial Stylist & Creative Consultant",
+            "spotlightTitleStart": "The Journey of ",
+            "spotlightTitleHighlight": "Sartorial Storytelling",
+            "spotlightQuote": "Fashion styling is the deliberate art of visual storytelling through cut, drape, and structural harmony.",
+            "spotlightParagraphs": [
+              "Over seven years of creative direction across Paris, Milan, and New Delhi, Tara Verma curates bespoke capsule wardrobes, red carpet appearances, and high-impact editorials defined by razor-sharp tailoring and timeless elegance.",
+              "Every bespoke engagement harmonizes sculptural couture silhouettes with tactile artisanal fabrics, creating an enduring aesthetic narrative tailored to each client’s personal presence and distinct public profile.",
+              "From private wardrobe consultations to global runway presentations, Tara balances classical atelier heritage with contemporary restraint—crafting an unmistakable signature of poise, intention, and quiet luxury."
+            ],
+            "primaryButtonText": "Book Consultation ✦",
+            "primaryButtonLink": "/contact",
+            "secondaryButtonText": "View Portfolio",
+            "secondaryButtonLink": "/portfolio",
+            "spotlightStats": [
               {
-                "label": "Style Community",
-                "value": "250K+"
+                "label": "Years Styling",
+                "value": "7+"
               },
               {
-                "label": "Global Brands",
+                "label": "Outfits Curated",
+                "value": "200+"
+              },
+              {
+                "label": "Brand Campaigns",
                 "value": "50+"
               },
               {
-                "label": "Curated Lookbooks",
-                "value": "120+"
-              },
-              {
-                "label": "Fashion Weeks",
-                "value": "14+"
-              }
-            ],
-            "name": "TARA VERMA",
-            "title": "Fashion & Lifestyle Curator | Creative Director",
-            "subtitle": "Timeless Wardrobe Direction · Luxury Brand Partnerships · Lifestyle Aesthetics",
-            "tagline": "Where high-fashion sophistication meets effortless everyday living.",
-            "location": "Paris · Milan · New Delhi · New York",
-            "bioShort": "Tara Verma is a premier fashion and lifestyle curator, known for her elevated wardrobe direction, effortless personal style, and visionary brand collaborations.",
-            "heroImage": "/images/model-hero.jpg",
-            "contactImage": "/images/tara-contact-hero.jpg",
-            "aboutImage": "/images/model-blazer.jpg",
-            "stylePillars": {
-              "Aesthetic": "Modern Minimalist Elegance",
-              "Signature": "Architectural Blazers & Draped Silk",
-              "Palette": "Champagne Gold, Noir, Warm Neutrals",
-              "Locations": "Paris · Milan · New Delhi · New York"
-            },
-            "skills": [
-              {
-                "name": "Bespoke Wardrobe & Capsule Styling",
-                "level": 98,
-                "desc": "Curating cohesive, timeless wardrobes that elevate everyday confidence."
-              },
-              {
-                "name": "Creative Direction & Moodboarding",
-                "level": 96,
-                "desc": "Visual storytelling, color harmony, and campaign aesthetic direction."
-              },
-              {
-                "name": "Luxury Brand Partnerships",
-                "level": 95,
-                "desc": "Authentic digital campaigns and ambassador curation for prestigious houses."
-              },
-              {
-                "name": "Lifestyle & Travel Storytelling",
-                "level": 94,
-                "desc": "Destination aesthetics, resort curation, and editorial lifestyle diaries."
+                "label": "Bespoke Curation",
+                "value": "100%"
               }
             ]
           }
@@ -273,388 +236,125 @@
       "AboutPage": {
         "variants": {
           "FashionAboutPage1": {
-            "badge": "✦ THE CURATOR'S STORY",
-            "topText": "✦ THE CURATOR'S STORY",
-            "titleStart": "Where Architectural Poise Meets ",
-            "titleHighlight": "Effortless Grace",
+            "sectionBadge": "✦ Haute Couture Atelier · The Stylist",
+            "sectionTitle": "About Me",
+            "image": "/images/model-blazer.webp",
+            "imageAlt": "Tara Verma — Fashion Stylist & Atelier Creative Director",
+            "missionTitle": "My Mission",
             "paragraphs": [
-              "Tara Verma is a premier fashion and lifestyle curator, known for her elevated wardrobe direction, effortless personal style, and visionary brand collaborations.",
-              "Tara Verma curates a modern dialogue between timeless luxury fashion and vibrant everyday living. From front-row styling at Paris and Milan Fashion Weeks to directing bespoke capsule wardrobe edits and international travel diaries, Tara brings an effortless grace to contemporary fashion. She partners with the world's most prestigious luxury houses, translating aspirational high fashion into wearable, inspiring lifestyle narratives.",
-              "Inspiring women globally to discover confidence, celebrate craftsmanship, and cultivate a deeply authentic personal style."
+              "Personal style is an architectural language — an intentional harmony of structural cut, draped silk, and proportion that commands presence without uttering a word. Guided by quiet luxury and restraint, each curation cuts through ephemeral micro-trends to cultivate an enduring sartorial identity.",
+              "Bridging European haute couture ateliers with handcrafted artisanal textiles, I curate bespoke capsule wardrobes and red-carpet appearances for discerning clientele worldwide, elevating everyday presence into an effortless work of art.",
+              "Every collaboration is underpinned by bespoke fabric sourcing, precise silhouette architecture, and a commitment to timeless elegance that transcends fleeting seasonal fads."
             ],
-            "image": "/images/model-blazer.jpg",
-            "stats": [
-              {
-                "label": "Style Community",
-                "value": "250K+"
-              },
-              {
-                "label": "Global Brands",
-                "value": "50+"
-              },
-              {
-                "label": "Curated Lookbooks",
-                "value": "120+"
-              },
-              {
-                "label": "Fashion Weeks",
-                "value": "14+"
-              }
-            ],
-            "stylePillars": {
-              "Aesthetic": "Modern Minimalist Elegance",
-              "Signature": "Architectural Blazers & Draped Silk",
-              "Palette": "Champagne Gold, Noir, Warm Neutrals",
-              "Locations": "Paris · Milan · New Delhi · New York"
+            "primaryButtonText": "Book Consultation ✦",
+            "primaryButtonLink": "/contact",
+            "secondaryButtonText": "Explore Services",
+            "secondaryButtonLink": "/services",
+            "spheresSection": {
+              "badge": "✦ Sartorial Signatures · Three Disciplines",
+              "title": "The Tara Verma Atelier",
+              "items": [
+                {
+                  "title": "Bespoke Capsule Architecture",
+                  "tagline": "PERSONAL WARDROBE CURATION",
+                  "image": "/images/model-roses.webp",
+                  "desc": "Deconstructing seasonal clutter to engineer 15-piece signature capsule wardrobes defined by razor-sharp tailoring, fluid silks, and effortless metropolitan ease."
+                },
+                {
+                  "title": "Red Carpet & Gala Styling",
+                  "tagline": "HAUTE COUTURE DIRECTION",
+                  "image": "/images/model-red-gown-clean.webp",
+                  "desc": "Directing high-visibility red carpet appearances and gala silhouettes with commanding posture, architectural train pacing, and dramatic jewel-toned luxury."
+                },
+                {
+                  "title": "Editorial Creative Direction",
+                  "tagline": "CAMPAIGN & LOOKBOOK CONCEPTS",
+                  "image": "/images/model-suit.webp",
+                  "desc": "Bridging storied European fashion houses with contemporary visual storytelling, sculpting on-set garment tension and cinematic lighting for major lookbooks."
+                }
+              ]
             },
-            "skills": [
-              {
-                "name": "Bespoke Wardrobe & Capsule Styling",
-                "level": 98,
-                "desc": "Curating cohesive, timeless wardrobes that elevate everyday confidence."
-              },
-              {
-                "name": "Creative Direction & Moodboarding",
-                "level": 96,
-                "desc": "Visual storytelling, color harmony, and campaign aesthetic direction."
-              },
-              {
-                "name": "Luxury Brand Partnerships",
-                "level": 95,
-                "desc": "Authentic digital campaigns and ambassador curation for prestigious houses."
-              },
-              {
-                "name": "Lifestyle & Travel Storytelling",
-                "level": 94,
-                "desc": "Destination aesthetics, resort curation, and editorial lifestyle diaries."
-              }
-            ]
+            "pillarsSection": {
+              "badge": "✦ Aesthetic Architecture · Lookbook Philosophy",
+              "titleStart": "The Four Style ",
+              "titleHighlight": "Pillars",
+              "subtitle": "Every outfit, wardrobe curation, and creative direction is anchored in four foundational design codes.",
+              "codePrefix": "✦ CODE",
+              "pillarPrefix": "Pillar",
+              "pillarSuffix": "✦ Architecture",
+              "items": [
+                {
+                  "id": "minimalist",
+                  "number": "01",
+                  "roman": "I",
+                  "title": "Minimalist Elegance",
+                  "tagline": "Quiet Luxury & Clean Lines",
+                  "description": "True sophistication lies in restraint. We strip away decorative excess to celebrate the pure architecture of garments, impeccable tailoring, and the unforced confidence of the woman wearing them.",
+                  "quote": "Simplicity is not the lack of clutter; it is the presence of absolute intention.",
+                  "image": "/images/model-studio.webp"
+                },
+                {
+                  "id": "tailoring",
+                  "number": "02",
+                  "roman": "II",
+                  "title": "Tailoring & Draped Silk",
+                  "tagline": "Fluid Feminine Movement",
+                  "description": "A deliberate dialogue between masculine sharpness and feminine fluidity. Pairing razor-sharp double-breasted blazers with liquid silk slip drapes creates an unforgettable sartorial tension.",
+                  "quote": "Contrast creates character: structured strength softened by fluid grace.",
+                  "image": "/images/model-suit.webp"
+                },
+                {
+                  "id": "chromatics",
+                  "number": "03",
+                  "roman": "III",
+                  "title": "Gold & Noir Chromatics",
+                  "tagline": "Timeless Chromatic Dialogue",
+                  "description": "Obsidian noir forms the timeless canvas, brought to life through luminous champagne golds, warm ivory, and rich desert neutrals that flatter every skin tone in any lighting.",
+                  "quote": "Color is psychological; the right tonal harmony gives commanding presence.",
+                  "image": "/images/tara-pillar-chromatics.webp"
+                },
+                {
+                  "id": "global",
+                  "number": "04",
+                  "roman": "IV",
+                  "title": "Global Fashion Bases",
+                  "tagline": "Paris · Milan · New Delhi",
+                  "description": "Bridging the storied haute couture ateliers of Europe with India's rich artisanal heritage. Bringing international front-row perspectives to everyday wardrobe curation.",
+                  "quote": "Global aesthetic awareness translates runways into wearable personal style.",
+                  "image": "/images/tara-pillar-global.webp"
+                }
+              ]
+            }
           }
         }
       },
       "Gallery": {
         "variants": {
           "FashionGallery1": {
-            "badge": "✦ SARTORIAL ARCHIVE",
-            "topText": "✦ SARTORIAL ARCHIVE",
-            "titleStart": "Curated ",
-            "heading1": "Curated ",
-            "titleHighlight": "Portfolio",
-            "heading2": "Portfolio",
-            "description": "A selected edit of red-carpet moments, high-fashion editorials, international campaigns, and couture collaborations.",
-            "buttonText": "View Full Archive",
+            "badge": "✦ SARTORIAL ARCHIVE · 2026",
+            "titleStart": "Curated Style ",
+            "titleHighlight": "Gallery",
+            "buttonText": "View All Archives ✦",
             "buttonLink": "/portfolio",
-            "items": [
-              {
-                "id": "port-1",
-                "title": "Palace Balcony Sunset Edit",
-                "category": "Fashion",
-                "tag": "Paris Haute Couture",
-                "image": "/images/model-hero.jpg",
-                "photographer": "Henri Moreau",
-                "designer": "Maison Royale Couture",
-                "location": "Paris, France",
-                "year": "2026",
-                "description": "Black off-shoulder ruffled evening dress on a historic stone palace balcony overlooking Paris at sunset.",
-                "details": "Architectural draping with structured bodice; paired with vintage gold drop earrings.",
-                "objectPosition": "50% 20%",
-                "variants": [
-                  {
-                    "name": "Golden Amber",
-                    "color": "#C9A96E"
-                  },
-                  {
-                    "name": "Midnight Noir",
-                    "color": "#0A0A0A"
-                  }
-                ]
-              },
-              {
-                "id": "port-2",
-                "title": "Summer Riviera Linen Aesthetic",
-                "category": "Lifestyle",
-                "tag": "Resort Holiday Living",
-                "image": "/images/model-hero.jpg",
-                "photographer": "Matteo Rossi",
-                "designer": "Riviera Resortwear",
-                "location": "Capri, Italy",
-                "year": "2026",
-                "description": "Sun-drenched Mediterranean resort style in breezy natural linens and woven straw accents.",
-                "details": "Resort-wear capsule featuring breathable organic linens, sea-breeze silhouettes, and woven accessories.",
-                "objectPosition": "50% 20%",
-                "variants": [
-                  {
-                    "name": "Emerald Glaze",
-                    "color": "#0F382A"
-                  },
-                  {
-                    "name": "Opal White",
-                    "color": "#F0EBE1"
-                  }
-                ]
-              },
-              {
-                "id": "port-3",
-                "title": "Emerald Silk Parisian Runway",
-                "category": "Fashion",
-                "tag": "Runway High-Fashion",
-                "image": "/hero-slide-1.jpg",
-                "photographer": "Alexander Ward",
-                "designer": "Maison Émeraude",
-                "location": "Paris, France",
-                "year": "2026",
-                "description": "Voluminous emerald green draped silk gown commanding the grand Parisian cobblestone boulevard.",
-                "details": "Liquid silk movement and dramatic sleeve silhouettes engineered for Paris Fashion Week.",
-                "objectPosition": "50% 20%",
-                "variants": [
-                  {
-                    "name": "Crimson Silk",
-                    "color": "#8B1E2E"
-                  },
-                  {
-                    "name": "Champagne Gold",
-                    "color": "#DFC18A"
-                  }
-                ]
-              },
-              {
-                "id": "port-4",
-                "title": "Milanese Tailored Silk Suiting",
-                "category": "Lifestyle",
-                "tag": "Cosmopolitan Living",
-                "image": "/images/model-suit.jpg",
-                "photographer": "Elena Gomez",
-                "designer": "Sartoria Milano",
-                "location": "Milan, Italy",
-                "year": "2026",
-                "description": "Double-breasted ivory silk tailored power suit radiating effortless cosmopolitan sophistication.",
-                "details": "Razor-sharp peak lapels paired with fluid wide-leg trousers for front-row Milanese street presence.",
-                "objectPosition": "50% 20%",
-                "variants": [
-                  {
-                    "name": "Haute Sapphire",
-                    "color": "#162846"
-                  },
-                  {
-                    "name": "Obsidian",
-                    "color": "#141414"
-                  }
-                ]
-              },
-              {
-                "id": "port-5",
-                "title": "Architectural Houndstooth Power Blazer",
-                "category": "Fashion",
-                "tag": "Executive Sartorial",
-                "image": "/images/model-blazer.jpg",
-                "photographer": "Jean-Paul Studio",
-                "designer": "Heritage Atelier",
-                "location": "Milan, Italy",
-                "year": "2026",
-                "description": "Sculptural double-breasted houndstooth wool blazer with razor-sharp shoulders and cinched waist.",
-                "details": "Structured tailoring paired with minimal jewelry; commanding modern power silhouette.",
-                "objectPosition": "50% 20%",
-                "variants": [
-                  {
-                    "name": "Rose Petal",
-                    "color": "#B85D6C"
-                  },
-                  {
-                    "name": "Pearl Cream",
-                    "color": "#EDE6D6"
-                  }
-                ]
-              },
-              {
-                "id": "port-6",
-                "title": "Scarlet & Gold Gala Balcony Gown",
-                "category": "Fashion",
-                "tag": "Haute Couture",
-                "image": "/hero-slide-3.jpg",
-                "photographer": "Claire Dubois",
-                "designer": "Atelier Céleste",
-                "location": "Paris, France",
-                "year": "2026",
-                "description": "Hand-embroidered gold filigree and scarlet chiffon gala gown on a grand balcony overlooking Paris at dusk.",
-                "details": "Dramatic cascading train and gold embroidery crafted for high-society gala receptions.",
-                "objectPosition": "50% 20%",
-                "variants": [
-                  {
-                    "name": "Tuxedo Black",
-                    "color": "#0F0F0F"
-                  },
-                  {
-                    "name": "Chalk Pinstripe",
-                    "color": "#E0DED9"
-                  }
-                ]
-              },
-              {
-                "id": "port-7",
-                "title": "Atelier Cashmere Knitwear & Silk",
-                "category": "Lifestyle",
-                "tag": "Atelier Loungewear",
-                "image": "/images/model-studio.jpg",
-                "photographer": "Sophie Laurent",
-                "designer": "Minimalist Atelier",
-                "location": "Milan, Italy",
-                "year": "2026",
-                "description": "Oversized cozy knitwear and natural textiles for relaxed weekend luxury living.",
-                "details": "Effortless weekend luxury capsule; cozy textures and relaxed morning aesthetic.",
-                "objectPosition": "50% 20%",
-                "variants": [
-                  {
-                    "name": "Monochrome Silver",
-                    "color": "#9E9E9E"
-                  },
-                  {
-                    "name": "Charcoal Velvet",
-                    "color": "#242526"
-                  }
-                ]
-              },
-              {
-                "id": "port-8",
-                "title": "Contemporary Metropolitan Power Tailoring",
-                "category": "Fashion",
-                "tag": "Metropolitan Power",
-                "image": "/images/model-contact.jpg",
-                "photographer": "Marco Bellini",
-                "designer": "Noir Studio",
-                "location": "New York, USA",
-                "year": "2026",
-                "description": "Crisp tailoring and confident metropolitan silhouette tailored for international affairs.",
-                "details": "Sharp lapels and fluid trousers engineered for commanding boardroom and gala presence.",
-                "objectPosition": "50% 20%",
-                "variants": [
-                  {
-                    "name": "Bespoke Bronze",
-                    "color": "#9E6D38"
-                  },
-                  {
-                    "name": "Raw Linen",
-                    "color": "#D9C9B4"
-                  }
-                ]
-              },
-              {
-                "id": "port-9",
-                "title": "Venice Red Carpet Reception Gown",
-                "category": "Fashion",
-                "tag": "Gala Couture",
-                "image": "/images/model-red-gown-clean.jpg",
-                "photographer": "Arjun Singhal",
-                "designer": "Imperial Drapes",
-                "location": "Venice, Italy",
-                "year": "2026",
-                "description": "Glamorous metallic evening gown capturing the golden light of the Venice Film Festival red carpet.",
-                "details": "Liquid metallic fabric with asymmetrical drape engineered for high-wattage red carpet presence.",
-                "objectPosition": "50% 20%",
-                "variants": [
-                  {
-                    "name": "Desert Sand",
-                    "color": "#C4A482"
-                  },
-                  {
-                    "name": "Sunset Ochre",
-                    "color": "#BF5700"
-                  }
-                ]
-              },
-              {
-                "id": "port-10",
-                "title": "Structured Obsidian Tuxedo Ensemble",
-                "category": "Fashion",
-                "tag": "Couture Suiting",
-                "image": "/images/model-suit.jpg",
-                "photographer": "Alexander Ward",
-                "designer": "Sartorial Atelier",
-                "location": "London, UK",
-                "year": "2026",
-                "description": "All-black tuxedo tailoring with satin lapels, high-waisted trousers, and architectural fedora styling.",
-                "details": "Clean lines and monochromatic mastery commanding both runway and VIP evening events.",
-                "objectPosition": "50% 20%",
-                "variants": [
-                  {
-                    "name": "Royal Zari Gold",
-                    "color": "#D4AF37"
-                  },
-                  {
-                    "name": "Ruby Weave",
-                    "color": "#7A1C24"
-                  }
-                ]
-              },
-              {
-                "id": "port-11",
-                "title": "Romantic Organza & Roses Haute Couture",
-                "category": "Lifestyle",
-                "tag": "Editorial Romance",
-                "image": "/images/model-roses.jpg",
-                "photographer": "Marco Bellini",
-                "designer": "Flora & Noir Atelier",
-                "location": "Rome, Italy",
-                "year": "2026",
-                "description": "Delicate black organza gown adorned with floral accents creating a romantic editorial fashion portrait.",
-                "details": "Sheer textural contrast and dramatic floral motifs designed for high-fashion editorial spreads.",
-                "objectPosition": "50% 20%",
-                "variants": [
-                  {
-                    "name": "Studio White",
-                    "color": "#F7F5F0"
-                  },
-                  {
-                    "name": "Pitch Jet",
-                    "color": "#111111"
-                  }
-                ]
-              },
-              {
-                "id": "port-12",
-                "title": "Champagne Gold Draped Evening Silhouette",
-                "category": "Fashion",
-                "tag": "Bespoke Eveningwear",
-                "image": "/images/tara-pillar-chromatics.jpg",
-                "photographer": "Christian Weber",
-                "designer": "Atelier Doré",
-                "location": "Paris, France",
-                "year": "2026",
-                "description": "Dramatic champagne gold and noir evening ensemble with fluid bias-cut draping and regal presence.",
-                "details": "Intricate metallic threading and fluid silk crepe de chine tailored for private VIP galas.",
-                "objectPosition": "50% 20%",
-                "variants": [
-                  {
-                    "name": "Gala Midnight",
-                    "color": "#0D1B2A"
-                  },
-                  {
-                    "name": "Starlight Gold",
-                    "color": "#E5C583"
-                  }
-                ]
-              }
-            ]
+            "footerLeftText": "✦ SARTORIAL ARCHIVE",
+            "footerRightText": "2026 EDITION",
+            "lightboxNavigateHint": "Use ← / → keys to navigate",
+            "lightboxPaletteLabel": "Palette:",
+            "lightboxCloseHint": "ESC to close"
           },
           "FashionGalleryPage1": {
-            "badge": "✦ FULL ARCHIVE",
-            "categories": [
-              "All",
-              "Fashion",
-              "Lifestyle"
-            ],
+            "archiveTapeLeft": "✦ TARA VERMA SARTORIAL ARCHIVE",
+            "archiveTapeCenter": "CURATED PORTFOLIO · 2026",
+            "archiveTapeRight": "CLICK ANY FRAME TO EXPAND",
+            "lightboxNavigateHint": "Use ← / → keys to navigate",
+            "lightboxPaletteLabel": "Palette:",
+            "lightboxCloseHint": "ESC to close",
+            "loadingText": "Loading Portfolio Gallery...",
             "items": [
               {
                 "id": "port-1",
                 "title": "Palace Balcony Sunset Edit",
-                "category": "Fashion",
-                "tag": "Paris Haute Couture",
-                "image": "/images/model-hero.jpg",
-                "photographer": "Henri Moreau",
-                "designer": "Maison Royale Couture",
-                "location": "Paris, France",
-                "year": "2026",
-                "description": "Black off-shoulder ruffled evening dress on a historic stone palace balcony overlooking Paris at sunset.",
-                "details": "Architectural draping with structured bodice; paired with vintage gold drop earrings.",
+                "image": "/images/model-hero.webp",
                 "objectPosition": "50% 20%",
                 "variants": [
                   {
@@ -670,15 +370,7 @@
               {
                 "id": "port-2",
                 "title": "Summer Riviera Linen Aesthetic",
-                "category": "Lifestyle",
-                "tag": "Resort Holiday Living",
-                "image": "/images/model-hero.jpg",
-                "photographer": "Matteo Rossi",
-                "designer": "Riviera Resortwear",
-                "location": "Capri, Italy",
-                "year": "2026",
-                "description": "Sun-drenched Mediterranean resort style in breezy natural linens and woven straw accents.",
-                "details": "Resort-wear capsule featuring breathable organic linens, sea-breeze silhouettes, and woven accessories.",
+                "image": "/images/tara-pillar-global.webp",
                 "objectPosition": "50% 20%",
                 "variants": [
                   {
@@ -694,15 +386,7 @@
               {
                 "id": "port-3",
                 "title": "Emerald Silk Parisian Runway",
-                "category": "Fashion",
-                "tag": "Runway High-Fashion",
-                "image": "/hero-slide-1.jpg",
-                "photographer": "Alexander Ward",
-                "designer": "Maison Émeraude",
-                "location": "Paris, France",
-                "year": "2026",
-                "description": "Voluminous emerald green draped silk gown commanding the grand Parisian cobblestone boulevard.",
-                "details": "Liquid silk movement and dramatic sleeve silhouettes engineered for Paris Fashion Week.",
+                "image": "/hero-slide-1.webp",
                 "objectPosition": "50% 20%",
                 "variants": [
                   {
@@ -718,15 +402,7 @@
               {
                 "id": "port-4",
                 "title": "Milanese Tailored Silk Suiting",
-                "category": "Lifestyle",
-                "tag": "Cosmopolitan Living",
-                "image": "/images/model-suit.jpg",
-                "photographer": "Elena Gomez",
-                "designer": "Sartoria Milano",
-                "location": "Milan, Italy",
-                "year": "2026",
-                "description": "Double-breasted ivory silk tailored power suit radiating effortless cosmopolitan sophistication.",
-                "details": "Razor-sharp peak lapels paired with fluid wide-leg trousers for front-row Milanese street presence.",
+                "image": "/images/model-suit.webp",
                 "objectPosition": "50% 20%",
                 "variants": [
                   {
@@ -742,15 +418,7 @@
               {
                 "id": "port-5",
                 "title": "Architectural Houndstooth Power Blazer",
-                "category": "Fashion",
-                "tag": "Executive Sartorial",
-                "image": "/images/model-blazer.jpg",
-                "photographer": "Jean-Paul Studio",
-                "designer": "Heritage Atelier",
-                "location": "Milan, Italy",
-                "year": "2026",
-                "description": "Sculptural double-breasted houndstooth wool blazer with razor-sharp shoulders and cinched waist.",
-                "details": "Structured tailoring paired with minimal jewelry; commanding modern power silhouette.",
+                "image": "/images/model-blazer.webp",
                 "objectPosition": "50% 20%",
                 "variants": [
                   {
@@ -766,15 +434,7 @@
               {
                 "id": "port-6",
                 "title": "Scarlet & Gold Gala Balcony Gown",
-                "category": "Fashion",
-                "tag": "Haute Couture",
-                "image": "/hero-slide-3.jpg",
-                "photographer": "Claire Dubois",
-                "designer": "Atelier Céleste",
-                "location": "Paris, France",
-                "year": "2026",
-                "description": "Hand-embroidered gold filigree and scarlet chiffon gala gown on a grand balcony overlooking Paris at dusk.",
-                "details": "Dramatic cascading train and gold embroidery crafted for high-society gala receptions.",
+                "image": "/hero-slide-3.webp",
                 "objectPosition": "50% 20%",
                 "variants": [
                   {
@@ -790,15 +450,7 @@
               {
                 "id": "port-7",
                 "title": "Atelier Cashmere Knitwear & Silk",
-                "category": "Lifestyle",
-                "tag": "Atelier Loungewear",
-                "image": "/images/model-studio.jpg",
-                "photographer": "Sophie Laurent",
-                "designer": "Minimalist Atelier",
-                "location": "Milan, Italy",
-                "year": "2026",
-                "description": "Oversized cozy knitwear and natural textiles for relaxed weekend luxury living.",
-                "details": "Effortless weekend luxury capsule; cozy textures and relaxed morning aesthetic.",
+                "image": "/images/model-studio.webp",
                 "objectPosition": "50% 20%",
                 "variants": [
                   {
@@ -814,15 +466,7 @@
               {
                 "id": "port-8",
                 "title": "Contemporary Metropolitan Power Tailoring",
-                "category": "Fashion",
-                "tag": "Metropolitan Power",
-                "image": "/images/model-contact.jpg",
-                "photographer": "Marco Bellini",
-                "designer": "Noir Studio",
-                "location": "New York, USA",
-                "year": "2026",
-                "description": "Crisp tailoring and confident metropolitan silhouette tailored for international affairs.",
-                "details": "Sharp lapels and fluid trousers engineered for commanding boardroom and gala presence.",
+                "image": "/images/model-contact.webp",
                 "objectPosition": "50% 20%",
                 "variants": [
                   {
@@ -838,15 +482,7 @@
               {
                 "id": "port-9",
                 "title": "Venice Red Carpet Reception Gown",
-                "category": "Fashion",
-                "tag": "Gala Couture",
-                "image": "/images/model-red-gown-clean.jpg",
-                "photographer": "Arjun Singhal",
-                "designer": "Imperial Drapes",
-                "location": "Venice, Italy",
-                "year": "2026",
-                "description": "Glamorous metallic evening gown capturing the golden light of the Venice Film Festival red carpet.",
-                "details": "Liquid metallic fabric with asymmetrical drape engineered for high-wattage red carpet presence.",
+                "image": "/images/model-red-gown-clean.webp",
                 "objectPosition": "50% 20%",
                 "variants": [
                   {
@@ -862,15 +498,7 @@
               {
                 "id": "port-10",
                 "title": "Structured Obsidian Tuxedo Ensemble",
-                "category": "Fashion",
-                "tag": "Couture Suiting",
-                "image": "/images/model-suit.jpg",
-                "photographer": "Alexander Ward",
-                "designer": "Sartorial Atelier",
-                "location": "London, UK",
-                "year": "2026",
-                "description": "All-black tuxedo tailoring with satin lapels, high-waisted trousers, and architectural fedora styling.",
-                "details": "Clean lines and monochromatic mastery commanding both runway and VIP evening events.",
+                "image": "/images/model-suit.webp",
                 "objectPosition": "50% 20%",
                 "variants": [
                   {
@@ -886,15 +514,7 @@
               {
                 "id": "port-11",
                 "title": "Romantic Organza & Roses Haute Couture",
-                "category": "Lifestyle",
-                "tag": "Editorial Romance",
-                "image": "/images/model-roses.jpg",
-                "photographer": "Marco Bellini",
-                "designer": "Flora & Noir Atelier",
-                "location": "Rome, Italy",
-                "year": "2026",
-                "description": "Delicate black organza gown adorned with floral accents creating a romantic editorial fashion portrait.",
-                "details": "Sheer textural contrast and dramatic floral motifs designed for high-fashion editorial spreads.",
+                "image": "/images/model-roses.webp",
                 "objectPosition": "50% 20%",
                 "variants": [
                   {
@@ -910,15 +530,7 @@
               {
                 "id": "port-12",
                 "title": "Champagne Gold Draped Evening Silhouette",
-                "category": "Fashion",
-                "tag": "Bespoke Eveningwear",
-                "image": "/images/tara-pillar-chromatics.jpg",
-                "photographer": "Christian Weber",
-                "designer": "Atelier Doré",
-                "location": "Paris, France",
-                "year": "2026",
-                "description": "Dramatic champagne gold and noir evening ensemble with fluid bias-cut draping and regal presence.",
-                "details": "Intricate metallic threading and fluid silk crepe de chine tailored for private VIP galas.",
+                "image": "/images/tara-pillar-chromatics.webp",
                 "objectPosition": "50% 20%",
                 "variants": [
                   {
@@ -937,192 +549,309 @@
       },
       "Services": {
         "variants": {
-          "FashionServices1": {
-            "badge": "✦ CURATED EXPERTISE",
-            "topText": "✦ CURATED EXPERTISE",
-            "titleStart": "Bespoke ",
-            "heading1": "Bespoke ",
-            "titleHighlight": "Services",
-            "heading2": "Services",
-            "description": "From red-carpet wardrobe direction and bespoke wedding couture to global brand ambassadorship and commercial creative consulting.",
-            "buttonText": "Explore All Services",
-            "buttonLink": "/services",
-            "items": [
-              {
-                "id": "bespoke-styling",
-                "title": "Bespoke Wardrobe Styling",
-                "subtitle": "CAPSULE & PERSONAL STYLING",
-                "desc": "Personalized wardrobe curation, seasonal lookbooks, silhouette coordination, and bespoke occasion wear styling tailored to your distinct lifestyle.",
-                "image": "/images/model-hero.jpg",
-                "icon": "✨",
-                "highlights": [
-                  "Seasonal Wardrobe Audits & Capsule Building",
-                  "Special Occasion & Red Carpet Curation",
-                  "Silhouettes, Proportions & Color Palette Harmony",
-                  "Personal Shopping & Designer Sourcing"
-                ]
-              },
-              {
-                "id": "brand-campaigns",
-                "title": "Luxury Brand Partnerships",
-                "subtitle": "CREATIVE AMBASSADORSHIP",
-                "desc": "High-impact creative collaborations, digital lookbooks, and luxury brand ambassadorship for world-renowned fashion, beauty, and lifestyle houses.",
-                "image": "/images/model-hero.jpg",
-                "icon": "💎",
-                "highlights": [
-                  "Multi-Platform Campaign Storytelling",
-                  "Exclusive Fashion Week & Front-Row Ambassadorship",
-                  "Bespoke Styling Editorial Lookbooks",
-                  "High-Conversion Luxury Brand Endorsements"
-                ]
-              },
-              {
-                "id": "editorial-direction",
-                "title": "Editorial Creative Direction",
-                "subtitle": "VISUAL DIRECTION",
-                "desc": "Full-spectrum creative direction for publications, lookbooks, and fashion labels. From moodboard ideation to on-set visual aesthetics.",
-                "image": "/images/model-suit.jpg",
-                "icon": "📸",
-                "highlights": [
-                  "Fashion Editorial Concept & Moodboarding",
-                  "On-Set Aesthetic Direction & Garment Pacing",
-                  "Color Palette & Lighting Synchronization",
-                  "Digital Lookbook Publishing & Spread Layout"
-                ]
-              },
-              {
-                "id": "lifestyle-travel",
-                "title": "Lifestyle & Travel Aesthetics",
-                "subtitle": "RESORT & DESTINATION",
-                "desc": "Curated travel chronicles, luxury hospitality partnerships, and resort-wear visual stories that capture the essence of effortless global living.",
-                "image": "/hero-slide-1.jpg",
-                "icon": "✈️",
-                "highlights": [
-                  "Destination Travel Guides & Wardrobe Edits",
-                  "Luxury Resort & Hospitality Features",
-                  "Summer & Winter Seasonal Style Chronicles",
-                  "Cultural & Artisanal Textile Expeditions"
-                ]
-              }
-            ]
-          },
           "FashionServicesPage1": {
-            "badge": "✦ BESPOKE STYLING & DIRECTION",
+            "intro": {
+              "badge": "✦ HAUTE ATELIER SUITES · CURATED STYLING SERVICES",
+              "titleStart": "Bespoke Sartorial ",
+              "titleHighlight": "Offerings",
+              "description": "Four tailored creative engagements sculpted to elevate personal presence, brand visibility, and visual storytelling."
+            },
+            "suitePrefix": "✦ SUITE 0",
+            "exploreSuitePrefix": "Explore Suite 0",
+            "directInquiryText": "Direct Inquiry →",
+            "bottomCtaText": "Book Appointment ✦",
+            "bottomCtaLink": "/contact",
+            "advantage": {
+              "image": "/images/model-contact.webp",
+              "philosophyLabel": "Tara Verma Philosophy",
+              "philosophyQuote": "True fashion is the harmony of silhouette, confidence, and soulful living.",
+              "badge": "✦ The Tara Verma Advantage",
+              "titleStart": "Authentic High-Fashion & ",
+              "titleHighlight": "Lifestyle Direction",
+              "quote": "With commanding aesthetic presence, international front-row exposure, and intuitive mastery of silhouettes, Tara transforms every collaboration into a timeless work of art.",
+              "description": "Whether styling high-profile appearances, creating seasonal lookbooks for global luxury fashion houses, or directing editorial campaigns across Paris, Milan, and New Delhi, Tara delivers an uncompromising standard of sartorial excellence.",
+              "stats": [
+                {
+                  "label": "Community",
+                  "value": "250K+"
+                },
+                {
+                  "label": "Luxury Brands",
+                  "value": "50+"
+                },
+                {
+                  "label": "Lookbooks",
+                  "value": "120+"
+                },
+                {
+                  "label": "Fashion Weeks",
+                  "value": "14+"
+                }
+              ],
+              "buttonText": "Inquire Collaboration ✦",
+              "buttonLink": "/contact"
+            },
+            "portraitArchives": {
+              "badge": "✦ Archival Fine Art Portraiture · Continuous Exhibition Reel",
+              "titleStart": "Personal Portrait ",
+              "titleHighlight": "Archives",
+              "description": "Continuous 35mm archival loop. Hover to pause the reel, click any plate to open full-screen viewer.",
+              "headerTapeLeft": "KODAK TRI-X 400 · CONTINUOUS EXHIBITION REEL",
+              "headerTapeCenterSuffix": "ARCHIVAL PORTRAIT PLATES",
+              "headerTapeRight": "PARIS · MILAN · LONDON · NEW DELHI",
+              "footerTapeLeft": "SAFETY FILM ◆ NO. 4022",
+              "footerTapeCenter": "HOVER TO PAUSE LOOP · CLICK TO EXPAND",
+              "footerTapeRight": "EXHIBITION ARCHIVES 2026",
+              "lightboxNavigateHint": "Use ← / → keys to navigate",
+              "lightboxCloseHint": "ESC to close",
+              "items": [
+                {
+                  "id": "p1",
+                  "plateNumber": "PLATE 01",
+                  "title": "The Noir Tuxedo Edit",
+                  "location": "Paris Atelier",
+                  "year": "2026",
+                  "image": "/images/model-suit.webp"
+                },
+                {
+                  "id": "p2",
+                  "plateNumber": "PLATE 02",
+                  "title": "Crimson Velvet Drama",
+                  "location": "Milan Runway",
+                  "year": "2026",
+                  "image": "/images/tara-pillar-chromatics.webp"
+                },
+                {
+                  "id": "p3",
+                  "plateNumber": "PLATE 03",
+                  "title": "Damask Rose & Velvet",
+                  "location": "London Editorial",
+                  "year": "2025",
+                  "image": "/images/model-roses.webp"
+                },
+                {
+                  "id": "p4",
+                  "plateNumber": "PLATE 04",
+                  "title": "Classic Monochrome",
+                  "location": "Rome Studio",
+                  "year": "2025",
+                  "image": "/images/model-blazer.webp"
+                },
+                {
+                  "id": "p5",
+                  "plateNumber": "PLATE 05",
+                  "title": "Golden Hour Lifestyle Muse",
+                  "location": "Amalfi Coast",
+                  "year": "2026",
+                  "image": "/images/model-contact.webp"
+                },
+                {
+                  "id": "p6",
+                  "plateNumber": "PLATE 06",
+                  "title": "Studio Fine Portraiture",
+                  "location": "New Delhi Atelier",
+                  "year": "2025",
+                  "image": "/hero-slide-1.webp"
+                },
+                {
+                  "id": "p7",
+                  "plateNumber": "PLATE 07",
+                  "title": "The Signature Muse Portrait",
+                  "location": "Paris Fashion Week",
+                  "year": "2026",
+                  "image": "/hero-slide-3.webp"
+                },
+                {
+                  "id": "p8",
+                  "plateNumber": "PLATE 08",
+                  "title": "Couture Velvet Evening Poise",
+                  "location": "Milan Fashion Archive",
+                  "year": "2026",
+                  "image": "/images/model-roses.webp"
+                }
+              ]
+            },
             "items": [
               {
                 "id": "bespoke-styling",
                 "title": "Bespoke Wardrobe Styling",
                 "subtitle": "CAPSULE & PERSONAL STYLING",
                 "desc": "Personalized wardrobe curation, seasonal lookbooks, silhouette coordination, and bespoke occasion wear styling tailored to your distinct lifestyle.",
-                "image": "/images/model-hero.jpg",
-                "icon": "✨",
-                "highlights": [
-                  "Seasonal Wardrobe Audits & Capsule Building",
-                  "Special Occasion & Red Carpet Curation",
-                  "Silhouettes, Proportions & Color Palette Harmony",
-                  "Personal Shopping & Designer Sourcing"
-                ]
+                "image": "/images/model-hero.webp"
               },
               {
                 "id": "brand-campaigns",
                 "title": "Luxury Brand Partnerships",
                 "subtitle": "CREATIVE AMBASSADORSHIP",
                 "desc": "High-impact creative collaborations, digital lookbooks, and luxury brand ambassadorship for world-renowned fashion, beauty, and lifestyle houses.",
-                "image": "/images/model-hero.jpg",
-                "icon": "💎",
-                "highlights": [
-                  "Multi-Platform Campaign Storytelling",
-                  "Exclusive Fashion Week & Front-Row Ambassadorship",
-                  "Bespoke Styling Editorial Lookbooks",
-                  "High-Conversion Luxury Brand Endorsements"
-                ]
+                "image": "/images/model-hero.webp"
               },
               {
                 "id": "editorial-direction",
                 "title": "Editorial Creative Direction",
                 "subtitle": "VISUAL DIRECTION",
                 "desc": "Full-spectrum creative direction for publications, lookbooks, and fashion labels. From moodboard ideation to on-set visual aesthetics.",
-                "image": "/images/model-suit.jpg",
-                "icon": "📸",
-                "highlights": [
-                  "Fashion Editorial Concept & Moodboarding",
-                  "On-Set Aesthetic Direction & Garment Pacing",
-                  "Color Palette & Lighting Synchronization",
-                  "Digital Lookbook Publishing & Spread Layout"
-                ]
+                "image": "/images/model-suit.webp"
               },
               {
                 "id": "lifestyle-travel",
                 "title": "Lifestyle & Travel Aesthetics",
                 "subtitle": "RESORT & DESTINATION",
                 "desc": "Curated travel chronicles, luxury hospitality partnerships, and resort-wear visual stories that capture the essence of effortless global living.",
-                "image": "/hero-slide-1.jpg",
-                "icon": "✈️",
-                "highlights": [
-                  "Destination Travel Guides & Wardrobe Edits",
-                  "Luxury Resort & Hospitality Features",
-                  "Summer & Winter Seasonal Style Chronicles",
-                  "Cultural & Artisanal Textile Expeditions"
-                ]
+                "image": "/hero-slide-1.webp"
               }
             ]
           },
           "FashionServiceDetail1": {
+            "homeText": "Home",
+            "servicesBreadcrumb": "Services",
+            "floatingBadge": "✦ BESPOKE DIRECTION",
+            "preludeBadge": "✦ CURATORIAL PRELUDE",
+            "quoteCredit": "— Tara Verma · Fashion Stylist",
+            "authorName": "By Tara Verma",
+            "authorRole": "Fashion Stylist & Atelier Creative Director",
+            "authorAvatar": "/images/tara-contact-hero.webp",
+            "ctaButtonText": "Curate Look with Stylist ✦",
+            "plateCaption": "✦ Editorial Plate · Styled by Tara Verma",
+            "principlesSection": {
+              "badgeLeft": "✦ Tara Verma Editorial Notes",
+              "badgeRight": "CURATORIAL CHECKLIST",
+              "title": "Core Sartorial Principles",
+              "subtitle": "Key architectural rules distilled from this styling study:",
+              "items": [
+                {
+                  "rule": "Rule 01 · Proportions",
+                  "title": "Architectural Silhouette",
+                  "description": "Anchor every outfit with one strong structured piece to maintain intentional balance and visual line."
+                },
+                {
+                  "rule": "Rule 02 · Tactility",
+                  "title": "Intentional Texture Clash",
+                  "description": "Juxtapose matte surfaces like boiled wool and denim with liquid satins and raw mulberries."
+                },
+                {
+                  "rule": "Rule 03 · Discipline",
+                  "title": "Tonal Restraint",
+                  "description": "Restrict each look to two complementary tones to achieve effortless, timeless quiet luxury."
+                }
+              ]
+            },
+            "moreHeading": "More Curations from the Atelier",
             "services": [
               {
                 "id": "bespoke-styling",
+                "suiteNumber": "SUITE 01",
                 "title": "Bespoke Wardrobe Styling",
-                "subtitle": "CAPSULE & PERSONAL STYLING",
-                "desc": "Personalized wardrobe curation, seasonal lookbooks, silhouette coordination, and bespoke occasion wear styling tailored to your distinct lifestyle.",
-                "image": "/images/model-hero.jpg",
-                "icon": "✨",
-                "highlights": [
-                  "Seasonal Wardrobe Audits & Capsule Building",
-                  "Special Occasion & Red Carpet Curation",
-                  "Silhouettes, Proportions & Color Palette Harmony",
-                  "Personal Shopping & Designer Sourcing"
+                "subtitle": "Capsule Curation & Silhouette Architecture",
+                "heroImage": "/images/model-suit.webp",
+                "leadDescription": "An intimate creative engagement engineered to define your signature sartorial language. We audit your wardrobe, eliminate noise, and curate a high-impact capsule tailored to your lifestyle and public appearances.",
+                "taraQuote": "True personal style is the deliberate discipline of knowing what silhouettes, fabrics, and proportions command your presence.",
+                "sections": [
+                  {
+                    "heading": "01. Wardrobe Architecture & High-Impact Editing",
+                    "text": "Every bespoke engagement begins with a ruthless deconstruction of your existing wardrobe rotation. We isolate core investment pieces, eliminate stylistic noise, and identify structural silhouette gaps. The result is a refined foundation where every garment serves an intentional purpose in commanding presence.",
+                    "wideImage": "/images/model-red-gown-clean.webp"
+                  },
+                  {
+                    "heading": "02. The Modular Capsule Matrix & Atelier Sourcing",
+                    "text": "We engineer a cohesive 10 to 15 piece modular wardrobe where every garment harmonizes across texture, cut, and chromatic depth. With private direct access to premier European ateliers in Paris and Milan, rare virgin wools and liquid silks are tailored to your precise measurements.",
+                    "images": [
+                      "/images/model-blazer.webp",
+                      "/images/model-contact.webp"
+                    ]
+                  },
+                  {
+                    "heading": "03. Precision Master Fitting & Digital Lookbook",
+                    "text": "Private fitting sessions ensure every lapel break, hemline, and drape conforms flawlessly to your posture. We deliver a custom high-definition digital lookbook featuring over 40 distinct styling combinations ready for immediate deployment across business, galas, and travel.",
+                    "wideImage": "/images/model-studio.webp"
+                  }
                 ]
               },
               {
                 "id": "brand-campaigns",
+                "suiteNumber": "SUITE 02",
                 "title": "Luxury Brand Partnerships",
-                "subtitle": "CREATIVE AMBASSADORSHIP",
-                "desc": "High-impact creative collaborations, digital lookbooks, and luxury brand ambassadorship for world-renowned fashion, beauty, and lifestyle houses.",
-                "image": "/images/model-hero.jpg",
-                "icon": "💎",
-                "highlights": [
-                  "Multi-Platform Campaign Storytelling",
-                  "Exclusive Fashion Week & Front-Row Ambassadorship",
-                  "Bespoke Styling Editorial Lookbooks",
-                  "High-Conversion Luxury Brand Endorsements"
+                "subtitle": "Creative Ambassadorship & High-Fashion Alignment",
+                "heroImage": "/images/model-hero.webp",
+                "leadDescription": "Elevating luxury houses through high-impact visual storytelling, runway front-row ambassadorship, and refined digital lookbooks that engage discerning international clientele.",
+                "taraQuote": "A luxury collaboration must embody the genuine romance of craftsmanship, silhouette harmony, and cultural heritage.",
+                "sections": [
+                  {
+                    "heading": "01. International Fashion Week Ambassadorship",
+                    "text": "Front-row appearances, live runway diaries, and bespoke street-style moments across Paris, Milan, and New York Fashion Weeks. Tara delivers sophisticated cultural alignment and authentic brand visibility among global fashion tastemakers and discerning clientele.",
+                    "wideImage": "/images/tara-pillar-global.webp"
+                  },
+                  {
+                    "heading": "02. Cinematic Lookbook & Garment Direction",
+                    "text": "Directing exclusive co-branded seasonal lookbooks that frame signature couture garments with sculptural poise, elevated lighting, and narrative depth. We produce compelling editorial imagery designed to captivate high-net-worth audiences.",
+                    "images": [
+                      "/images/model-roses.webp",
+                      "/images/model-suit.webp"
+                    ]
+                  },
+                  {
+                    "heading": "03. High-Conversion Commercial Endorsements",
+                    "text": "Authentic multi-platform creative collaborations connecting fine jewelry, luxury accessories, and haute couture to an engaged community of over 250K fashion aficionados with verifiable commercial impact.",
+                    "wideImage": "/images/model-hero.webp"
+                  }
                 ]
               },
               {
                 "id": "editorial-direction",
+                "suiteNumber": "SUITE 03",
                 "title": "Editorial Creative Direction",
-                "subtitle": "VISUAL DIRECTION",
-                "desc": "Full-spectrum creative direction for publications, lookbooks, and fashion labels. From moodboard ideation to on-set visual aesthetics.",
-                "image": "/images/model-suit.jpg",
-                "icon": "📸",
-                "highlights": [
-                  "Fashion Editorial Concept & Moodboarding",
-                  "On-Set Aesthetic Direction & Garment Pacing",
-                  "Color Palette & Lighting Synchronization",
-                  "Digital Lookbook Publishing & Spread Layout"
+                "subtitle": "Concept, Styling & Master Visual Storytelling",
+                "heroImage": "/images/model-suit.webp",
+                "leadDescription": "Full-spectrum creative direction for publications, lookbooks, and high-fashion ateliers. From concept moodboards to on-set garment pacing and final spread sequencing.",
+                "taraQuote": "Creative direction is the choreography of beauty — aligning posture, garment tension, and shadow to stop the world.",
+                "sections": [
+                  {
+                    "heading": "01. Publication Covers & Master Spreads",
+                    "text": "Conceptualizing and directing print and digital magazine cover stories defined by evocative narrative tension, avant-garde tailoring, and storytelling depth. From visual treatment decks to final spread layouts, every frame is crafted to leave an indelible impression.",
+                    "wideImage": "/images/tara-pillar-chromatics.webp"
+                  },
+                  {
+                    "heading": "02. On-Set Garment Pacing & Drapery Sculpting",
+                    "text": "Orchestrating live movement, architectural drape pinning, and silhouette tension during fast-paced studio and location shoots with top international fashion photographers and crews.",
+                    "images": [
+                      "/images/model-blazer.webp",
+                      "/images/model-red-gown-clean.webp"
+                    ]
+                  },
+                  {
+                    "heading": "03. Chromatic Synchronization & Spread Sequencing",
+                    "text": "Aligning fabric sheen, spatial architecture, and natural lighting to achieve chromatic harmony across every spread. We sequence the final narrative with typography hierarchy that commands global editorial respect.",
+                    "wideImage": "/images/model-studio.webp"
+                  }
                 ]
               },
               {
                 "id": "lifestyle-travel",
+                "suiteNumber": "SUITE 04",
                 "title": "Lifestyle & Travel Aesthetics",
-                "subtitle": "RESORT & DESTINATION",
-                "desc": "Curated travel chronicles, luxury hospitality partnerships, and resort-wear visual stories that capture the essence of effortless global living.",
-                "image": "/hero-slide-1.jpg",
-                "icon": "✈️",
-                "highlights": [
-                  "Destination Travel Guides & Wardrobe Edits",
-                  "Luxury Resort & Hospitality Features",
-                  "Summer & Winter Seasonal Style Chronicles",
-                  "Cultural & Artisanal Textile Expeditions"
+                "subtitle": "Destination & Resort Wardrobe Curation",
+                "heroImage": "/hero-slide-1.webp",
+                "leadDescription": "Curating destination wardrobes, luxury hospitality partnerships, and jet-set visual stories that capture effortless global living from Amalfi to Paris.",
+                "taraQuote": "Travel styling is harmonizing your silhouette with sea breezes, stone terraces, and golden sunset light.",
+                "sections": [
+                  {
+                    "heading": "01. Destination Wardrobe Architecture",
+                    "text": "Selecting sun-washed lightweight linens, fluid silk slips, and effortless evening resortwear engineered for Mediterranean itineraries and coastal living. We harmonize your silhouette with maritime breezes, stone terraces, and golden sunset light.",
+                    "wideImage": "/hero-slide-3.webp"
+                  },
+                  {
+                    "heading": "02. Luxury Hospitality & Coastal Diaries",
+                    "text": "Crafting atmospheric visual chronicles celebrating boutique villas, private yachts, and heritage hospitality properties through sophisticated style narratives that embody the romance of effortless global living.",
+                    "images": [
+                      "/images/model-roses.webp",
+                      "/images/model-contact.webp"
+                    ]
+                  },
+                  {
+                    "heading": "03. Artisanal Textile Expeditions",
+                    "text": "Documenting regional master weavers, hand-dyed silks, and ancestral crafts from Amalfi to New Delhi—integrating genuine artisanal soul and cultural depth into contemporary resort fashion collections.",
+                    "wideImage": "/hero-slide-1.webp"
+                  }
                 ]
               }
             ]
@@ -1132,20 +861,23 @@
       "Testimonials": {
         "variants": {
           "FashionTestimonials1": {
-            "badge": "✦ INDUSTRY ENDORSEMENTS",
-            "topText": "✦ INDUSTRY ENDORSEMENTS",
-            "titleStart": "What Houses & Clients ",
-            "heading1": "What Houses & Clients ",
-            "titleHighlight": "Say",
-            "heading2": "Say",
-            "description": "Endorsements from luxury houses, international creative directors, and couture clients worldwide.",
+            "badge": "✦ Industry Endorsements · Continuous Exhibition Reel",
+            "titleStart": "What Visionary ",
+            "titleHighlight": "Houses Say",
+            "description": "Testimonials from creative directors across Paris, Milan, London, and New Delhi. Hover to pause reel.",
+            "headerTapeLeft": "PREMIER FASHION HOUSES",
+            "headerTapeCenter": "PARIS · MILAN · LONDON · NEW DELHI",
+            "headerTapeRight": "VERIFIED ENDORSEMENTS",
+            "footerTapeLeft": "SAFETY ARCHIVE ◆ NO. 8840",
+            "footerTapeCenter": "HOVER TO PAUSE REEL",
+            "footerTapeRight": "2026 EDITIONS",
             "items": [
               {
                 "id": "test-1",
                 "quote": "Tara's poise, effortless posture, and ability to embody the spirit of haute couture make her an absolute dream to direct on the runway.",
                 "author": "Henri Moreau",
                 "role": "Haute Couture Creative Director",
-                "avatar": "/images/model-suit.jpg",
+                "avatar": "/images/model-suit.webp",
                 "city": "Paris, France"
               },
               {
@@ -1153,7 +885,7 @@
                 "quote": "Working with Tara Verma was an incredible experience. She brought our entire editorial campaign to life with stunning emotional depth and micro-precision.",
                 "author": "Marco Bellini",
                 "role": "Fashion Photographer & Vogue Contributor",
-                "avatar": "/images/model-contact.jpg",
+                "avatar": "/images/model-contact.webp",
                 "city": "Milan, Italy"
               },
               {
@@ -1161,7 +893,7 @@
                 "quote": "Tara possesses an innate architectural understanding of garments. Her wardrobe styling for our Milan runway redefined what contemporary quiet luxury means.",
                 "author": "Sophie Laurent",
                 "role": "Senior Fashion Editor, Harper's Bazaar",
-                "avatar": "/images/model-hero.jpg",
+                "avatar": "/images/model-hero.webp",
                 "city": "Milan, Italy"
               },
               {
@@ -1169,7 +901,7 @@
                 "quote": "Her creative direction brings an effortless global perspective. Every silhouette, tonal palette, and texture she selects feels intentional and timeless.",
                 "author": "Alexander Ward",
                 "role": "Global Luxury Brand Director, Atelier Sartorial",
-                "avatar": "/images/model-blazer.jpg",
+                "avatar": "/images/model-blazer.webp",
                 "city": "London, UK"
               },
               {
@@ -1177,7 +909,7 @@
                 "quote": "Tara bridges European haute couture with India's rich artisanal heritage with breathtaking authenticity and unmatched red carpet glamour.",
                 "author": "Vikramaditya Seth",
                 "role": "Editorial Director & Fashion Week Curator",
-                "avatar": "/images/model-hero.jpg",
+                "avatar": "/images/model-hero.webp",
                 "city": "New Delhi, India"
               }
             ]
@@ -1186,113 +918,17 @@
       },
       "Blog": {
         "variants": {
-          "FashionBlog1": {
-            "badge": "✦ EDITORIAL JOURNAL",
-            "topText": "✦ EDITORIAL JOURNAL",
-            "titleStart": "Latest ",
-            "heading1": "Latest ",
-            "titleHighlight": "Style Notes",
-            "heading2": "Style Notes",
-            "description": "Runway analysis, seasonal capsule wardrobe direction, beauty rituals, and behind-the-scenes glimpses into fashion week diaries.",
-            "readMoreText": "Read Story",
-            "items": [
-              {
-                "id": "the-2026-capsule-wardrobe-essential-pieces",
-                "title": "The 2026 Capsule Wardrobe",
-                "excerpt": "How to build a versatile, timeless wardrobe with ten core investment pieces that transition seamlessly from day to night across all seasons.",
-                "category": "STYLE CURATION",
-                "date": "February 2026",
-                "author": "Tara Verma",
-                "image": "/images/tara-pillar-chromatics.jpg",
-                "intro": "A thoughtful capsule wardrobe is not about limitation — it is the ultimate expression of personal liberation. By investing in ten meticulously tailored, versatile pieces, you unlock endless sartorial combinations that transition effortlessly from Parisian atelier meetings to evening galas.",
-                "quote": "Simplicity in wardrobe curation is not about having less; it is about every single piece carrying an absolute intention.",
-                "sections": [
-                  {
-                    "heading": "01. The Architectural Double-Breasted Blazer",
-                    "text": "The anchor of every modern woman's wardrobe is an impeccably tailored black or ivory double-breasted blazer. Look for mid-weight virgin wool or structured crepe with structured power shoulders. It commands instant authority when paired with crisp shirting, yet softens beautifully over liquid silk slip dresses for sunset soirées.",
-                    "wideImage": "/images/model-hero.jpg"
-                  },
-                  {
-                    "heading": "02. Liquid Silk Slip & Bias-Cut Drapes",
-                    "text": "Fluidity creates character. A bias-cut silk skirt or midi slip dress in obsidian noir or champagne gold moves with the body, delivering an unforced feminine elegance that rigid synthetic fabrics simply cannot replicate. Wear it barefoot on a seaside balcony or layered beneath a cashmere trench coat in mid-winter.",
-                    "images": [
-                      "/images/tara-pillar-chromatics.jpg",
-                      "/images/model-suit.jpg"
-                    ]
-                  },
-                  {
-                    "heading": "03. Structured Wide-Leg Tailored Trousers",
-                    "text": "High-rise, deep-pleated wide-leg trousers elongate the silhouette and provide effortless metropolitan ease. When hemmed precisely to skim the floor over pointed leather boots or minimalist sandals, they create an unbroken line of tonal sophistication.",
-                    "wideImage": "/images/model-studio.jpg"
-                  }
-                ]
-              },
-              {
-                "id": "european-summer-aesthetics-paris-to-amalfi",
-                "title": "European Summer Aesthetics",
-                "excerpt": "A curated visual diary and packing guide for European summer travels, exploring relaxed linen silhouettes, woven accessories, and sun-kissed palettes.",
-                "category": "LIFESTYLE & TRAVEL",
-                "date": "January 2026",
-                "author": "Tara Verma",
-                "image": "/hero-slide-1.jpg",
-                "intro": "Summer across Europe demands a dialogue between relaxed holiday ease and razor-sharp sartorial discipline. Exploring the secret to effortless packing, sun-bleached linen palettes, and transitional day-to-night styling from Paris terraces to the cliffs of Positano.",
-                "quote": "Travel style should never feel like a performance; it should feel like living inside an ethereal cinematic frame.",
-                "sections": [
-                  {
-                    "heading": "01. The Parisian Terrace Morning: Crisp Poplin & Woven Accents",
-                    "text": "Mornings in Saint-Germain require breathable crisp poplin button-downs tucked loosely into relaxed linen shorts. Keep accessories disciplined: a classic woven straw basket, tortoiseshell sunglasses, and unadorned gold hoops.",
-                    "wideImage": "/hero-slide-1.jpg"
-                  },
-                  {
-                    "heading": "02. Riviera Sun: Breathable Linens & Sculptural Hats",
-                    "text": "As the Mediterranean sun reaches its peak along the Italian coastline, fluid linen palazzo sets in desert sand and ivory reflect heat while maintaining structured elegance. Natural textures connect the wearer to the surrounding maritime landscape.",
-                    "images": [
-                      "/images/model-roses.jpg",
-                      "/images/model-contact.jpg"
-                    ]
-                  },
-                  {
-                    "heading": "03. Amalfi Golden Hour: Liquid Satins & Dramatic Gowns",
-                    "text": "When the sun dips behind the cliffside villas of Positano, transition into jewel-toned satins or floor-sweeping crimson gowns. The warm evening sea breeze creates natural movement that makes dinner overlooking the Tyrrhenian Sea unforgettable.",
-                    "wideImage": "/hero-slide-3.jpg"
-                  }
-                ]
-              },
-              {
-                "id": "mastering-monochromatic-dressing-tonal-elegance",
-                "title": "Mastering Monochromatic Dressing",
-                "excerpt": "Why wearing varying shades of a single color family creates the most effortless, sophisticated silhouette in modern high-fashion styling.",
-                "category": "FASHION GUIDE",
-                "date": "January 2026",
-                "author": "Tara Verma",
-                "image": "/images/model-hero.jpg",
-                "intro": "Monochrome is the highest form of sartorial confidence. Wearing varying shades, textures, and weights of a single color family creates an unbroken vertical line that elongates the silhouette and communicates instant quiet luxury.",
-                "quote": "When color is unified, silhouette, texture, and personal presence take center stage.",
-                "sections": [
-                  {
-                    "heading": "01. The Power of Tactile Texture Contrast",
-                    "text": "The common trap in monochromatic styling is flatness. The antidote is intentional texture clash: pair matte boiled wool with liquid silk satin, coarse cashmere knits with smooth leather, and transparent organza with structured crepe. Light catches each surface differently, creating rich visual depth.",
-                    "wideImage": "/images/model-blazer.jpg"
-                  },
-                  {
-                    "heading": "02. The Noir Spectrum: Beyond Flat Black",
-                    "text": "Black is not a single color — it is a spectrum ranging from deep blue-black obsidian to warm charcoal and espresso noir. Layering subtle tone shifts prevents an all-black look from feeling heavy, giving it the dimension of high-fashion editorial portraiture.",
-                    "images": [
-                      "/images/model-hero.jpg",
-                      "/images/model-blazer.jpg"
-                    ]
-                  },
-                  {
-                    "heading": "03. Champagne Gold & Warm Ivory Palettes",
-                    "text": "For daylight elegance and warm skin tones, monochrome ivory and champagne golds radiate warmth. Pairing cream cashmere with oyster silk trousers creates an angelic, luminous presence that feels distinctly bespoke.",
-                    "wideImage": "/images/model-roses.jpg"
-                  }
-                ]
-              }
-            ]
-          },
           "FashionBlogPage1": {
-            "badge": "✦ JOURNAL ARCHIVES",
+            "readMoreText": "Read Chronicle ✦",
+            "byPrefix": "By",
+            "consultationBanner": {
+              "badge": "✦ Private Wardrobe Styling & Consultation",
+              "titleStart": "Curate Your Signature ",
+              "titleHighlight": "Sartorial Identity",
+              "description": "Collaborate directly with Tara Verma on personal wardrobe capsules, red-carpet appearances, or brand creative direction.",
+              "buttonText": "Connect with Stylist ✦",
+              "buttonLink": "/contact"
+            },
             "items": [
               {
                 "id": "the-2026-capsule-wardrobe-essential-pieces",
@@ -1301,27 +937,27 @@
                 "category": "STYLE CURATION",
                 "date": "February 2026",
                 "author": "Tara Verma",
-                "image": "/images/tara-pillar-chromatics.jpg",
+                "image": "/images/tara-pillar-chromatics.webp",
                 "intro": "A thoughtful capsule wardrobe is not about limitation — it is the ultimate expression of personal liberation. By investing in ten meticulously tailored, versatile pieces, you unlock endless sartorial combinations that transition effortlessly from Parisian atelier meetings to evening galas.",
                 "quote": "Simplicity in wardrobe curation is not about having less; it is about every single piece carrying an absolute intention.",
                 "sections": [
                   {
                     "heading": "01. The Architectural Double-Breasted Blazer",
                     "text": "The anchor of every modern woman's wardrobe is an impeccably tailored black or ivory double-breasted blazer. Look for mid-weight virgin wool or structured crepe with structured power shoulders. It commands instant authority when paired with crisp shirting, yet softens beautifully over liquid silk slip dresses for sunset soirées.",
-                    "wideImage": "/images/model-hero.jpg"
+                    "wideImage": "/images/model-hero.webp"
                   },
                   {
                     "heading": "02. Liquid Silk Slip & Bias-Cut Drapes",
                     "text": "Fluidity creates character. A bias-cut silk skirt or midi slip dress in obsidian noir or champagne gold moves with the body, delivering an unforced feminine elegance that rigid synthetic fabrics simply cannot replicate. Wear it barefoot on a seaside balcony or layered beneath a cashmere trench coat in mid-winter.",
                     "images": [
-                      "/images/tara-pillar-chromatics.jpg",
-                      "/images/model-suit.jpg"
+                      "/images/tara-pillar-chromatics.webp",
+                      "/images/model-suit.webp"
                     ]
                   },
                   {
                     "heading": "03. Structured Wide-Leg Tailored Trousers",
                     "text": "High-rise, deep-pleated wide-leg trousers elongate the silhouette and provide effortless metropolitan ease. When hemmed precisely to skim the floor over pointed leather boots or minimalist sandals, they create an unbroken line of tonal sophistication.",
-                    "wideImage": "/images/model-studio.jpg"
+                    "wideImage": "/images/model-studio.webp"
                   }
                 ]
               },
@@ -1332,27 +968,27 @@
                 "category": "LIFESTYLE & TRAVEL",
                 "date": "January 2026",
                 "author": "Tara Verma",
-                "image": "/hero-slide-1.jpg",
+                "image": "/hero-slide-1.webp",
                 "intro": "Summer across Europe demands a dialogue between relaxed holiday ease and razor-sharp sartorial discipline. Exploring the secret to effortless packing, sun-bleached linen palettes, and transitional day-to-night styling from Paris terraces to the cliffs of Positano.",
                 "quote": "Travel style should never feel like a performance; it should feel like living inside an ethereal cinematic frame.",
                 "sections": [
                   {
                     "heading": "01. The Parisian Terrace Morning: Crisp Poplin & Woven Accents",
                     "text": "Mornings in Saint-Germain require breathable crisp poplin button-downs tucked loosely into relaxed linen shorts. Keep accessories disciplined: a classic woven straw basket, tortoiseshell sunglasses, and unadorned gold hoops.",
-                    "wideImage": "/hero-slide-1.jpg"
+                    "wideImage": "/hero-slide-1.webp"
                   },
                   {
                     "heading": "02. Riviera Sun: Breathable Linens & Sculptural Hats",
                     "text": "As the Mediterranean sun reaches its peak along the Italian coastline, fluid linen palazzo sets in desert sand and ivory reflect heat while maintaining structured elegance. Natural textures connect the wearer to the surrounding maritime landscape.",
                     "images": [
-                      "/images/model-roses.jpg",
-                      "/images/model-contact.jpg"
+                      "/images/model-roses.webp",
+                      "/images/model-contact.webp"
                     ]
                   },
                   {
                     "heading": "03. Amalfi Golden Hour: Liquid Satins & Dramatic Gowns",
                     "text": "When the sun dips behind the cliffside villas of Positano, transition into jewel-toned satins or floor-sweeping crimson gowns. The warm evening sea breeze creates natural movement that makes dinner overlooking the Tyrrhenian Sea unforgettable.",
-                    "wideImage": "/hero-slide-3.jpg"
+                    "wideImage": "/hero-slide-3.webp"
                   }
                 ]
               },
@@ -1363,175 +999,128 @@
                 "category": "FASHION GUIDE",
                 "date": "January 2026",
                 "author": "Tara Verma",
-                "image": "/images/model-hero.jpg",
+                "image": "/images/model-hero.webp",
                 "intro": "Monochrome is the highest form of sartorial confidence. Wearing varying shades, textures, and weights of a single color family creates an unbroken vertical line that elongates the silhouette and communicates instant quiet luxury.",
                 "quote": "When color is unified, silhouette, texture, and personal presence take center stage.",
                 "sections": [
                   {
                     "heading": "01. The Power of Tactile Texture Contrast",
                     "text": "The common trap in monochromatic styling is flatness. The antidote is intentional texture clash: pair matte boiled wool with liquid silk satin, coarse cashmere knits with smooth leather, and transparent organza with structured crepe. Light catches each surface differently, creating rich visual depth.",
-                    "wideImage": "/images/model-blazer.jpg"
+                    "wideImage": "/images/model-blazer.webp"
                   },
                   {
                     "heading": "02. The Noir Spectrum: Beyond Flat Black",
                     "text": "Black is not a single color — it is a spectrum ranging from deep blue-black obsidian to warm charcoal and espresso noir. Layering subtle tone shifts prevents an all-black look from feeling heavy, giving it the dimension of high-fashion editorial portraiture.",
                     "images": [
-                      "/images/model-hero.jpg",
-                      "/images/model-blazer.jpg"
+                      "/images/model-hero.webp",
+                      "/images/model-blazer.webp"
                     ]
                   },
                   {
                     "heading": "03. Champagne Gold & Warm Ivory Palettes",
                     "text": "For daylight elegance and warm skin tones, monochrome ivory and champagne golds radiate warmth. Pairing cream cashmere with oyster silk trousers creates an angelic, luminous presence that feels distinctly bespoke.",
-                    "wideImage": "/images/model-roses.jpg"
+                    "wideImage": "/images/model-roses.webp"
                   }
                 ]
               }
             ]
           },
           "FashionBlogDetail1": {
-            "posts": [
-              {
-                "id": "the-2026-capsule-wardrobe-essential-pieces",
-                "title": "The 2026 Capsule Wardrobe",
-                "excerpt": "How to build a versatile, timeless wardrobe with ten core investment pieces that transition seamlessly from day to night across all seasons.",
-                "category": "STYLE CURATION",
-                "date": "February 2026",
-                "author": "Tara Verma",
-                "image": "/images/tara-pillar-chromatics.jpg",
-                "intro": "A thoughtful capsule wardrobe is not about limitation — it is the ultimate expression of personal liberation. By investing in ten meticulously tailored, versatile pieces, you unlock endless sartorial combinations that transition effortlessly from Parisian atelier meetings to evening galas.",
-                "quote": "Simplicity in wardrobe curation is not about having less; it is about every single piece carrying an absolute intention.",
-                "sections": [
-                  {
-                    "heading": "01. The Architectural Double-Breasted Blazer",
-                    "text": "The anchor of every modern woman's wardrobe is an impeccably tailored black or ivory double-breasted blazer. Look for mid-weight virgin wool or structured crepe with structured power shoulders. It commands instant authority when paired with crisp shirting, yet softens beautifully over liquid silk slip dresses for sunset soirées.",
-                    "wideImage": "/images/model-hero.jpg"
-                  },
-                  {
-                    "heading": "02. Liquid Silk Slip & Bias-Cut Drapes",
-                    "text": "Fluidity creates character. A bias-cut silk skirt or midi slip dress in obsidian noir or champagne gold moves with the body, delivering an unforced feminine elegance that rigid synthetic fabrics simply cannot replicate. Wear it barefoot on a seaside balcony or layered beneath a cashmere trench coat in mid-winter.",
-                    "images": [
-                      "/images/tara-pillar-chromatics.jpg",
-                      "/images/model-suit.jpg"
-                    ]
-                  },
-                  {
-                    "heading": "03. Structured Wide-Leg Tailored Trousers",
-                    "text": "High-rise, deep-pleated wide-leg trousers elongate the silhouette and provide effortless metropolitan ease. When hemmed precisely to skim the floor over pointed leather boots or minimalist sandals, they create an unbroken line of tonal sophistication.",
-                    "wideImage": "/images/model-blazer.jpg"
-                  }
-                ]
-              },
-              {
-                "id": "european-summer-aesthetics-paris-to-amalfi",
-                "title": "European Summer Aesthetics",
-                "excerpt": "A curated visual diary and packing guide for European summer travels, exploring relaxed linen silhouettes, woven accessories, and sun-kissed palettes.",
-                "category": "LIFESTYLE & TRAVEL",
-                "date": "January 2026",
-                "author": "Tara Verma",
-                "image": "/hero-slide-1.jpg",
-                "intro": "Summer across Europe demands a dialogue between relaxed holiday ease and razor-sharp sartorial discipline. Exploring the secret to effortless packing, sun-bleached linen palettes, and transitional day-to-night styling from Paris terraces to the cliffs of Positano.",
-                "quote": "Travel style should never feel like a performance; it should feel like living inside an ethereal cinematic frame.",
-                "sections": [
-                  {
-                    "heading": "01. The Parisian Terrace Morning: Crisp Poplin & Woven Accents",
-                    "text": "Mornings in Saint-Germain require breathable crisp poplin button-downs tucked loosely into relaxed linen shorts. Keep accessories disciplined: a classic woven straw basket, tortoiseshell sunglasses, and unadorned gold hoops.",
-                    "wideImage": "/hero-slide-1.jpg"
-                  },
-                  {
-                    "heading": "02. Riviera Sun: Breathable Linens & Sculptural Hats",
-                    "text": "As the Mediterranean sun reaches its peak along the Italian coastline, fluid linen palazzo sets in desert sand and ivory reflect heat while maintaining structured elegance. Natural textures connect the wearer to the surrounding maritime landscape.",
-                    "images": [
-                      "/images/model-roses.jpg",
-                      "/images/model-contact.jpg"
-                    ]
-                  },
-                  {
-                    "heading": "03. Amalfi Golden Hour: Liquid Satins & Dramatic Gowns",
-                    "text": "When the sun dips behind the cliffside villas of Positano, transition into jewel-toned satins or floor-sweeping crimson gowns. The warm evening sea breeze creates natural movement that makes dinner overlooking the Tyrrhenian Sea unforgettable.",
-                    "wideImage": "/hero-slide-3.jpg"
-                  }
-                ]
-              },
-              {
-                "id": "mastering-monochromatic-dressing-tonal-elegance",
-                "title": "Mastering Monochromatic Dressing",
-                "excerpt": "Why wearing varying shades of a single color family creates the most effortless, sophisticated silhouette in modern high-fashion styling.",
-                "category": "FASHION GUIDE",
-                "date": "January 2026",
-                "author": "Tara Verma",
-                "image": "/images/model-hero.jpg",
-                "intro": "Monochrome is the highest form of sartorial confidence. Wearing varying shades, textures, and weights of a single color family creates an unbroken vertical line that elongates the silhouette and communicates instant quiet luxury.",
-                "quote": "When color is unified, silhouette, texture, and personal presence take center stage.",
-                "sections": [
-                  {
-                    "heading": "01. The Power of Tactile Texture Contrast",
-                    "text": "The common trap in monochromatic styling is flatness. The antidote is intentional texture clash: pair matte boiled wool with liquid silk satin, coarse cashmere knits with smooth leather, and transparent organza with structured crepe. Light catches each surface differently, creating rich visual depth.",
-                    "wideImage": "/images/model-blazer.jpg"
-                  },
-                  {
-                    "heading": "02. The Noir Spectrum: Beyond Flat Black",
-                    "text": "Black is not a single color — it is a spectrum ranging from deep blue-black obsidian to warm charcoal and espresso noir. Layering subtle tone shifts prevents an all-black look from feeling heavy, giving it the dimension of high-fashion editorial portraiture.",
-                    "images": [
-                      "/images/model-hero.jpg",
-                      "/images/model-blazer.jpg"
-                    ]
-                  },
-                  {
-                    "heading": "03. Champagne Gold & Warm Ivory Palettes",
-                    "text": "For daylight elegance and warm skin tones, monochrome ivory and champagne golds radiate warmth. Pairing cream cashmere with oyster silk trousers creates an angelic, luminous presence that feels distinctly bespoke.",
-                    "wideImage": "/images/model-roses.jpg"
-                  }
-                ]
-              }
-            ]
+            "authorAvatar": "/images/tara-contact-hero.webp",
+            "homeText": "Home",
+            "journalBreadcrumb": "Journal",
+            "preludeBadge": "✦ CURATORIAL PRELUDE",
+            "quoteCredit": "— Tara Verma · Fashion Stylist",
+            "authorRole": "Fashion Stylist & Atelier Creative Director",
+            "ctaButtonText": "Curate Look with Stylist ✦",
+            "ctaButtonLink": "/contact",
+            "plateCaption": "✦ Editorial Plate · Styled by Tara Verma",
+            "principlesSection": {
+              "badgeLeft": "✦ Tara Verma Editorial Notes",
+              "badgeRight": "CURATORIAL CHECKLIST",
+              "title": "Core Sartorial Principles",
+              "subtitle": "Key architectural rules distilled from this styling study:",
+              "items": [
+                {
+                  "rule": "Rule 01 · Proportions",
+                  "title": "Architectural Silhouette",
+                  "description": "Anchor every outfit with one strong structured piece to maintain intentional balance and visual line."
+                },
+                {
+                  "rule": "Rule 02 · Tactility",
+                  "title": "Intentional Texture Clash",
+                  "description": "Juxtapose matte surfaces like boiled wool and denim with liquid satins and raw mulberries."
+                },
+                {
+                  "rule": "Rule 03 · Discipline",
+                  "title": "Tonal Restraint",
+                  "description": "Restrict each look to two complementary tones to achieve effortless, timeless quiet luxury."
+                }
+              ]
+            },
+            "moreHeading": "More Curations from the Journal"
           }
         }
       },
       "Contact": {
         "variants": {
           "FashionContactForm1": {
-            "badge": "✦ PRIVATE INQUIRIES",
-            "topText": "✦ PRIVATE INQUIRIES",
-            "titleStart": "Initiate a ",
-            "heading1": "Initiate a ",
-            "titleHighlight": "Consultation",
-            "heading2": "Consultation",
-            "description": "Schedule a private wardrobe consultation, VIP gala styling session, or luxury brand campaign collaboration.",
-            "phone": "+1 00000 00000",
-            "socialLinks": {
-              "instagram": "https://instagram.com",
-              "twitter": "https://twitter.com",
-              "facebook": "https://facebook.com",
-              "vogueProfile": "https://vogue.com"
-            },
-            "email": "xyz@gmail.com",
-            "location": "Paris · Milan · New Delhi · New York",
-            "agencies": [
+            "categories": [
               {
-                "city": "Paris & Milan",
-                "agency": "Elite Model Management",
-                "address": "Avenue Montaigne, 75008 Paris",
-                "phone": "+1 00000 00000"
+                "label": "Brand Campaign",
+                "subject": "Fashion Brand & Campaign Collaboration"
               },
               {
-                "city": "New York",
-                "agency": "IMG Models Worldwide",
-                "address": "520 Broadway, SoHo, New York, NY 10012, USA",
-                "phone": "+1 00000 00000"
+                "label": "Editorial & Photo",
+                "subject": "Editorial Direction & Photoshoot Collaboration"
               },
               {
-                "city": "USA Atelier Flagship",
-                "agency": "Tara Verma Representation",
-                "address": "520 Broadway, SoHo, New York, NY 10012, USA",
-                "phone": "+1 00000 00000"
+                "label": "Ambassadorship",
+                "subject": "Global Brand Ambassador & Runway Booking"
+              },
+              {
+                "label": "Bespoke Styling",
+                "subject": "Bespoke Wardrobe & Red Carpet Curation"
+              },
+              {
+                "label": "General Inquiry",
+                "subject": "General Collaboration & Press Inquiry"
               }
             ],
-            "social": {
-              "instagram": "https://instagram.com",
+            "sectionBadge": "✦ Direct Collaboration Desk",
+            "sectionTitleStart": "Send an Inquiry to ",
+            "sectionTitleHighlight": "Tara Verma",
+            "sectionSubtitle": "Directly connect with Tara Verma for wardrobe styling, red-carpet appearances, or campaign direction.",
+            "formBadge": "✦ Project Specification",
+            "formTitle": "Collaboration Brief",
+            "scopeLabel": "Select Scope:",
+            "successTitle": "Inquiry Successfully Dispatched",
+            "successMessage": "Tara and her atelier management will respond within 24 business hours.",
+            "nameLabel": "Your Name / Maison",
+            "namePlaceholder": "e.g. Maya Sen",
+            "emailLabel": "Email Address",
+            "emailPlaceholder": "e.g. maya@luxe.com",
+            "subjectLabel": "Collaboration Subject",
+            "subjectPlaceholder": "e.g. Red Carpet Wardrobe Styling / Editorial Campaign",
+            "messageLabel": "Project Scope & Dates",
+            "messagePlaceholder": "Share aesthetic vision, dates, location, and key deliverables...",
+            "submitButtonText": "Submit Inquiry ✦",
+            "submittingText": "Dispatching...",
+            "contactImage": "/images/model-contact.webp",
+            "contactImageAlt": "Tara Verma — Direct Atelier Booking",
+            "mapBadge": "✦ Global Atelier Presence · USA Flagship",
+            "mapTitleStart": "Flagship Atelier & ",
+            "mapTitleHighlight": "Showroom",
+            "flagshipCity": "SoHo, New York",
+            "pinBadge": "✦ Flagship Atelier",
+            "flagshipAddress": "520 Broadway, SoHo · New York, NY 10012",
+            "directionsText": "Directions ↗",
+            "mapEmbedUrl": "https://maps.google.com/maps?q=520%20Broadway%2C%20SoHo%2C%20New%20York%2C%20NY%2010012%2C%20USA&t=&z=15&ie=UTF8&iwloc=&output=embed",
+            "mapDirectionsUrl": "https://maps.google.com/?q=520+Broadway,+New+York,+NY+10012",
+            "socialLinks": {
               "twitter": "https://twitter.com",
-              "facebook": "https://facebook.com",
-              "vogueProfile": "https://vogue.com"
+              "instagram": "https://instagram.com",
+              "facebook": "https://facebook.com"
             }
           }
         }
@@ -1539,16 +1128,18 @@
       "ThankYou": {
         "variants": {
           "FashionThankYou1": {
-            "badge": "✦ CONSULTATION RECEIVED",
-            "topText": "✦ CONSULTATION RECEIVED",
-            "titleStart": "Thank You for ",
-            "heading1": "Thank You for ",
-            "titleHighlight": "Reaching Out",
-            "heading2": "Reaching Out",
-            "description": "Your consultation brief has been safely received. Our creative team will review your requirements and reach out within 24 hours.",
+            "homeText": "Home",
+            "bannerImage": "/images/model-contact.webp",
+            "bannerTitle": "Thank You",
+            "cardTitle": "Inquiry Received",
+            "quote": "Every sartorial transformation begins with a single conversation.",
+            "description": "Thank you for reaching out to Tara Verma Haute Atelier. Your consultation brief has been safely received. Our creative team will review your requirements and reach out within 24 hours.",
+            "emailLabel": "Direct Desk:",
+            "email": "xyz@gmail.com",
+            "phoneLabel": "Phone:",
+            "phone": "+1 00000 00000",
             "buttonText": "Return to Home",
-            "buttonLink": "/",
-            "phone": "+1 00000 00000"
+            "buttonLink": "/"
           }
         }
       },
@@ -1557,6 +1148,7 @@
           "FashionHeader1": {
             "brandName": "TARA VERMA",
             "brandTagline": "HAUTE ATELIER · PARIS",
+            "logo": "/logo-metallic.webp",
             "navLinks": [
               {
                 "name": "Home",
@@ -1575,79 +1167,69 @@
                 "path": "/services"
               },
               {
-                "name": "Journal",
+                "name": "Blog",
                 "path": "/blog"
-              },
-              {
-                "name": "FAQ",
-                "path": "/faq"
               }
             ],
             "button": {
-              "text": "Contact Us",
+              "text": "Contact Us ✦",
               "link": "/contact"
-            }
+            },
+            "locationsText": "PARIS · MILAN · NEW YORK"
           },
           "FashionFooter1": {
-            "brandName": "TARA VERMA",
-            "tagline": "Haute Atelier & Editorial Direction",
-            "location": "Paris · Milan · New Delhi · New York",
-            "newsletter": {
-              "title": "Join The Private Salon",
-              "description": "Receive private invitations, seasonal lookbook previews, and curated styling notes directly from Tara's desk."
+            "description": "An internationally celebrated luxury fashion & lifestyle portfolio honoring haute couture tailoring, bespoke wardrobe architecture, and effortless presence.",
+            "locations": [
+              "PARIS",
+              "MILAN",
+              "NEW YORK",
+              "NEW DELHI"
+            ],
+            "address": {
+              "title": "✦ Flagship Showroom & Atelier",
+              "line1": "520 Broadway, SoHo",
+              "line2": "New York, NY 10012, United States",
+              "emailLabel": "Email:",
+              "email": "xyz@gmail.com",
+              "phoneLabel": "Phone:",
+              "phone": "+1 00000 00000"
             },
+            "connectTitle": "✦ Connect & Follow",
+            "connectDescription": "Follow Tara Verma for daily front-row lookbooks & styling chronicles.",
             "socialLinks": {
               "instagram": "https://instagram.com",
               "twitter": "https://twitter.com",
               "facebook": "https://facebook.com",
+              "youtube": "https://youtube.com",
               "vogueProfile": "https://vogue.com"
             },
-            "copyright": "© 2026 Tara Verma Haute Atelier. All Rights Reserved."
-          }
-        }
-      },
-      "BrandPartners": {
-        "variants": {
-          "FashionBrandPartners1": {
-            "badge": "✦ LUXURY COUTURE HOUSES",
-            "items": [
+            "footerLinks": [
               {
-                "name": "CHANEL",
-                "category": "Haute Couture",
-                "location": "Paris",
-                "quote": "Effortless poise and commanding architectural presence on the runway."
+                "name": "Home",
+                "href": "/"
               },
               {
-                "name": "DIOR",
-                "category": "Beauty & Fragrance",
-                "location": "Paris",
-                "quote": "Radiant luminous skin and unmatched editorial camera charisma."
+                "name": "About",
+                "href": "/about"
               },
               {
-                "name": "VOGUE",
-                "category": "Cover & Editorial",
-                "location": "Milan",
-                "quote": "The defining face of contemporary haute couture luxury."
+                "name": "Portfolio",
+                "href": "/portfolio"
               },
               {
-                "name": "LANCÔME",
-                "category": "Global Campaign",
-                "location": "New York",
-                "quote": "Pure timeless elegance and magnetic facial symmetry."
+                "name": "Services",
+                "href": "/services"
               },
               {
-                "name": "TOM FORD",
-                "category": "Evening Couture",
-                "location": "London",
-                "quote": "Bold, dramatic silhouette and unapologetic modern glamour."
+                "name": "Blog",
+                "href": "/blog"
               },
               {
-                "name": "ESTÉE LAUDER",
-                "category": "Skincare Ambassador",
-                "location": "New York",
-                "quote": "Flawless beauty and captivating grace in every single frame."
+                "name": "Contact",
+                "href": "/contact"
               }
-            ]
+            ],
+            "copyright": "© 2026 Tara Verma — Fashion & Lifestyle. All Rights Reserved. Powered by lestow"
           }
         }
       }

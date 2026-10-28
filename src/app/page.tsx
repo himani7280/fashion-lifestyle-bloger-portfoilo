@@ -13,16 +13,16 @@ export const metadata = {
 export default function HomePage() {
   return (
     <div className="bg-[#0A0A0A] text-[#F5F0E8] min-h-screen overflow-x-hidden">
-      {/* 01: Hero Banner Section */}
+      {/* Hero Banner */}
       <PersonalHero />
 
-      {/* 02: About Spotlight Section (Concise with Contact CTA) */}
+      {/* About Spotlight */}
       <AboutSpotlight />
 
-      {/* 03: 2-Row Curated Style Gallery */}
+      {/* Curated Gallery */}
       <HomeGallery />
 
-      {/* 04: What Visionary Houses Say */}
+      {/* Testimonials */}
       <TestimonialsSection />
     </div>
   );

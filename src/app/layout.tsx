@@ -1,20 +1,7 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Poppins } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
 
 export const metadata: Metadata = {
   title: "Tara Verma — Fashion & Lifestyle Portfolio",
@@ -37,9 +24,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${poppins.variable} antialiased overflow-x-clip max-w-full w-full`}
+      className="antialiased text-[16px] scroll-smooth overflow-x-clip max-w-full w-full"
     >
-      <body className="min-h-screen flex flex-col bg-[#0A0A0A] text-[#F5F0E8] selection:bg-[#C9A96E] selection:text-[#0A0A0A] font-[family-name:var(--font-poppins)] overflow-x-clip max-w-full w-full relative">
+      <body className="min-h-screen flex flex-col bg-[#0A0A0A] text-[#F5F0E8] text-[14px] leading-[1.6] selection:bg-[#C9A96E] selection:text-[#0A0A0A] overflow-x-clip max-w-full w-full relative">
         <Header />
         <main className="flex-1 w-full max-w-full overflow-x-clip">{children}</main>
         <Footer />
