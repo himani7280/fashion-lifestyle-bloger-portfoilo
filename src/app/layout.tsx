@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { fonts } from "@/data/fashionData";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -24,9 +25,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="antialiased text-[16px] scroll-smooth overflow-x-clip max-w-full w-full"
+      className="antialiased text-[16px] font-normal scroll-smooth overflow-x-clip max-w-full w-full"
     >
-      <body className="min-h-screen flex flex-col bg-[#0A0A0A] text-[#F5F0E8] text-[14px] leading-[1.6] selection:bg-[#C9A96E] selection:text-[#0A0A0A] overflow-x-clip max-w-full w-full relative">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href={fonts.googleFontsUrl} rel="stylesheet" />
+      </head>
+      <body
+        style={{ fontFamily: fonts.body }}
+        className="min-h-screen flex flex-col bg-[#0A0A0A] text-[#F5F0E8] text-[14px] font-normal leading-[1.6] selection:bg-[#C9A96E] selection:text-[#0A0A0A] overflow-x-clip max-w-full w-full relative"
+      >
         <Header />
         <main className="flex-1 w-full max-w-full overflow-x-clip">{children}</main>
         <Footer />

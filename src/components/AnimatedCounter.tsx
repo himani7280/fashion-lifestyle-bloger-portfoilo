@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import { fonts } from "@/data/fashionData";
 
 interface AnimatedCounterProps {
   value: string;
@@ -68,7 +69,7 @@ export default function AnimatedCounter({
   }, [hasAnimated, targetNumber, prefix, suffix, value, duration]);
 
   return (
-    <span ref={elementRef} className={className}>
+    <span ref={elementRef} style={{ fontFamily: fonts.heading }} className={className}>
       {hasAnimated ? displayValue : `${prefix}0${suffix}`}
     </span>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { thankYouData } from "@/data/fashionData";
+import { thankYouData, fonts } from "@/data/fashionData";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata = {
@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function ThankYouPage() {
   return (
-    <div className="bg-[#0A0A0A] text-[#F5F0E8] min-h-screen overflow-x-hidden">
+    <div style={{ fontFamily: fonts.body }} className="bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden">
       
       {/* Hero Banner */}
       <section className="relative w-full py-[12px] border-b border-[#1A1A1A]">
@@ -36,7 +36,7 @@ export default function ThankYouPage() {
               <span className="text-white font-semibold">{thankYouData.bannerTitle}</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight tracking-wide">
+            <h1 style={{ fontFamily: fonts.heading }} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight tracking-wide">
               {thankYouData.bannerTitle}
             </h1>
           </div>
@@ -58,7 +58,7 @@ export default function ThankYouPage() {
 
             {/* Content */}
             <div className="relative z-10 space-y-3">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+              <h2 style={{ fontFamily: fonts.heading }} className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
                 {thankYouData.cardTitle}
               </h2>
               <p className="text-xl sm:text-2xl italic text-[#DFC18A] font-light">
@@ -70,7 +70,7 @@ export default function ThankYouPage() {
             </div>
 
             {/* Contact Info */}
-            <div className="relative z-10 pt-2 pb-1 text-[14px] text-[#777] flex flex-wrap items-center justify-center gap-2 sm:gap-4 border-t border-[#1C1C1C]">
+            <div style={{ fontFamily: fonts.mono }} className="relative z-10 pt-2 pb-1 text-[14px] font-normal text-[#777] flex flex-wrap items-center justify-center gap-2 sm:gap-4 border-t border-[#1C1C1C]">
               <span>{thankYouData.emailLabel} <span className="text-[#E5C583]">{thankYouData.email}</span></span>
               <span className="hidden sm:inline">·</span>
               <span>{thankYouData.phoneLabel} <span className="text-[#E5C583]">{thankYouData.phone}</span></span>

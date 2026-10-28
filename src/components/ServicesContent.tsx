@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { services, servicesHero, servicesPageData, PortraitPlate } from "@/data/fashionData";
+import { services, servicesHero, servicesPageData, PortraitPlate, fonts } from "@/data/fashionData";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -62,7 +62,7 @@ export default function ServicesContent() {
   const { intro, advantage, portraitArchives } = servicesPageData;
 
   return (
-    <div className="bg-[#0A0A0A] text-[#F5F0E8] min-h-screen overflow-x-hidden">
+    <div style={{ fontFamily: fonts.body }} className="bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden">
       
       {/* Hero Banner */}
       <section className="relative w-full py-2 sm:py-3 border-b border-[#1A1A1A]">
@@ -88,7 +88,7 @@ export default function ServicesContent() {
               <span className="text-white font-semibold">{servicesHero.breadcrumb}</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+            <h1 style={{ fontFamily: fonts.heading }} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
               {servicesHero.titleStart}{" "}
               <em className="font-normal italic bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] bg-clip-text text-transparent">
                 {servicesHero.titleHighlight}
@@ -107,7 +107,7 @@ export default function ServicesContent() {
             <span className="text-[14px] uppercase tracking-[0.35em] text-[#C9A96E] font-bold block">
               {intro.badge}
             </span>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
+            <h2 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
               {intro.titleStart}
               <em className="italic font-light text-[#E5C583]">
                 {intro.titleHighlight}
@@ -151,13 +151,13 @@ export default function ServicesContent() {
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/85 via-transparent to-transparent pointer-events-none" />
 
                         {/* Suite Badge */}
-                        <div className="absolute top-3 right-3 z-10 bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/50 text-[13px] sm:text-[14px] uppercase tracking-wider text-[#E5C583] whitespace-nowrap">
+                        <div style={{ fontFamily: fonts.mono }} className="absolute top-3 right-3 z-10 bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/50 text-[13px] sm:text-[14px] font-normal uppercase tracking-wider text-[#E5C583] whitespace-nowrap">
                           {servicesPageData.suitePrefix}{idx + 1}
                         </div>
 
                         {/* Bottom Tag */}
                         <div className="absolute bottom-3.5 inset-x-6 z-10 flex justify-center">
-                          <span className="text-[12px] sm:text-[13px] uppercase tracking-wider text-[#C9A96E] bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#333] whitespace-nowrap max-w-[85%] truncate shadow-lg">
+                          <span style={{ fontFamily: fonts.mono }} className="text-[12px] sm:text-[13px] font-normal uppercase tracking-wider text-[#C9A96E] bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#333] whitespace-nowrap max-w-[85%] truncate shadow-lg">
                             {srv.subtitle}
                           </span>
                         </div>
@@ -172,12 +172,12 @@ export default function ServicesContent() {
                         <span className="text-3xl sm:text-4xl italic text-[#C9A96E] font-light">
                           {roman}.
                         </span>
-                        <span className="text-[13px] sm:text-[14px] uppercase tracking-[0.12em] text-[#C9A96E] font-bold bg-[#141414] px-4 py-1.5 rounded-full border border-[#C9A96E]/30 whitespace-nowrap">
+                        <span style={{ fontFamily: fonts.mono }} className="text-[13px] sm:text-[14px] uppercase tracking-[0.12em] text-[#C9A96E] font-bold bg-[#141414] px-4 py-1.5 rounded-full border border-[#C9A96E]/30 whitespace-nowrap">
                           {srv.subtitle}
                         </span>
                       </div>
 
-                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
+                      <h3 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
                         {srv.title}
                       </h3>
 
@@ -196,7 +196,8 @@ export default function ServicesContent() {
                         </Link>
                         <Link
                           href={`/contact?service=${srv.id}`}
-                          className="text-[14px] uppercase tracking-wider text-[#C9A96E] hover:text-white transition-colors underline underline-offset-4 py-2 px-1 whitespace-nowrap"
+                          style={{ fontFamily: fonts.mono }}
+                          className="text-[14px] font-normal uppercase tracking-wider text-[#C9A96E] hover:text-white transition-colors underline underline-offset-4 py-2 px-1 whitespace-nowrap"
                         >
                           {servicesPageData.directInquiryText}
                         </Link>
@@ -235,7 +236,7 @@ export default function ServicesContent() {
                 <span className="text-[14px] uppercase tracking-[0.25em] text-[#C9A96E] font-semibold block mb-0.5">
                   {advantage.philosophyLabel}
                 </span>
-                <p className="text-[14px] sm:text-base font-bold text-white italic">
+                <p style={{ fontFamily: fonts.heading }} className="text-[14px] sm:text-base font-bold text-white italic">
                   &ldquo;{advantage.philosophyQuote}&rdquo;
                 </p>
               </div>
@@ -248,7 +249,7 @@ export default function ServicesContent() {
               {advantage.badge}
             </div>
 
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+            <h2 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
               {advantage.titleStart}
               <em className="italic font-light text-[#E5C583]">
                 {advantage.titleHighlight}
@@ -319,7 +320,7 @@ export default function ServicesContent() {
               <span className="text-[14px] uppercase tracking-[0.25em] text-[#C9A96E] font-semibold block mb-1">
                 {portraitArchives.badge}
               </span>
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
+              <h2 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
                 {portraitArchives.titleStart}
                 <em className="italic font-light text-[#E5C583]">
                   {portraitArchives.titleHighlight}
@@ -332,7 +333,7 @@ export default function ServicesContent() {
           </div>
 
           {/* Header Tape */}
-          <div className="flex items-center justify-between text-[13px] sm:text-[14px] uppercase tracking-[0.16em] text-[#777] px-2">
+          <div style={{ fontFamily: fonts.mono }} className="flex items-center justify-between text-[13px] sm:text-[14px] font-normal uppercase tracking-[0.16em] text-[#777] px-2">
             <span>{portraitArchives.headerTapeLeft}</span>
             <span>{PORTRAIT_PLATES.length} {portraitArchives.headerTapeCenterSuffix}</span>
             <span>{portraitArchives.headerTapeRight}</span>
@@ -362,7 +363,7 @@ export default function ServicesContent() {
                   />
 
                   {/* Plate Number */}
-                  <div className="absolute top-2.5 left-2.5 z-10 bg-[#0A0A0A]/90 backdrop-blur-md text-[#C9A96E] text-[13px] sm:text-[14px] tracking-wider px-2.5 py-0.5 rounded border border-[#C9A96E]/40 shadow-md">
+                  <div style={{ fontFamily: fonts.mono }} className="absolute top-2.5 left-2.5 z-10 bg-[#0A0A0A]/90 backdrop-blur-md text-[#C9A96E] text-[13px] sm:text-[14px] font-normal tracking-wider px-2.5 py-0.5 rounded border border-[#C9A96E]/40 shadow-md">
                     {plate.plateNumber}
                   </div>
 
@@ -376,11 +377,11 @@ export default function ServicesContent() {
 
                 {/* Caption */}
                 <div className="px-1 space-y-1">
-                  <div className="flex items-center justify-between text-[13px] sm:text-[14px] uppercase tracking-wider text-[#999]">
+                  <div style={{ fontFamily: fonts.mono }} className="flex items-center justify-between text-[13px] sm:text-[14px] font-normal uppercase tracking-wider text-[#999]">
                     <span>{plate.location}</span>
                     <span>{plate.year}</span>
                   </div>
-                  <h4 className="text-[14px] sm:text-[15px] font-bold text-white group-hover:text-[#E5C583] transition-colors line-clamp-1">
+                  <h4 style={{ fontFamily: fonts.heading }} className="text-[14px] sm:text-[15px] font-bold text-white group-hover:text-[#E5C583] transition-colors line-clamp-1">
                     {plate.title}
                   </h4>
                 </div>
@@ -391,7 +392,7 @@ export default function ServicesContent() {
 
         {/* Footer Tape */}
         <ScrollReveal variant="fade-up" delay={180} className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-2 pb-1">
-          <div className="flex items-center justify-between text-[13px] sm:text-[14px] uppercase tracking-[0.16em] text-[#777] border-t border-[#1C1C1C] pt-2.5">
+          <div style={{ fontFamily: fonts.mono }} className="flex items-center justify-between text-[13px] sm:text-[14px] font-normal uppercase tracking-[0.16em] text-[#777] border-t border-[#1C1C1C] pt-2.5">
             <span>{portraitArchives.footerTapeLeft}</span>
             <span>{portraitArchives.footerTapeCenter}</span>
             <span>{portraitArchives.footerTapeRight}</span>
@@ -433,10 +434,10 @@ export default function ServicesContent() {
             {/* Top Bar */}
             <div className="absolute top-4 left-4 right-4 z-30 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/50 text-[13px] sm:text-[14px] uppercase tracking-wider text-[#E5C583]">
+                <span style={{ fontFamily: fonts.mono }} className="bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/50 text-[13px] sm:text-[14px] font-normal uppercase tracking-wider text-[#E5C583]">
                   ✦ {currentPlateIndex + 1} / {PORTRAIT_PLATES.length}
                 </span>
-                <span className="text-[13px] sm:text-[14px] text-white/90 hidden sm:inline-block bg-[#0A0A0A]/70 px-3 py-1 rounded-full border border-white/10">
+                <span style={{ fontFamily: fonts.mono }} className="text-[13px] sm:text-[14px] font-normal text-white/90 hidden sm:inline-block bg-[#0A0A0A]/70 px-3 py-1 rounded-full border border-white/10">
                   {selectedPlate.title}
                 </span>
               </div>
@@ -470,7 +471,7 @@ export default function ServicesContent() {
             </button>
 
             {/* Bottom Info Bar */}
-            <div className="absolute bottom-4 inset-x-4 z-30 flex items-center justify-between pointer-events-none text-[13px] sm:text-[14px] text-[#999]">
+            <div style={{ fontFamily: fonts.mono }} className="absolute bottom-4 inset-x-4 z-30 flex items-center justify-between pointer-events-none text-[13px] sm:text-[14px] font-normal text-[#999]">
               <span className="bg-[#0A0A0A]/80 px-3 py-1 rounded-full border border-white/10 pointer-events-auto">
                 {portraitArchives.lightboxNavigateHint}
               </span>

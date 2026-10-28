@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
-import { testimonials, testimonialsSectionData } from "@/data/fashionData";
+import { testimonials, testimonialsSectionData, fonts } from "@/data/fashionData";
 
 export default function TestimonialsSection() {
   // Duplicate list for seamless marquee
@@ -39,7 +39,7 @@ export default function TestimonialsSection() {
             <span className="text-[14px] sm:text-[15px] uppercase tracking-[0.22em] text-[#C9A96E] font-semibold block mb-0.5">
               {testimonialsSectionData.badge}
             </span>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
+            <h2 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
               {testimonialsSectionData.titleStart}
               <em className="italic font-light text-[#E5C583]">
                 {testimonialsSectionData.titleHighlight}
@@ -52,7 +52,7 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Header Tape */}
-        <div className="flex items-center justify-between text-[14px] uppercase tracking-[0.2em] text-[#666] px-1">
+        <div style={{ fontFamily: fonts.mono }} className="flex items-center justify-between text-[14px] font-normal uppercase tracking-[0.2em] text-[#666] px-1">
           <span>{testimonialsSectionData.headerTapeLeft}</span>
           <span className="hidden sm:inline">{testimonialsSectionData.headerTapeCenter}</span>
           <span>{testimonialsSectionData.headerTapeRight}</span>
@@ -71,7 +71,7 @@ export default function TestimonialsSection() {
               <div>
                 {/* Rating Stars */}
                 <div className="flex items-center justify-between mb-1.5">
-                  <span className="text-xl sm:text-2xl text-[#C9A96E]/40 leading-none">
+                  <span style={{ fontFamily: fonts.heading }} className="text-xl sm:text-2xl font-normal text-[#C9A96E]/40 leading-none">
                     &ldquo;
                   </span>
                   <div className="flex items-center gap-0.5 text-[#C9A96E] text-[14px]">
@@ -101,14 +101,14 @@ export default function TestimonialsSection() {
                   />
                 </div>
                 <div className="min-w-0">
-                  <h4 className="text-[15px] sm:text-[16px] font-bold text-white group-hover:text-[#E5C583] transition-colors leading-tight truncate">
+                  <h4 style={{ fontFamily: fonts.heading }} className="text-[15px] sm:text-[16px] font-bold text-white group-hover:text-[#E5C583] transition-colors leading-tight truncate">
                     {t.author}
                   </h4>
                   <p className="text-[14px] uppercase tracking-wider text-[#C9A96E] font-medium leading-tight truncate">
                     {t.role}
                   </p>
                   {t.city && (
-                    <p className="text-[14px] uppercase tracking-wider text-[#888] leading-none mt-1">
+                    <p style={{ fontFamily: fonts.mono }} className="text-[14px] font-normal uppercase tracking-wider text-[#888] leading-none mt-1">
                       {t.city}
                     </p>
                   )}
@@ -122,7 +122,7 @@ export default function TestimonialsSection() {
 
       {/* Footer Tape */}
       <ScrollReveal variant="fade-up" delay={200} className="max-w-7xl mx-auto w-full pt-3">
-        <div className="flex items-center justify-between text-[14px] uppercase tracking-[0.3em] text-[#777] border-t border-[#1C1C1C] pt-2">
+        <div style={{ fontFamily: fonts.mono }} className="flex items-center justify-between text-[14px] font-normal uppercase tracking-[0.3em] text-[#777] border-t border-[#1C1C1C] pt-2">
           <span>{testimonialsSectionData.footerTapeLeft}</span>
           <span>{testimonialsSectionData.footerTapeCenter}</span>
           <span>{testimonialsSectionData.footerTapeRight}</span>

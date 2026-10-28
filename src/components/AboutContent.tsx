@@ -4,14 +4,14 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
-import { aboutHero, aboutPageData, contact, Pillar, CuratedSphere } from "@/data/fashionData";
+import { aboutHero, aboutPageData, contact, Pillar, CuratedSphere, fonts } from "@/data/fashionData";
 
 const PILLARS: Pillar[] = aboutPageData.pillarsSection.items;
 const TARA_SPHERES: CuratedSphere[] = aboutPageData.spheresSection.items;
 
 export default function AboutContent() {
   return (
-    <div className="bg-[#0A0A0A] text-[#F5F0E8] min-h-screen overflow-x-hidden">
+    <div style={{ fontFamily: fonts.body }} className="bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden">
       
       {/* Hero Banner */}
       <section className="relative w-full py-2 sm:py-3 border-b border-[#1A1A1A]">
@@ -37,7 +37,7 @@ export default function AboutContent() {
               <span className="text-white font-semibold">{aboutHero.breadcrumb}</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+            <h1 style={{ fontFamily: fonts.heading }} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
               {aboutHero.titleStart}{" "}
               <em className="font-normal italic bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] bg-clip-text text-transparent">
                 {aboutHero.titleHighlight}
@@ -52,10 +52,10 @@ export default function AboutContent() {
         
         {/* Section Header */}
         <ScrollReveal variant="fade-up" className="text-center mb-10 sm:mb-14 space-y-1.5">
-          <span className="text-[14px] uppercase tracking-[0.22em] text-[#C9A96E] font-medium block">
+          <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-[0.22em] text-[#C9A96E] font-medium block">
             {aboutPageData.sectionBadge}
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
+          <h2 style={{ fontFamily: fonts.heading }} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
             {aboutPageData.sectionTitle}
           </h2>
         </ScrollReveal>
@@ -81,7 +81,7 @@ export default function AboutContent() {
 
           {/* Right Narrative */}
           <ScrollReveal variant="fade-right" delay={120} className="lg:col-span-7 space-y-5 text-left">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight">
+            <h3 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight">
               {aboutPageData.missionTitle}
             </h3>
 
@@ -117,10 +117,10 @@ export default function AboutContent() {
         <div className="pt-12 sm:pt-16 border-t border-[#1C1C1C] space-y-8 mt-12">
           
           <ScrollReveal variant="fade-up" className="text-center max-w-xl mx-auto space-y-1">
-            <span className="text-[14px] uppercase tracking-[0.28em] text-[#C9A96E] font-medium block">
+            <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-[0.28em] text-[#C9A96E] font-medium block">
               {aboutPageData.spheresSection.badge}
             </span>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            <h3 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
               {aboutPageData.spheresSection.title}
             </h3>
           </ScrollReveal>
@@ -147,12 +147,12 @@ export default function AboutContent() {
                 </div>
 
                 {/* Title */}
-                <h4 className="text-xl sm:text-2xl font-bold text-white mt-5 mb-1.5 tracking-tight group-hover:text-[#E5C583] transition-colors">
+                <h4 style={{ fontFamily: fonts.heading }} className="text-xl sm:text-2xl font-bold text-white mt-5 mb-1.5 tracking-tight group-hover:text-[#E5C583] transition-colors">
                   {sphere.title}
                 </h4>
 
                 {/* Tagline */}
-                <span className="text-[14px] uppercase tracking-[0.2em] text-[#C9A96E] font-semibold mb-2.5 block">
+                <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-[0.2em] text-[#C9A96E] font-semibold mb-2.5 block">
                   ✦ {sphere.tagline}
                 </span>
 
@@ -215,7 +215,7 @@ export default function AboutContent() {
             <span className="text-[9.5px] uppercase tracking-[0.3em] text-[#C9A96E] font-bold block">
               {aboutPageData.pillarsSection.badge}
             </span>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
+            <h2 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
               {aboutPageData.pillarsSection.titleStart}
               <em className="italic font-light text-[#E5C583]">
                 {aboutPageData.pillarsSection.titleHighlight}
@@ -254,7 +254,7 @@ export default function AboutContent() {
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/70 via-transparent to-transparent opacity-80" />
                       
                       {/* Code Badge */}
-                      <div className="absolute top-4 left-4 z-10 bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#C9A96E]/50 text-[10px] uppercase tracking-[0.2em] text-[#E5C583]">
+                      <div style={{ fontFamily: fonts.mono }} className="absolute top-4 left-4 z-10 bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#C9A96E]/50 text-[10px] font-normal uppercase tracking-[0.2em] text-[#E5C583]">
                         {aboutPageData.pillarsSection.codePrefix} {pillar.number}
                       </div>
 
@@ -276,15 +276,15 @@ export default function AboutContent() {
                     
                     {/* Roman Numeral Watermark */}
                     <div className="relative">
-                      <span className="text-7xl sm:text-8xl lg:text-9xl font-black text-white/5 select-none absolute -top-12 -left-4 pointer-events-none">
+                      <span style={{ fontFamily: fonts.heading }} className="text-7xl sm:text-8xl lg:text-9xl font-black text-white/5 select-none absolute -top-12 -left-4 pointer-events-none">
                         {pillar.roman}
                       </span>
                       
                       <div className="relative z-10 space-y-2">
-                        <span className="text-[14px] uppercase tracking-[0.25em] text-[#C9A96E] font-bold block">
+                        <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-[0.25em] text-[#C9A96E] font-bold block">
                           {aboutPageData.pillarsSection.pillarPrefix} {pillar.number} {aboutPageData.pillarsSection.pillarSuffix}
                         </span>
-                        <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+                        <h3 style={{ fontFamily: fonts.heading }} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
                           {pillar.title}
                         </h3>
                       </div>

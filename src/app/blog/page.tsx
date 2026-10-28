@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { blogHero, blogPageData, blogPosts } from "@/data/fashionData";
+import { blogHero, blogPageData, blogPosts, fonts } from "@/data/fashionData";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata = {
@@ -15,7 +15,7 @@ export default function BlogPage() {
   const posts = blogPosts;
 
   return (
-    <div className="bg-[#0A0A0A] text-[#F5F0E8] min-h-screen overflow-x-hidden">
+    <div style={{ fontFamily: fonts.body }} className="bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden">
       
       {/* Hero Banner */}
       <section className="relative w-full py-[12px] border-b border-[#1A1A1A] bg-[#0A0A0A]">
@@ -41,7 +41,7 @@ export default function BlogPage() {
               <span className="text-white font-semibold">{blogHero.breadcrumb}</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+            <h1 style={{ fontFamily: fonts.heading }} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
               {blogHero.titleStart}{" "}
               <em className="font-normal italic bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] bg-clip-text text-transparent">
                 {blogHero.titleHighlight}
@@ -79,7 +79,7 @@ export default function BlogPage() {
 
                   {/* Post Date Badge */}
                   <div className="absolute bottom-4 left-4 z-10 flex items-center">
-                    <span className="bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/10 text-[14px] text-[#C4BCB3] whitespace-nowrap">
+                    <span style={{ fontFamily: fonts.mono }} className="bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/10 text-[14px] font-normal text-[#C4BCB3] whitespace-nowrap">
                       {post.date}
                     </span>
                   </div>
@@ -90,16 +90,16 @@ export default function BlogPage() {
                 <div className="space-y-4">
                   {/* Category & Date */}
                   <div className="flex items-center flex-wrap gap-2.5 sm:gap-3">
-                    <span className="text-[14px] uppercase tracking-[0.14em] text-[#C9A96E] font-bold bg-[#141414] px-3.5 py-1 rounded-full border border-[#C9A96E]/30 whitespace-nowrap inline-block">
+                    <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-[0.14em] text-[#C9A96E] font-bold bg-[#141414] px-3.5 py-1 rounded-full border border-[#C9A96E]/30 whitespace-nowrap inline-block">
                       ✦ {post.category}
                     </span>
-                    <span className="text-[14px] text-[#A69C8E] whitespace-nowrap">
+                    <span style={{ fontFamily: fonts.mono }} className="text-[14px] font-normal text-[#A69C8E] whitespace-nowrap">
                       {post.date}
                     </span>
                   </div>
 
                   <Link href={`/blog/${post.id}`} className="group block">
-                    <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white group-hover:text-[#E5C583] transition-colors leading-tight">
+                    <h2 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-4xl md:text-5xl font-bold text-white group-hover:text-[#E5C583] transition-colors leading-tight">
                       {post.title}
                     </h2>
                   </Link>
@@ -118,7 +118,7 @@ export default function BlogPage() {
                       <span>→</span>
                     </Link>
 
-                    <div className="flex items-center gap-2 text-[14px] text-[#888] whitespace-nowrap">
+                    <div style={{ fontFamily: fonts.mono }} className="flex items-center gap-2 text-[14px] font-normal text-[#888] whitespace-nowrap">
                       <span>{blogPageData.byPrefix} {post.author}</span>
                     </div>
                   </div>
@@ -160,10 +160,10 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto w-full my-[12px]">
           <ScrollReveal variant="zoom-in">
             <div className="bg-[#0E0E0E] rounded-3xl border border-[#222] p-5 sm:p-8 text-center space-y-3.5 shadow-2xl">
-              <span className="text-[14px] uppercase tracking-[0.25em] text-[#C9A96E] block font-semibold">
+              <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-[0.25em] text-[#C9A96E] block font-semibold">
                 {blogPageData.consultationBanner.badge}
               </span>
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
+              <h2 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
                 {blogPageData.consultationBanner.titleStart}{" "}
                 <em className="italic font-light text-[#E5C583]">
                   {blogPageData.consultationBanner.titleHighlight}

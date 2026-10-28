@@ -4,7 +4,7 @@
 import Link from "next/link";
 import BrandLogo from "@/components/BrandLogo";
 import ScrollReveal from "@/components/ScrollReveal";
-import { footerData } from "@/data/fashionData";
+import { footerData, fonts } from "@/data/fashionData";
 
 const FOOTER_LINKS = footerData.footerLinks;
 
@@ -53,7 +53,7 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="w-full max-w-full overflow-hidden bg-[#080808] text-[#F5EDE5] border-t border-[#1C1C1C] py-6 sm:py-8 px-4 sm:px-6 md:px-8 text-[14px]">
+    <footer style={{ fontFamily: fonts.body }} className="w-full max-w-full overflow-hidden bg-[#080808] text-[#F5EDE5] border-t border-[#1C1C1C] py-6 sm:py-8 px-4 sm:px-6 md:px-8 text-[14px] font-normal">
       <div className="max-w-7xl mx-auto space-y-5 sm:space-y-6">
         
         {/* Main Footer Grid */}
@@ -65,7 +65,7 @@ export default function Footer() {
             <p className="text-[14px] text-[#A69C8E] font-light leading-relaxed max-w-sm">
               {footerData.description}
             </p>
-            <div className="pt-0.5 flex flex-wrap items-center gap-2.5 text-[14px] uppercase tracking-wider text-[#C9A96E]">
+            <div style={{ fontFamily: fonts.mono }} className="pt-0.5 flex flex-wrap items-center gap-2.5 text-[14px] font-normal uppercase tracking-wider text-[#C9A96E]">
               {footerData.locations.map((loc, idx) => (
                 <span key={loc} className="inline-flex items-center gap-2.5">
                   <span>{idx === 0 ? `✦ ${loc}` : loc}</span>
@@ -77,7 +77,7 @@ export default function Footer() {
 
           {/* Atelier Address */}
           <ScrollReveal variant="fade-up" delay={100} className="sm:col-span-1 md:col-span-4 space-y-2">
-            <span className="text-[14px] uppercase tracking-[0.2em] font-semibold text-[#C9A96E] block">
+            <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-[0.2em] font-semibold text-[#C9A96E] block">
               {footerData.address.title}
             </span>
             <div className="space-y-1 text-[14px] text-[#C4BCB3] font-light">
@@ -97,7 +97,7 @@ export default function Footer() {
 
           {/* Social Links */}
           <ScrollReveal variant="fade-up" delay={200} className="sm:col-span-1 md:col-span-3 space-y-2.5 sm:text-left md:text-right">
-            <span className="text-[14px] uppercase tracking-[0.2em] font-semibold text-[#C9A96E] block">
+            <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-[0.2em] font-semibold text-[#C9A96E] block">
               {footerData.connectTitle}
             </span>
             <p className="text-[#888] text-[14px] font-light">

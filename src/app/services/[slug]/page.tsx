@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { services, serviceDetailsList, serviceDetailsData, ServiceDetailItem } from "@/data/fashionData";
+import { services, serviceDetailsList, serviceDetailsData, ServiceDetailItem, fonts } from "@/data/fashionData";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const SERVICE_DETAILS: Record<string, ServiceDetailItem> = Object.fromEntries(
@@ -40,7 +40,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   }
 
   return (
-    <div className="bg-[#0A0A0A] text-[#F5F0E8] min-h-screen overflow-x-hidden">
+    <div style={{ fontFamily: fonts.body }} className="bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden">
       
       {/* Hero Banner */}
       <section className="relative w-full py-[12px] border-b border-[#1A1A1A] bg-[#0A0A0A]">
@@ -68,7 +68,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               <span className="text-white font-semibold">{detail.title}</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+            <h1 style={{ fontFamily: fonts.heading }} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
               {detail.title.split(" ").slice(0, -1).join(" ")}{" "}
               <em className="font-normal italic bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] bg-clip-text text-transparent">
                 {detail.title.split(" ").slice(-1)[0]}
@@ -100,10 +100,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
                   {/* Bottom Metadata */}
                   <div className="absolute bottom-4 left-4 right-4 z-10 p-3 bg-[#0A0A0A]/90 backdrop-blur-md rounded-2xl border border-[#333] flex items-center justify-between">
-                    <span className="text-[14px] uppercase text-[#C9A96E] font-semibold">
+                    <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase text-[#C9A96E] font-semibold">
                       {detail.subtitle}
                     </span>
-                    <span className="text-[14px] uppercase text-[#888]">
+                    <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase text-[#888]">
                       {serviceDetailsData.floatingBadge}
                     </span>
                   </div>
@@ -114,10 +114,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             {/* Right Prelude & Specs */}
             <ScrollReveal variant="fade-right" delay={120} className="lg:col-span-7 space-y-4 sm:space-y-5 text-left">
               <div className="space-y-2">
-                <div className="inline-flex items-center gap-2 bg-[#141414] text-[#E5C583] text-[14px] uppercase tracking-widest px-4 py-1.5 rounded-full border border-[#C9A96E]/40">
+                <div style={{ fontFamily: fonts.mono }} className="inline-flex items-center gap-2 bg-[#141414] text-[#E5C583] text-[14px] uppercase tracking-widest px-4 py-1.5 rounded-full border border-[#C9A96E]/40">
                   <span>{serviceDetailsData.preludeBadge}</span>
                 </div>
-                <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+                <h2 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
                   {detail.title}
                 </h2>
               </div>
@@ -135,7 +135,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                   <p className="text-base sm:text-lg italic text-[#DFC18A] leading-relaxed font-light">
                     &ldquo;{detail.taraQuote}&rdquo;
                   </p>
-                  <span className="text-[14px] uppercase tracking-widest text-[#888] block">
+                  <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-widest text-[#888] block">
                     {serviceDetailsData.quoteCredit}
                   </span>
                 </div>
@@ -154,7 +154,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 </div>
                 <div>
                   <span className="text-[14px] font-bold text-white block leading-tight">{serviceDetailsData.authorName}</span>
-                  <span className="text-[14px] uppercase tracking-wider text-[#A69C8E] block">
+                  <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-wider text-[#A69C8E] block">
                     {serviceDetailsData.authorRole}
                   </span>
                 </div>
@@ -186,7 +186,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 
                 {/* Section Heading */}
                 <div className="space-y-1">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-snug">
+                  <h3 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-snug">
                     {section.heading}
                   </h3>
                   <div className="w-14 h-[2px] bg-[#C9A96E]" />
@@ -209,7 +209,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                       className="object-cover filter brightness-[0.96] transition-transform duration-700 hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-                    <div className="absolute bottom-3 left-4 text-[14px] tracking-widest text-white/80 uppercase">
+                    <div style={{ fontFamily: fonts.mono }} className="absolute bottom-3 left-4 text-[14px] tracking-widest text-white/80 uppercase">
                       {serviceDetailsData.plateCaption}
                     </div>
                   </div>
@@ -253,16 +253,16 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           <ScrollReveal variant="fade-up">
             <div className="bg-[#0E0E0E] rounded-3xl border border-[#262626] p-4 sm:p-6 space-y-3.5 shadow-2xl w-full">
               <div className="flex items-center justify-between border-b border-[#1E1E1E] pb-2.5">
-                <span className="text-[14px] uppercase tracking-[0.28em] text-[#C9A96E] font-bold">
+                <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-[0.28em] text-[#C9A96E] font-bold">
                   {serviceDetailsData.principlesSection.badgeLeft}
                 </span>
-                <span className="text-[14px] uppercase tracking-wider text-[#777]">
+                <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-wider text-[#777]">
                   {serviceDetailsData.principlesSection.badgeRight}
                 </span>
               </div>
 
               <div className="text-center max-w-xl mx-auto space-y-1">
-                <h3 className="text-xl sm:text-2xl font-bold text-white">
+                <h3 style={{ fontFamily: fonts.heading }} className="text-xl sm:text-2xl font-bold text-white">
                   {serviceDetailsData.principlesSection.title}
                 </h3>
                 <p className="text-sm italic text-[#AAA]">
@@ -274,10 +274,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 {serviceDetailsData.principlesSection.items.map((item, idx) => (
                   <ScrollReveal key={idx} variant="zoom-in" delay={idx * 100}>
                     <div className="bg-[#141414] p-4 rounded-2xl border border-[#222] hover:border-[#C9A96E]/50 transition-colors space-y-1.5 h-full">
-                      <span className="text-[14px] uppercase tracking-widest text-[#E5C583] block">
+                      <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-widest text-[#E5C583] block">
                         {item.rule}
                       </span>
-                      <h4 className="font-bold text-base text-white">
+                      <h4 style={{ fontFamily: fonts.heading }} className="font-bold text-base text-white">
                         {item.title}
                       </h4>
                       <p className="text-[14px] text-[#999] leading-relaxed font-light">
@@ -297,7 +297,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         <ScrollReveal variant="fade-up">
           <div className="max-w-7xl mx-auto w-full space-y-4 my-[12px]">
             <div className="flex items-center justify-between">
-              <h3 className="text-xl sm:text-2xl font-bold text-white">
+              <h3 style={{ fontFamily: fonts.heading }} className="text-xl sm:text-2xl font-bold text-white">
                 {serviceDetailsData.moreHeading}
               </h3>
             </div>
@@ -323,13 +323,13 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                       />
                     </div>
                     <div className="space-y-1">
-                      <span className="text-[14px] uppercase tracking-wider text-[#C9A96E] block">
+                      <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-wider text-[#C9A96E] block">
                         ✦ {rs.subtitle}
                       </span>
-                      <h4 className="text-sm sm:text-base font-bold text-white group-hover:text-[#E5C583] transition-colors line-clamp-2 leading-snug">
+                      <h4 style={{ fontFamily: fonts.heading }} className="text-sm sm:text-base font-bold text-white group-hover:text-[#E5C583] transition-colors line-clamp-2 leading-snug">
                         {rs.title}
                       </h4>
-                      <span className="text-[14px] text-[#A69C8E] block">
+                      <span style={{ fontFamily: fonts.mono }} className="text-[14px] text-[#A69C8E] block">
                         {rs.desc?.slice(0, 70)}...
                       </span>
                     </div>

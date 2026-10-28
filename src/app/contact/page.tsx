@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { contactHero, contact } from "@/data/fashionData";
+import { contactHero, contact, fonts } from "@/data/fashionData";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export default function ContactPage() {
@@ -52,7 +52,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-[#0A0A0A] text-[#F5F0E8] min-h-screen overflow-x-hidden">
+    <div style={{ fontFamily: fonts.body }} className="bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden">
       
       {/* Hero Banner */}
       <section className="relative w-full py-2 sm:py-3 border-b border-[#1C1C1C]">
@@ -78,7 +78,7 @@ export default function ContactPage() {
               <span className="text-white font-semibold">{contactHero.breadcrumb}</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight tracking-wide">
+            <h1 style={{ fontFamily: fonts.heading }} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight tracking-wide">
               {contactHero.title}
             </h1>
           </div>
@@ -94,7 +94,7 @@ export default function ContactPage() {
             <span className="text-[14px] uppercase tracking-[0.3em] text-[#C9A96E] font-semibold block">
               {contact.sectionBadge}
             </span>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
+            <h2 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
               {contact.sectionTitleStart}{" "}
               <em className="italic font-light text-[#E5C583]">
                 {contact.sectionTitleHighlight}
@@ -115,7 +115,7 @@ export default function ContactPage() {
               <span className="text-[9.5px] uppercase tracking-[0.25em] text-[#C9A96E] font-semibold block">
                 {contact.formBadge}
               </span>
-              <h3 className="text-xl sm:text-2xl font-bold text-white">
+              <h3 style={{ fontFamily: fonts.heading }} className="text-xl sm:text-2xl font-bold text-white">
                 {contact.formTitle}
               </h3>
             </div>
@@ -271,17 +271,17 @@ export default function ContactPage() {
         <ScrollReveal variant="fade-up">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-4 pb-3 border-b border-[#1C1C1C]">
             <div>
-              <span className="text-[14px] uppercase tracking-[0.3em] text-[#C9A96E] font-semibold block mb-0.5">
+              <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-[0.3em] text-[#C9A96E] font-semibold block mb-0.5">
                 {contact.mapBadge}
               </span>
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
+              <h2 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
                 {contact.mapTitleStart}{" "}
                 <em className="italic font-light text-[#E5C583]">
                   {contact.mapTitleHighlight}
                 </em>
               </h2>
             </div>
-            <div className="flex items-center gap-2 text-[14px] text-[#AAA]">
+            <div style={{ fontFamily: fonts.mono }} className="flex items-center gap-2 text-[14px] text-[#AAA]">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
               <span>{contact.flagshipCity}</span>
             </div>
@@ -306,10 +306,10 @@ export default function ContactPage() {
             {/* Floating Map Pin Badge */}
             <div className="absolute bottom-3 left-3 right-3 sm:left-5 sm:right-auto sm:max-w-md p-3.5 bg-[#0A0A0A]/95 backdrop-blur-md rounded-2xl border border-[#C9A96E]/50 shadow-2xl flex items-center justify-between gap-4">
               <div>
-                <span className="text-[9.5px] uppercase tracking-[0.2em] text-[#C9A96E] font-bold block">
+                <span style={{ fontFamily: fonts.mono }} className="text-[9.5px] uppercase tracking-[0.2em] text-[#C9A96E] font-bold block">
                   {contact.pinBadge}
                 </span>
-                <p className="text-sm font-bold text-white">
+                <p style={{ fontFamily: fonts.heading }} className="text-sm font-bold text-white">
                   {contact.flagshipAddress}
                 </p>
               </div>

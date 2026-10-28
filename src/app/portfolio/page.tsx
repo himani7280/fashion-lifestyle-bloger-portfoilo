@@ -3,7 +3,7 @@
 import React, { useState, useEffect, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { portfolioHero, portfolioPageData, portfolioItems, PortfolioItem } from "@/data/fashionData";
+import { portfolioHero, portfolioPageData, portfolioItems, PortfolioItem, fonts } from "@/data/fashionData";
 import ScrollReveal from "@/components/ScrollReveal";
 
 function PortfolioContent() {
@@ -76,7 +76,7 @@ function PortfolioContent() {
   };
 
   return (
-    <div className="bg-[#0A0A0A] text-[#F5F0E8] min-h-screen overflow-x-hidden">
+    <div style={{ fontFamily: fonts.body }} className="bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden">
       
       {/* Hero Banner */}
       <section className="relative w-full py-2 sm:py-3 border-b border-[#1A1A1A]">
@@ -102,7 +102,7 @@ function PortfolioContent() {
               <span className="text-white font-semibold">{portfolioHero.breadcrumb}</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+            <h1 style={{ fontFamily: fonts.heading }} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
               {portfolioHero.titleStart}{" "}
               <em className="font-normal italic bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] bg-clip-text text-transparent">
                 {portfolioHero.titleHighlight}
@@ -149,7 +149,7 @@ function PortfolioContent() {
 
                       {/* Hover title */}
                       <div className="absolute bottom-0 inset-x-0 p-5 sm:p-6 text-center z-10 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
-                        <h3 className="text-base sm:text-lg md:text-xl font-bold text-white group-hover:text-[#E5C583] transition-colors leading-snug drop-shadow-md">
+                        <h3 style={{ fontFamily: fonts.heading }} className="text-base sm:text-lg md:text-xl font-bold text-white group-hover:text-[#E5C583] transition-colors leading-snug drop-shadow-md">
                           {item.title}
                         </h3>
                       </div>
@@ -163,7 +163,7 @@ function PortfolioContent() {
 
         {/* Archive Tape */}
         <ScrollReveal variant="fade-up">
-          <div className="mt-8 pt-4 border-t border-[#1C1C1C] flex items-center justify-between text-[13px] sm:text-[14px] uppercase tracking-[0.18em] text-[#888]">
+          <div style={{ fontFamily: fonts.mono }} className="mt-8 pt-4 border-t border-[#1C1C1C] flex items-center justify-between text-[13px] sm:text-[14px] font-normal uppercase tracking-[0.18em] text-[#888]">
             <span>{portfolioPageData.archiveTapeLeft}</span>
             <span>{portfolioPageData.archiveTapeCenter}</span>
             <span className="hidden sm:inline-block">{portfolioPageData.archiveTapeRight}</span>
@@ -205,10 +205,10 @@ function PortfolioContent() {
             {/* Top Bar */}
             <div className="absolute top-4 left-4 right-4 z-30 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/50 text-[10px] uppercase tracking-widest text-[#E5C583]">
+                <span style={{ fontFamily: fonts.mono }} className="bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/50 text-[10px] font-normal uppercase tracking-widest text-[#E5C583]">
                   ✦ {currentIndex + 1} / {portfolio.length}
                 </span>
-                <span className="text-xs text-white/90 hidden sm:inline-block bg-[#0A0A0A]/70 px-3 py-1 rounded-full border border-white/10">
+                <span style={{ fontFamily: fonts.mono }} className="text-xs font-normal text-white/90 hidden sm:inline-block bg-[#0A0A0A]/70 px-3 py-1 rounded-full border border-white/10">
                   {selectedItem.title}
                 </span>
               </div>
@@ -242,7 +242,7 @@ function PortfolioContent() {
             </button>
 
             {/* Bottom Info Bar */}
-            <div className="absolute bottom-4 inset-x-4 z-30 flex items-center justify-between pointer-events-none text-[10px] text-[#888]">
+            <div style={{ fontFamily: fonts.mono }} className="absolute bottom-4 inset-x-4 z-30 flex items-center justify-between pointer-events-none text-[10px] font-normal text-[#888]">
               <span className="bg-[#0A0A0A]/80 px-3 py-1 rounded-full border border-white/10 pointer-events-auto">
                 {portfolioPageData.lightboxNavigateHint}
               </span>

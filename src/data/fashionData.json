@@ -1,18 +1,18 @@
 {
   "Fashion": {
     "fonts": {
-      "heading": "Playfair Display, serif",
-      "body": "Poppins, sans-serif",
-      "accent": "Cormorant Garamond, serif",
-      "mono": "monospace"
+      "heading": "'Playfair Display', serif",
+      "body": "'Poppins', sans-serif",
+      "mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
     },
     "templateComponents": {
       "template-1": {
         "fonts": {
-          "heading": "Playfair Display, serif",
-          "body": "Poppins, sans-serif",
-          "accent": "Cormorant Garamond, serif",
-          "mono": "monospace"
+          "heading": "'Playfair Display', serif",
+          "body": "'Poppins', sans-serif",
+          "mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+          "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
         },
         "shared": {
           "Header": "FashionHeader1",
@@ -199,7 +199,7 @@
           "FashionAbout1": {
             "name": "TARA VERMA",
             "heroImage": "/images/model-hero.webp",
-            "badge": "✦ Editorial Stylist & Creative Consultant",
+            "badge": "✦ Editorial Stylist",
             "spotlightTitleStart": "The Journey of ",
             "spotlightTitleHighlight": "Sartorial Storytelling",
             "spotlightQuote": "Fashion styling is the deliberate art of visual storytelling through cut, drape, and structural harmony.",

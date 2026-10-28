@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import BrandLogo from "@/components/BrandLogo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { navigation } from "@/data/fashionData";
+import { navigation, fonts } from "@/data/fashionData";
 
 const NAV_LINKS = navigation.navLinks.map((item) => ({
   name: item.name,
@@ -87,7 +87,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center gap-8 xl:gap-9 2xl:gap-12 text-[14px] uppercase tracking-[0.14em] font-medium">
+          <nav style={{ fontFamily: fonts.body }} className="hidden xl:flex items-center gap-8 xl:gap-9 2xl:gap-12 text-[14px] uppercase tracking-[0.14em] font-medium">
             {NAV_LINKS.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -115,6 +115,7 @@ export default function Header() {
             <Link
               href={navigation.button.link}
               onClick={handleNavClick}
+              style={{ fontFamily: fonts.body }}
               className="inline-flex items-center justify-center bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] px-5 sm:px-6 py-2 rounded-full text-[13px] sm:text-[14px] uppercase tracking-[0.14em] font-bold transition-all duration-300 shadow-[0_4px_15px_rgba(201,169,110,0.25)] hover:shadow-[0_6px_25px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
             >
               {navigation.button.text}
@@ -164,7 +165,7 @@ export default function Header() {
               </div>
 
               {/* Mobile Nav Links */}
-              <nav className="flex flex-col gap-1 pt-4 text-[14px] uppercase tracking-[0.14em]">
+              <nav style={{ fontFamily: fonts.body }} className="flex flex-col gap-1 pt-4 text-[14px] font-medium uppercase tracking-[0.14em]">
                 {NAV_LINKS.map((item) => (
                   <Link
                     key={item.href}
@@ -192,7 +193,7 @@ export default function Header() {
               >
                 {navigation.button.text}
               </Link>
-              <p className="text-[14px] text-[#888] text-center">
+              <p style={{ fontFamily: fonts.mono }} className="text-[14px] font-normal text-[#888] text-center">
                 {navigation.locationsText}
               </p>
             </div>

@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import ScrollReveal from "@/components/ScrollReveal";
-import { personalBrand } from "@/data/fashionData";
+import { personalBrand, fonts } from "@/data/fashionData";
 
 export default function AboutSpotlight() {
   return (
@@ -38,7 +38,7 @@ export default function AboutSpotlight() {
                 {personalBrand.badge}
               </div>
 
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
+              <h2 style={{ fontFamily: fonts.heading }} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
                 {personalBrand.spotlightTitleStart}
                 <em className="italic font-light text-[#E5C583]">
                   {personalBrand.spotlightTitleHighlight}
