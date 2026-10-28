@@ -3,12 +3,11 @@
 import React, { useState, useEffect, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import fashionData from "@/data/fashionData.json";
-import { PortfolioItem } from "@/data/fashionData";
+import { portfolioItems, PortfolioItem } from "@/data/fashionData";
 
 function PortfolioContent() {
   const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null);
-  const portfolio = fashionData.portfolio as PortfolioItem[];
+  const portfolio = portfolioItems;
 
   const currentIndex = selectedItem
     ? portfolio.findIndex((p) => p.id === selectedItem.id)
@@ -78,9 +77,9 @@ function PortfolioContent() {
   return (
     <div className="bg-[#0A0A0A] text-[#F5F0E8] min-h-screen overflow-x-hidden font-[family-name:var(--font-poppins)]">
       
-      {/* ── 01: BREADCRUMB & HEADER BANNER (FULL WIDTH & REDUCED HEIGHT) ── */}
-      <section className="relative w-full py-[12px] border-b border-[#1A1A1A]">
-        <div className="relative w-full overflow-hidden h-[140px] sm:h-[180px] md:h-[220px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
+      {/* ── 01: BREADCRUMB & HEADER BANNER (FULL WIDTH & PROMINENT) ── */}
+      <section className="relative w-full py-2 sm:py-3 border-b border-[#1A1A1A]">
+        <div className="relative w-full overflow-hidden h-[280px] sm:h-[340px] md:h-[380px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
           <div className="absolute inset-0 z-0">
             <Image
               src="/images/tara-pillar-global.jpg"
@@ -88,21 +87,21 @@ function PortfolioContent() {
               fill
               priority
               sizes="100vw"
-              style={{ objectPosition: "50% 25%" }}
-              className="object-cover filter brightness-[0.88] contrast-[1.04]"
+              style={{ objectPosition: "50% 20%" }}
+              className="object-cover filter brightness-[0.92] contrast-[1.04]"
             />
-            <div className="absolute inset-0 bg-black/35 pointer-events-none" />
-            <div className="absolute inset-x-0 bottom-0 h-14 sm:h-16 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
           </div>
 
-          <div className="relative z-10 max-w-4xl mx-auto w-full px-6 text-center space-y-1.5">
-            <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] font-medium bg-[#0A0A0A]/80 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/40">
+          <div className="relative z-10 max-w-4xl mx-auto w-full px-6 text-center space-y-2">
+            <div className="inline-flex items-center gap-2 text-[14px] uppercase tracking-[0.2em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#C9A96E]/40">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <span className="text-[#555]">/</span>
               <span className="text-white font-semibold">Gallery</span>
             </div>
 
-            <h1 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
+            <h1 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
               Fashion &amp; Lifestyle{" "}
               <em className="font-normal italic bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] bg-clip-text text-transparent">
                 Gallery
@@ -157,7 +156,7 @@ function PortfolioContent() {
           </div>
 
         {/* Gallery Bottom Alignment Hairline & Archive Tape */}
-        <div className="mt-8 pt-4 border-t border-[#1C1C1C] flex items-center justify-between text-[9px] uppercase tracking-[0.25em] text-[#666] font-mono">
+        <div className="mt-8 pt-4 border-t border-[#1C1C1C] flex items-center justify-between text-[13px] sm:text-[14px] uppercase tracking-[0.18em] text-[#888] font-mono">
           <span>✦ TARA VERMA SARTORIAL ARCHIVE</span>
           <span>CURATED PORTFOLIO · 2026</span>
           <span className="hidden sm:inline-block">CLICK ANY FRAME TO EXPAND</span>
@@ -187,7 +186,7 @@ function PortfolioContent() {
                 priority
                 sizes="(max-width: 1280px) 100vw, 1200px"
                 style={{ objectPosition: selectedItem.objectPosition || "50% 20%" }}
-                className="object-contain sm:object-cover"
+                className="object-cover"
               />
             </div>
 
@@ -239,6 +238,21 @@ function PortfolioContent() {
               <span className="bg-[#0A0A0A]/80 px-3 py-1 rounded-full border border-white/10 pointer-events-auto">
                 Use ← / → keys to navigate
               </span>
+              {selectedItem.variants && selectedItem.variants.length > 0 && (
+                <div className="hidden sm:flex items-center gap-2 bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/40 pointer-events-auto">
+                  <span className="text-[#C9A96E]">Palette:</span>
+                  <div className="flex items-center gap-1.5">
+                    {selectedItem.variants.map((v, i) => (
+                      <span
+                        key={i}
+                        title={v.name}
+                        className="w-3 h-3 rounded-full border border-white/30"
+                        style={{ backgroundColor: v.color || "#C9A96E" }}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
               <span className="bg-[#0A0A0A]/80 px-3 py-1 rounded-full border border-white/10 pointer-events-auto">
                 ESC to close
               </span>
@@ -258,7 +272,7 @@ export default function PortfolioPage() {
         <div className="min-h-screen flex items-center justify-center bg-[#0A0A0A] text-[#F5F0E8]">
           <div className="text-center space-y-3">
             <div className="w-8 h-8 border-2 border-[#C9A96E] border-t-transparent rounded-full animate-spin mx-auto" />
-            <p className="text-xs uppercase tracking-[0.2em] text-[#C9A96E]">
+            <p className="text-[14px] uppercase tracking-[0.2em] text-[#C9A96E]">
               Loading Portfolio Gallery...
             </p>
           </div>

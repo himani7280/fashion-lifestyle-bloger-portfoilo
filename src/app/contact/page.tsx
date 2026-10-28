@@ -47,6 +47,7 @@ export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitted(true);
 
     setTimeout(() => {
       setIsSubmitting(false);
@@ -58,8 +59,8 @@ export default function ContactPage() {
     <div className="bg-[#0A0A0A] text-[#F5F0E8] min-h-screen overflow-x-hidden font-[family-name:var(--font-poppins)]">
       
       {/* ── 01: BREADCRUMB BANNER IMAGE HERO ── */}
-      <section className="relative w-full py-[12px] border-b border-[#1C1C1C]">
-        <div className="relative w-full overflow-hidden h-[140px] sm:h-[180px] md:h-[220px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
+      <section className="relative w-full py-2 sm:py-3 border-b border-[#1C1C1C]">
+        <div className="relative w-full overflow-hidden h-[280px] sm:h-[340px] md:h-[380px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
           <div className="absolute inset-0 z-0">
             <Image
               src="/images/model-blazer.jpg"
@@ -68,20 +69,20 @@ export default function ContactPage() {
               priority
               sizes="100vw"
               style={{ objectPosition: "50% 20%" }}
-              className="object-cover filter brightness-[0.88] contrast-[1.04]"
+              className="object-cover filter brightness-[0.92] contrast-[1.04]"
             />
-            <div className="absolute inset-0 bg-black/35 pointer-events-none" />
-            <div className="absolute inset-x-0 bottom-0 h-14 sm:h-16 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
           </div>
 
-          <div className="relative z-10 max-w-4xl mx-auto w-full px-6 text-center space-y-1.5">
-            <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/40 shadow-lg">
+          <div className="relative z-10 max-w-4xl mx-auto w-full px-6 text-center space-y-2">
+            <div className="inline-flex items-center gap-2 text-[14px] uppercase tracking-[0.2em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#C9A96E]/40 shadow-lg">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <span className="text-[#555]">/</span>
               <span className="text-white font-semibold">Contact</span>
             </div>
 
-            <h1 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight tracking-wide">
+            <h1 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight tracking-wide">
               Contact
             </h1>
           </div>
@@ -99,11 +100,14 @@ export default function ContactPage() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-5 space-y-1">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-[#C9A96E] font-semibold block">
+          <span className="text-[14px] uppercase tracking-[0.3em] text-[#C9A96E] font-semibold block">
             ✦ Direct Collaboration Desk
           </span>
-          <h2 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl font-bold text-white">
-            Send an Inquiry to Tara Verma
+          <h2 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-4xl md:text-5xl font-bold text-white">
+            Send an Inquiry to{" "}
+            <em className="font-[family-name:var(--font-cormorant)] italic font-light text-[#E5C583]">
+              Tara Verma
+            </em>
           </h2>
           <p className="font-[family-name:var(--font-cormorant)] text-sm italic text-[#B0A696] font-light max-w-xl mx-auto">
             Directly connect with Tara Verma for wardrobe styling, red-carpet appearances, or campaign direction.
@@ -151,13 +155,13 @@ export default function ContactPage() {
             {/* Submission Alert */}
             {submitted && (
               <div className="p-4 bg-[#161616] border border-[#C9A96E] rounded-2xl space-y-1 animate-fade-in shadow-[0_0_20px_rgba(201,169,110,0.25)]">
-                <div className="flex items-center gap-2 text-white font-bold text-xs">
-                  <span className="w-5 h-5 rounded-full bg-[#C9A96E] text-[#0A0A0A] flex items-center justify-center text-xs font-black">
+                <div className="flex items-center gap-2 text-white font-bold text-[14px]">
+                  <span className="w-5 h-5 rounded-full bg-[#C9A96E] text-[#0A0A0A] flex items-center justify-center text-[14px] font-black">
                     ✓
                   </span>
                   <span className="text-[#E5C583]">Inquiry Successfully Dispatched</span>
                 </div>
-                <p className="text-[11px] text-[#A69C8E]">
+                <p className="text-[14px] text-[#A69C8E]">
                   Tara and her atelier management will respond within 24 business hours.
                 </p>
               </div>
@@ -169,7 +173,7 @@ export default function ContactPage() {
               {/* Row 1: Name & Email */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <label htmlFor="contact-name" className="block text-[10.5px] uppercase tracking-wider font-semibold text-[#D8CCA8]">
+                  <label htmlFor="contact-name" className="block text-[14px] uppercase tracking-wider font-semibold text-[#D8CCA8]">
                     Your Name / Maison <span className="text-[#C9A96E]">*</span>
                   </label>
                   <input
@@ -180,12 +184,12 @@ export default function ContactPage() {
                     placeholder="e.g. Maya Sen"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#161616] border border-[#2B2B2B] focus:border-[#C9A96E] focus:bg-[#1A1A1A] outline-none text-xs text-white transition-all placeholder:text-[#555]"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#161616] border border-[#2B2B2B] focus:border-[#C9A96E] focus:bg-[#1A1A1A] outline-none text-[14px] text-white transition-all placeholder:text-[#555]"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label htmlFor="contact-email" className="block text-[10.5px] uppercase tracking-wider font-semibold text-[#D8CCA8]">
+                  <label htmlFor="contact-email" className="block text-[14px] uppercase tracking-wider font-semibold text-[#D8CCA8]">
                     Email Address <span className="text-[#C9A96E]">*</span>
                   </label>
                   <input
@@ -196,14 +200,14 @@ export default function ContactPage() {
                     placeholder="e.g. maya@luxe.com"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#161616] border border-[#2B2B2B] focus:border-[#C9A96E] focus:bg-[#1A1A1A] outline-none text-xs text-white transition-all placeholder:text-[#555]"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#161616] border border-[#2B2B2B] focus:border-[#C9A96E] focus:bg-[#1A1A1A] outline-none text-[14px] text-white transition-all placeholder:text-[#555]"
                   />
                 </div>
               </div>
 
               {/* Row 2: Subject */}
               <div className="space-y-1">
-                <label htmlFor="contact-subject" className="block text-[10.5px] uppercase tracking-wider font-semibold text-[#D8CCA8]">
+                <label htmlFor="contact-subject" className="block text-[14px] uppercase tracking-wider font-semibold text-[#D8CCA8]">
                   Collaboration Subject <span className="text-[#C9A96E]">*</span>
                 </label>
                 <input
@@ -214,13 +218,13 @@ export default function ContactPage() {
                   placeholder="e.g. Red Carpet Wardrobe Styling / Editorial Campaign"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-[#161616] border border-[#2B2B2B] focus:border-[#C9A96E] focus:bg-[#1A1A1A] outline-none text-xs text-white transition-all placeholder:text-[#555]"
+                  className="w-full px-3.5 py-2.5 rounded-xl bg-[#161616] border border-[#2B2B2B] focus:border-[#C9A96E] focus:bg-[#1A1A1A] outline-none text-[14px] text-white transition-all placeholder:text-[#555]"
                 />
               </div>
 
               {/* Row 3: Message */}
               <div className="space-y-1">
-                <label htmlFor="contact-message" className="block text-[10.5px] uppercase tracking-wider font-semibold text-[#D8CCA8]">
+                <label htmlFor="contact-message" className="block text-[14px] uppercase tracking-wider font-semibold text-[#D8CCA8]">
                   Project Scope &amp; Dates <span className="text-[#C9A96E]">*</span>
                 </label>
                 <textarea
@@ -231,7 +235,7 @@ export default function ContactPage() {
                   placeholder="Share aesthetic vision, dates, location, and key deliverables..."
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-[#161616] border border-[#2B2B2B] focus:border-[#C9A96E] focus:bg-[#1A1A1A] outline-none text-xs text-white transition-all resize-none placeholder:text-[#555]"
+                  className="w-full px-3.5 py-2.5 rounded-xl bg-[#161616] border border-[#2B2B2B] focus:border-[#C9A96E] focus:bg-[#1A1A1A] outline-none text-[14px] text-white transition-all resize-none placeholder:text-[#555]"
                 />
               </div>
 
@@ -239,7 +243,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] disabled:opacity-50 text-[#0A0A0A] py-3.5 px-6 rounded-full text-xs uppercase tracking-[0.2em] font-bold transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.55)] hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] disabled:opacity-50 text-[#0A0A0A] py-3.5 px-6 rounded-full text-[14px] uppercase tracking-[0.2em] font-bold transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.55)] hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
               >
                 <span>{isSubmitting ? "Dispatching..." : "Submit Inquiry ✦"}</span>
                 <span>→</span>
@@ -277,14 +281,17 @@ export default function ContactPage() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-4 pb-3 border-b border-[#1C1C1C]">
           <div>
-            <span className="text-[10px] uppercase tracking-[0.3em] text-[#C9A96E] font-semibold block mb-0.5 font-mono">
+            <span className="text-[14px] uppercase tracking-[0.3em] text-[#C9A96E] font-semibold block mb-0.5 font-mono">
               ✦ Global Atelier Presence · USA Flagship
             </span>
-            <h2 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl font-bold text-white">
-              ✦ Atelier &amp; Showroom Location
+            <h2 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-4xl md:text-5xl font-bold text-white">
+              Flagship Atelier &amp;{" "}
+              <em className="font-[family-name:var(--font-cormorant)] italic font-light text-[#E5C583]">
+                Showroom
+              </em>
             </h2>
           </div>
-          <div className="flex items-center gap-2 text-xs font-mono text-[#AAA]">
+          <div className="flex items-center gap-2 text-[14px] font-mono text-[#AAA]">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
             <span>SoHo, New York</span>
           </div>

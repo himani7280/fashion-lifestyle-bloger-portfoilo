@@ -37,9 +37,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${poppins.variable} antialiased scroll-smooth`}
+      className={`${playfair.variable} ${poppins.variable} antialiased overflow-x-clip max-w-full w-full`}
     >
-      <body className="min-h-screen flex flex-col bg-[#0A0A0A] text-[#F5F0E8] selection:bg-[#C9A96E] selection:text-[#0A0A0A] font-[family-name:var(--font-poppins)] overflow-x-hidden max-w-full w-full">
+      <body className="min-h-screen flex flex-col bg-[#0A0A0A] text-[#F5F0E8] selection:bg-[#C9A96E] selection:text-[#0A0A0A] font-[family-name:var(--font-poppins)] overflow-x-clip max-w-full w-full relative">
         <Header />
         <main className="flex-1 w-full max-w-full overflow-x-clip">{children}</main>
         <Footer />

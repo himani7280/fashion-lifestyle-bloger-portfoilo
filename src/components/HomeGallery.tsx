@@ -3,11 +3,10 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import fashionData from "@/data/fashionData.json";
-import { PortfolioItem } from "@/data/fashionData";
+import { portfolioItems, PortfolioItem } from "@/data/fashionData";
 
 export default function HomeGallery() {
-  const portfolio = fashionData.portfolio as PortfolioItem[];
+  const portfolio = portfolioItems;
   // Exactly 2 rows of varied "chota-bda" Bento images:
   // Row 1: Item 0 (col-span-2 bda) + Item 1 (col-span-1 chota) = 3 cols
   // Row 2: Item 2 (col-span-1 chota) + Item 3 (col-span-2 bda) = 3 cols
@@ -79,10 +78,10 @@ export default function HomeGallery() {
         
         {/* Section Header */}
         <div className="border-b border-[#1C1C1C] pb-2.5">
-          <span className="text-[9.5px] uppercase tracking-[0.3em] text-[#C9A96E] font-bold block mb-0.5 font-[family-name:var(--font-inter)]">
+          <span className="text-[14px] uppercase tracking-[0.25em] text-[#C9A96E] font-semibold block mb-1 font-[family-name:var(--font-inter)]">
             ✦ SARTORIAL ARCHIVE · 2026
           </span>
-          <h2 className="font-[family-name:var(--font-playfair)] text-xl sm:text-3xl font-bold text-white">
+          <h2 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-4xl md:text-5xl font-bold text-white">
             Curated Style{" "}
             <em className="font-[family-name:var(--font-cormorant)] italic font-light text-[#E5C583]">
               Gallery
@@ -136,18 +135,18 @@ export default function HomeGallery() {
         </div>
 
         {/* Bottom Gallery Action */}
-        <div className="pt-5 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#1C1C1C]">
-          <span className="text-[9px] uppercase tracking-[0.25em] text-[#666] font-mono hidden sm:inline-block">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#1C1C1C]">
+          <span className="text-[14px] uppercase tracking-[0.2em] text-[#888] font-mono hidden sm:inline-block">
             ✦ SARTORIAL ARCHIVE
           </span>
           <Link
             href="/portfolio"
-            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-xs uppercase tracking-[0.2em] px-8 py-3 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.55)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-[14px] uppercase tracking-[0.16em] px-8 py-3.5 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.55)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
           >
             <span>View All Archives ✦</span>
             <span>→</span>
           </Link>
-          <span className="text-[9px] uppercase tracking-[0.25em] text-[#666] font-mono hidden sm:inline-block">
+          <span className="text-[14px] uppercase tracking-[0.2em] text-[#888] font-mono hidden sm:inline-block">
             2026 EDITION
           </span>
         </div>
@@ -176,7 +175,7 @@ export default function HomeGallery() {
                 priority
                 sizes="(max-width: 1280px) 100vw, 1200px"
                 style={{ objectPosition: selectedItem.objectPosition || "50% 20%" }}
-                className="object-contain sm:object-cover"
+                className="object-cover"
               />
             </div>
 
@@ -228,6 +227,21 @@ export default function HomeGallery() {
               <span className="bg-[#0A0A0A]/80 px-3 py-1 rounded-full border border-white/10 pointer-events-auto">
                 Use ← / → keys to navigate
               </span>
+              {selectedItem.variants && selectedItem.variants.length > 0 && (
+                <div className="hidden sm:flex items-center gap-2 bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/40 pointer-events-auto">
+                  <span className="text-[#C9A96E]">Palette:</span>
+                  <div className="flex items-center gap-1.5">
+                    {selectedItem.variants.map((v, i) => (
+                      <span
+                        key={i}
+                        title={v.name}
+                        className="w-3 h-3 rounded-full border border-white/30"
+                        style={{ backgroundColor: v.color || "#C9A96E" }}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
               <span className="bg-[#0A0A0A]/80 px-3 py-1 rounded-full border border-white/10 pointer-events-auto">
                 ESC to close
               </span>

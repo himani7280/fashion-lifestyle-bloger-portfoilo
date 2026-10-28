@@ -67,7 +67,7 @@ export default function ThankYouPage() {
           </div>
 
           {/* Minimalist Contact Line */}
-          <div className="relative z-10 pt-2 pb-1 text-xs font-mono text-[#777] flex flex-wrap items-center justify-center gap-2 sm:gap-4 border-t border-[#1C1C1C]">
+          <div className="relative z-10 pt-2 pb-1 text-[14px] font-mono text-[#777] flex flex-wrap items-center justify-center gap-2 sm:gap-4 border-t border-[#1C1C1C]">
             <span>Direct Desk: <span className="text-[#E5C583]">xyz@gmail.com</span></span>
             <span className="hidden sm:inline">·</span>
             <span>Phone: <span className="text-[#E5C583]">+1 00000 00000</span></span>
@@ -77,7 +77,7 @@ export default function ThankYouPage() {
           <div className="relative z-10 pt-3 flex items-center justify-center">
             <Link
               href="/"
-              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-xs uppercase tracking-[0.2em] px-9 py-3.5 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.55)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-[14px] uppercase tracking-[0.2em] px-9 py-3.5 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.55)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
             >
               <span>Return to Home</span>
               <span>→</span>

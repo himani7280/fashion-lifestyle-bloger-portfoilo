@@ -3,8 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import fashionData from "@/data/fashionData.json";
-import { ServiceItem } from "@/data/fashionData";
+import { services } from "@/data/fashionData";
 import AnimatedCounter from "@/components/AnimatedCounter";
 
 interface PortraitPlate {
@@ -51,7 +50,7 @@ const PORTRAIT_PLATES: PortraitPlate[] = [
     title: "Classic Monochrome",
     location: "Rome Studio",
     year: "2025",
-    image: "/images/model-about.jpg",
+    image: "/images/model-blazer.jpg",
     quote: "Subtlety is the ultimate sophistication in modern high-fashion portraiture.",
   },
   {
@@ -93,8 +92,6 @@ const PORTRAIT_PLATES: PortraitPlate[] = [
 ];
 
 export default function ServicesContent() {
-  const services = fashionData.services as ServiceItem[];
-
   // Interchanged component: Portrait Plates Carousel
   const [selectedPlate, setSelectedPlate] = useState<PortraitPlate | null>(null);
   const marqueeList = [...PORTRAIT_PLATES, ...PORTRAIT_PLATES];
@@ -149,8 +146,8 @@ export default function ServicesContent() {
     <div className="bg-[#0A0A0A] text-[#F5F0E8] min-h-screen overflow-x-hidden font-[family-name:var(--font-poppins)]">
       
       {/* ── 01: BANNER (SINGLE TITLE & BREADCRUMBS ONLY) ── */}
-      <section className="relative w-full py-[12px] border-b border-[#1A1A1A]">
-        <div className="relative w-full overflow-hidden h-[140px] sm:h-[180px] md:h-[220px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
+      <section className="relative w-full py-2 sm:py-3 border-b border-[#1A1A1A]">
+        <div className="relative w-full overflow-hidden h-[280px] sm:h-[340px] md:h-[380px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
           <div className="absolute inset-0 z-0">
             <Image
               src="/images/model-suit.jpg"
@@ -159,20 +156,20 @@ export default function ServicesContent() {
               priority
               sizes="100vw"
               style={{ objectPosition: "50% 20%" }}
-              className="object-cover filter brightness-[0.88] contrast-[1.04]"
+              className="object-cover filter brightness-[0.92] contrast-[1.04]"
             />
-            <div className="absolute inset-0 bg-black/35 pointer-events-none" />
-            <div className="absolute inset-x-0 bottom-0 h-14 sm:h-16 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
           </div>
 
-          <div className="relative z-10 max-w-4xl mx-auto w-full px-6 text-center space-y-1.5">
-            <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] font-medium bg-[#0A0A0A]/80 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/40">
+          <div className="relative z-10 max-w-4xl mx-auto w-full px-6 text-center space-y-2">
+            <div className="inline-flex items-center gap-2 text-[14px] uppercase tracking-[0.2em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#C9A96E]/40">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <span className="text-[#555]">/</span>
               <span className="text-white font-semibold">Services</span>
             </div>
 
-            <h1 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
+            <h1 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
               Fashion Styling &amp;{" "}
               <em className="font-normal italic bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] bg-clip-text text-transparent">
                 Creative Direction
@@ -188,7 +185,7 @@ export default function ServicesContent() {
           
           {/* Section Introduction */}
           <div className="text-center max-w-3xl mx-auto space-y-2">
-            <span className="text-[10px] uppercase tracking-[0.35em] text-[#C9A96E] font-bold font-[family-name:var(--font-inter)] block">
+            <span className="text-[14px] uppercase tracking-[0.35em] text-[#C9A96E] font-bold font-[family-name:var(--font-inter)] block">
               ✦ HAUTE ATELIER SUITES · CURATED STYLING SERVICES
             </span>
             <h2 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-4xl md:text-5xl font-bold text-white">
@@ -236,13 +233,13 @@ export default function ServicesContent() {
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/85 via-transparent to-transparent pointer-events-none" />
 
                         {/* Floating Suite Badge */}
-                        <div className="absolute top-3 right-3 z-10 bg-[#0A0A0A]/90 backdrop-blur-md px-3 py-1 rounded-full border border-[#C9A96E]/50 text-[9.5px] uppercase font-mono tracking-widest text-[#E5C583]">
+                        <div className="absolute top-3 right-3 z-10 bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/50 text-[13px] sm:text-[14px] uppercase font-mono tracking-wider text-[#E5C583] whitespace-nowrap">
                           ✦ SUITE 0{idx + 1}
                         </div>
 
                         {/* Bottom Tag */}
-                        <div className="absolute bottom-3 inset-x-3 z-10 text-center">
-                          <span className="text-[10px] uppercase tracking-wider text-[#C9A96E] bg-[#0A0A0A]/85 backdrop-blur-md px-3 py-1 rounded-full border border-[#333] inline-block font-mono">
+                        <div className="absolute bottom-3.5 inset-x-6 z-10 flex justify-center">
+                          <span className="text-[12px] sm:text-[13px] uppercase tracking-wider text-[#C9A96E] bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#333] font-mono whitespace-nowrap max-w-[85%] truncate shadow-lg">
                             {srv.subtitle}
                           </span>
                         </div>
@@ -253,11 +250,11 @@ export default function ServicesContent() {
                     <div className={`lg:col-span-7 space-y-4 relative ${isEven ? "lg:order-1" : "lg:order-2"}`}>
                       
                       {/* Watermark Roman Numeral */}
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-3 flex-wrap">
                         <span className="font-[family-name:var(--font-cormorant)] text-3xl sm:text-4xl italic text-[#C9A96E] font-light">
                           {roman}.
                         </span>
-                        <span className="text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] font-bold font-mono bg-[#141414] px-3 py-1 rounded-full border border-[#C9A96E]/30">
+                        <span className="text-[13px] sm:text-[14px] uppercase tracking-[0.12em] text-[#C9A96E] font-bold font-mono bg-[#141414] px-4 py-1.5 rounded-full border border-[#C9A96E]/30 whitespace-nowrap">
                           {srv.subtitle}
                         </span>
                       </div>
@@ -274,14 +271,14 @@ export default function ServicesContent() {
                       <div className="pt-3 flex flex-wrap items-center gap-3">
                         <Link
                           href={`/services/${srv.id}`}
-                          className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-xs uppercase tracking-[0.2em] px-7 py-3.5 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
+                          className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-[13px] sm:text-[14px] uppercase tracking-[0.12em] px-6 sm:px-7 py-3 sm:py-3.5 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer whitespace-nowrap"
                         >
                           <span>Explore Suite 0{idx + 1} ✦</span>
                           <span>→</span>
                         </Link>
                         <Link
                           href={`/contact?service=${srv.id}`}
-                          className="text-xs uppercase tracking-wider text-[#C9A96E] hover:text-white transition-colors underline underline-offset-4 font-mono py-2 px-1"
+                          className="text-[14px] uppercase tracking-wider text-[#C9A96E] hover:text-white transition-colors underline underline-offset-4 font-mono py-2 px-1 whitespace-nowrap"
                         >
                           Direct Inquiry →
                         </Link>
@@ -317,10 +314,10 @@ export default function ServicesContent() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/70 via-transparent to-transparent pointer-events-none" />
               
               <div className="absolute bottom-4 left-4 right-4 p-3.5 bg-[#0A0A0A]/90 backdrop-blur-md rounded-2xl border border-[#C9A96E]/30 text-center shadow-xl">
-                <span className="text-[9.5px] uppercase tracking-[0.25em] text-[#C9A96E] font-semibold block mb-0.5">
+                <span className="text-[14px] uppercase tracking-[0.25em] text-[#C9A96E] font-semibold block mb-0.5">
                   Tara Verma Philosophy
                 </span>
-                <p className="font-[family-name:var(--font-playfair)] text-xs sm:text-sm font-bold text-white italic">
+                <p className="font-[family-name:var(--font-playfair)] text-[14px] sm:text-base font-bold text-white italic">
                   &ldquo;True fashion is the harmony of silhouette, confidence, and soulful living.&rdquo;
                 </p>
               </div>
@@ -329,11 +326,11 @@ export default function ServicesContent() {
 
           {/* Narrative Story & Metrics */}
           <div className="lg:col-span-7 space-y-4">
-            <div className="inline-block bg-[#141414] text-[#E5C583] text-[10.5px] uppercase tracking-[0.22em] font-semibold px-3.5 py-1 rounded-full border border-[#C9A96E]/30">
+            <div className="inline-block bg-[#141414] text-[#E5C583] text-[14px] uppercase tracking-[0.22em] font-semibold px-3.5 py-1 rounded-full border border-[#C9A96E]/30">
               ✦ The Tara Verma Advantage
             </div>
 
-            <h2 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
+            <h2 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
               Authentic High-Fashion &amp;{" "}
               <em className="font-[family-name:var(--font-cormorant)] italic font-light text-[#E5C583]">
                 Lifestyle Direction
@@ -344,7 +341,7 @@ export default function ServicesContent() {
               &ldquo;With commanding aesthetic presence, international front-row exposure, and intuitive mastery of silhouettes, Tara transforms every collaboration into a timeless work of art.&rdquo;
             </p>
 
-            <p className="text-xs sm:text-sm text-[#B3A99B] leading-relaxed font-light">
+            <p className="text-[14px] sm:text-base text-[#B3A99B] leading-relaxed font-light">
               Whether styling high-profile appearances, creating seasonal lookbooks for global luxury fashion houses, or directing editorial campaigns across Paris, Milan, and New Delhi, Tara delivers an uncompromising standard of sartorial excellence.
             </p>
 
@@ -352,28 +349,28 @@ export default function ServicesContent() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2 border-t border-[#1C1C1C]">
               <div className="bg-[#121212] p-3 rounded-xl border border-[#222222] text-center">
                 <AnimatedCounter value="250K+" />
-                <span className="text-[9.5px] uppercase tracking-wider text-[#888] font-medium block mt-0.5">Community</span>
+                <span className="text-[14px] uppercase tracking-wider text-[#888] font-medium block mt-0.5">Community</span>
               </div>
               <div className="bg-[#121212] p-3 rounded-xl border border-[#222222] text-center">
                 <AnimatedCounter value="50+" />
-                <span className="text-[9.5px] uppercase tracking-wider text-[#888] font-medium block mt-0.5">Luxury Brands</span>
+                <span className="text-[14px] uppercase tracking-wider text-[#888] font-medium block mt-0.5">Luxury Brands</span>
               </div>
               <div className="bg-[#121212] p-3 rounded-xl border border-[#222222] text-center">
                 <AnimatedCounter value="120+" />
-                <span className="text-[9.5px] uppercase tracking-wider text-[#888] font-medium block mt-0.5">Lookbooks</span>
+                <span className="text-[14px] uppercase tracking-wider text-[#888] font-medium block mt-0.5">Lookbooks</span>
               </div>
               <div className="bg-[#121212] p-3 rounded-xl border border-[#222222] text-center">
                 <AnimatedCounter value="14+" />
-                <span className="text-[9.5px] uppercase tracking-wider text-[#888] font-medium block mt-0.5">Fashion Weeks</span>
+                <span className="text-[14px] uppercase tracking-wider text-[#888] font-medium block mt-0.5">Fashion Weeks</span>
               </div>
             </div>
 
             <div className="pt-2">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-xs uppercase tracking-[0.2em] px-7 py-3.5 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-[13px] sm:text-[14px] uppercase tracking-[0.12em] px-6 sm:px-7 py-3.5 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer whitespace-nowrap"
               >
-                <span>Inquire for Collaboration ✦</span>
+                <span>Inquire Collaboration ✦</span>
                 <span>→</span>
               </Link>
             </div>
@@ -409,10 +406,10 @@ export default function ServicesContent() {
           {/* Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 pb-3 border-b border-[#1C1C1C]">
             <div>
-              <span className="text-[9.5px] uppercase tracking-[0.3em] text-[#C9A96E] font-semibold block mb-0.5 font-[family-name:var(--font-inter)]">
+              <span className="text-[14px] uppercase tracking-[0.25em] text-[#C9A96E] font-semibold block mb-1 font-[family-name:var(--font-inter)]">
                 ✦ Archival Fine Art Portraiture · Continuous Exhibition Reel
               </span>
-              <h2 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-4xl font-bold text-white">
+              <h2 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-4xl md:text-5xl font-bold text-white">
                 Personal Portrait{" "}
                 <em className="font-[family-name:var(--font-cormorant)] italic font-light text-[#E5C583]">
                   Archives
@@ -425,7 +422,7 @@ export default function ServicesContent() {
           </div>
 
           {/* Film Edge Header Tape */}
-          <div className="flex items-center justify-between text-[8.5px] uppercase tracking-[0.3em] text-[#555] font-mono px-2">
+          <div className="flex items-center justify-between text-[13px] sm:text-[14px] uppercase tracking-[0.16em] text-[#777] font-mono px-2">
             <span>KODAK TRI-X 400 · CONTINUOUS EXHIBITION REEL</span>
             <span>8 ARCHIVAL PORTRAIT PLATES</span>
             <span>PARIS · MILAN · LONDON · NEW DELHI</span>
@@ -435,12 +432,12 @@ export default function ServicesContent() {
 
         {/* ── CONTINUOUS INFINITE CAROUSEL LOOP REEL ── */}
         <div className="w-full overflow-hidden select-none py-3">
-          <div className="animate-portrait-loop gap-5 sm:gap-6 px-4">
+          <div className="animate-portrait-loop gap-2.5 sm:gap-3 px-3">
             {marqueeList.map((plate, index) => (
               <div
                 key={`${plate.id}-${index}`}
                 onClick={() => setSelectedPlate(plate)}
-                className="w-[170px] sm:w-[200px] md:w-[230px] shrink-0 group relative cursor-pointer flex flex-col space-y-2 transition-transform duration-500 hover:scale-[1.03]"
+                className="w-[180px] sm:w-[210px] md:w-[240px] shrink-0 group relative cursor-pointer flex flex-col space-y-2 transition-transform duration-500 hover:scale-[1.03]"
                 title={`Click to view ${plate.title}`}
               >
                 {/* 35mm Compact Portrait Frame */}
@@ -449,18 +446,18 @@ export default function ServicesContent() {
                     src={plate.image}
                     alt={plate.title}
                     fill
-                    sizes="(max-width: 768px) 200px, 230px"
+                    sizes="(max-width: 768px) 210px, 240px"
                     style={{ objectPosition: "50% 18%" }}
                     className="object-cover filter grayscale contrast-[1.08] group-hover:grayscale-0 group-hover:scale-106 transition-all duration-700 ease-out"
                   />
 
                   {/* Negative Plate Number Marker */}
-                  <div className="absolute top-2.5 left-2.5 z-10 bg-[#0A0A0A]/85 backdrop-blur-md text-[#C9A96E] text-[8px] font-mono tracking-widest px-2 py-0.5 rounded border border-[#C9A96E]/40 shadow-md">
+                  <div className="absolute top-2.5 left-2.5 z-10 bg-[#0A0A0A]/90 backdrop-blur-md text-[#C9A96E] text-[13px] sm:text-[14px] font-mono tracking-wider px-2.5 py-0.5 rounded border border-[#C9A96E]/40 shadow-md">
                     {plate.plateNumber}
                   </div>
 
                   {/* Expand icon on hover */}
-                  <div className="absolute top-2.5 right-2.5 z-10 w-6 h-6 rounded-full bg-[#0A0A0A]/80 border border-[#333] text-[#C9A96E] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  <div className="absolute top-2.5 right-2.5 z-10 w-7 h-7 rounded-full bg-[#0A0A0A]/80 border border-[#333] text-[#C9A96E] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-[13px]">
                     ↗
                   </div>
 
@@ -468,12 +465,12 @@ export default function ServicesContent() {
                 </div>
 
                 {/* Museum Exhibition Caption Underneath */}
-                <div className="px-1 space-y-0.5">
-                  <div className="flex items-center justify-between text-[8.5px] uppercase tracking-wider text-[#888] font-mono">
+                <div className="px-1 space-y-1">
+                  <div className="flex items-center justify-between text-[13px] sm:text-[14px] uppercase tracking-wider text-[#999] font-mono">
                     <span>{plate.location}</span>
                     <span>{plate.year}</span>
                   </div>
-                  <h4 className="font-[family-name:var(--font-playfair)] text-xs sm:text-sm font-bold text-white group-hover:text-[#E5C583] transition-colors line-clamp-1">
+                  <h4 className="font-[family-name:var(--font-playfair)] text-[14px] sm:text-[15px] font-bold text-white group-hover:text-[#E5C583] transition-colors line-clamp-1">
                     {plate.title}
                   </h4>
                 </div>
@@ -484,7 +481,7 @@ export default function ServicesContent() {
 
         {/* Film Edge Footer Tape */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-2 pb-1">
-          <div className="flex items-center justify-between text-[9px] uppercase tracking-[0.3em] text-[#555] font-mono border-t border-[#1C1C1C] pt-2">
+          <div className="flex items-center justify-between text-[13px] sm:text-[14px] uppercase tracking-[0.16em] text-[#777] font-mono border-t border-[#1C1C1C] pt-2.5">
             <span>SAFETY FILM ◆ NO. 4022</span>
             <span>HOVER TO PAUSE LOOP · CLICK TO EXPAND</span>
             <span>EXHIBITION ARCHIVES 2026</span>
@@ -526,10 +523,10 @@ export default function ServicesContent() {
             {/* Top Bar: Counter & Title on left, Close on right */}
             <div className="absolute top-4 left-4 right-4 z-30 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/50 text-[10px] uppercase font-mono tracking-widest text-[#E5C583]">
+                <span className="bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/50 text-[13px] sm:text-[14px] uppercase font-mono tracking-wider text-[#E5C583]">
                   ✦ {currentPlateIndex + 1} / {PORTRAIT_PLATES.length}
                 </span>
-                <span className="text-xs font-mono text-white/90 hidden sm:inline-block bg-[#0A0A0A]/70 px-3 py-1 rounded-full border border-white/10">
+                <span className="text-[13px] sm:text-[14px] font-mono text-white/90 hidden sm:inline-block bg-[#0A0A0A]/70 px-3 py-1 rounded-full border border-white/10">
                   {selectedPlate.title}
                 </span>
               </div>
@@ -563,7 +560,7 @@ export default function ServicesContent() {
             </button>
 
             {/* Bottom Floating Minimal Bar */}
-            <div className="absolute bottom-4 inset-x-4 z-30 flex items-center justify-between pointer-events-none text-[10px] font-mono text-[#888]">
+            <div className="absolute bottom-4 inset-x-4 z-30 flex items-center justify-between pointer-events-none text-[13px] sm:text-[14px] font-mono text-[#999]">
               <span className="bg-[#0A0A0A]/80 px-3 py-1 rounded-full border border-white/10 pointer-events-auto">
                 Use ← / → keys to navigate
               </span>
@@ -580,9 +577,9 @@ export default function ServicesContent() {
         <div className="py-4">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] px-8 py-4 rounded-full text-xs uppercase tracking-[0.2em] font-bold transition-all duration-300 shadow-[0_4px_25px_rgba(201,169,110,0.35)] hover:shadow-[0_6px_35px_rgba(201,169,110,0.6)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-[13px] sm:text-[14px] uppercase tracking-[0.12em] font-bold transition-all duration-300 shadow-[0_4px_25px_rgba(201,169,110,0.35)] hover:shadow-[0_6px_35px_rgba(201,169,110,0.6)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer whitespace-nowrap max-w-[calc(100vw-32px)]"
           >
-            <span>Book Private Styling Appointment ✦</span>
+            <span>Book Appointment ✦</span>
             <span>→</span>
           </Link>
         </div>

@@ -105,31 +105,31 @@ export default function AboutContent() {
   return (
     <div className="bg-[#0A0A0A] text-[#F5F0E8] min-h-screen overflow-x-hidden font-[family-name:var(--font-poppins)]">
       
-      {/* ── 01: FULL WIDTH COMPACT BANNER ── */}
-      <section className="relative w-full py-[12px] border-b border-[#1A1A1A]">
-        <div className="relative w-full overflow-hidden h-[140px] sm:h-[180px] md:h-[220px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
+      {/* ── 01: FULL WIDTH PROMINENT HERO BANNER ── */}
+      <section className="relative w-full py-2 sm:py-3 border-b border-[#1A1A1A]">
+        <div className="relative w-full overflow-hidden h-[280px] sm:h-[340px] md:h-[380px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/model-about.jpg"
+              src="/images/model-hero.jpg"
               alt="About Tara Verma — Fashion & Lifestyle"
               fill
               priority
               sizes="100vw"
-              style={{ objectPosition: "50% 25%" }}
-              className="object-cover filter brightness-[0.88] contrast-[1.04]"
+              style={{ objectPosition: "50% 28%" }}
+              className="object-cover filter brightness-[0.92] contrast-[1.04]"
             />
-            <div className="absolute inset-0 bg-black/35 pointer-events-none" />
-            <div className="absolute inset-x-0 bottom-0 h-14 sm:h-16 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
           </div>
 
-          <div className="relative z-10 max-w-4xl mx-auto w-full px-6 text-center space-y-1.5">
-            <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] font-medium bg-[#0A0A0A]/80 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/40">
+          <div className="relative z-10 max-w-4xl mx-auto w-full px-6 text-center space-y-2">
+            <div className="inline-flex items-center gap-2 text-[14px] uppercase tracking-[0.2em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#C9A96E]/40">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <span className="text-[#555]">/</span>
               <span className="text-white font-semibold">About Tara</span>
             </div>
 
-            <h1 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
+            <h1 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
               About{" "}
               <em className="font-normal italic bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] bg-clip-text text-transparent">
                 Tara Verma
@@ -144,7 +144,7 @@ export default function AboutContent() {
         
         {/* Centered Heading */}
         <div className="text-center mb-10 sm:mb-14 space-y-1.5">
-          <span className="text-[10px] uppercase font-mono tracking-[0.28em] text-[#C9A96E] font-medium block">
+          <span className="text-[14px] uppercase font-mono tracking-[0.22em] text-[#C9A96E] font-medium block">
             ✦ Haute Couture Atelier · The Stylist
           </span>
           <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
@@ -177,32 +177,32 @@ export default function AboutContent() {
               My Mission
             </h3>
 
-            <p className="text-xs sm:text-sm text-[#A0A0A0] leading-relaxed font-light">
-              My mission is anchored in the belief that personal style is an architectural language — an intentional harmony of structural cut, draped silk, and proportion that reveals commanding presence without uttering a single word. Every curation is guided by restraint and quiet luxury, cutting through ephemeral micro-trends to cultivate timeless sartorial identity.
+            <p className="text-[14px] sm:text-base text-[#C4BCB3] leading-relaxed font-light">
+              Personal style is an architectural language — an intentional harmony of structural cut, draped silk, and proportion that commands presence without uttering a word. Guided by quiet luxury and restraint, each curation cuts through ephemeral micro-trends to cultivate an enduring sartorial identity.
             </p>
 
-            <p className="text-xs sm:text-sm text-[#A0A0A0] leading-relaxed font-light">
-              Bridging European haute couture ateliers across Paris and Milan with the handcrafted heritage of artisanal textiles, I collaborate with discerning women worldwide to curate bespoke capsule wardrobes and red carpet appearances that command attention effortlessly in every room.
+            <p className="text-[14px] sm:text-base text-[#C4BCB3] leading-relaxed font-light">
+              Bridging European haute couture ateliers with handcrafted artisanal textiles, I curate bespoke capsule wardrobes and red-carpet appearances for discerning clientele worldwide, elevating everyday presence into an effortless work of art.
             </p>
 
-            <p className="text-xs sm:text-sm text-[#A0A0A0] leading-relaxed font-light">
-              Beyond garments, my creative philosophy integrates fashion with an intentional, elevated lifestyle — harmonizing everyday sensory aesthetics, cosmopolitan travel wardrobes, and mindful living so your sartorial identity effortlessly enhances who you are.
+            <p className="text-[14px] sm:text-base text-[#C4BCB3] leading-relaxed font-light">
+              Every collaboration is underpinned by bespoke fabric sourcing, precise silhouette architecture, and a commitment to timeless elegance that transcends fleeting seasonal fads.
             </p>
 
-            {/* Action Buttons */}
-            <div className="pt-2 flex flex-wrap items-center gap-3">
+            {/* 2 Buttons Aligned with Column */}
+            <div className="pt-2 flex flex-wrap items-center gap-3.5">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-xs uppercase tracking-[0.2em] px-6 py-3 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:scale-[1.03] active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-[13px] sm:text-[14px] uppercase tracking-[0.14em] px-7 py-3.5 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer whitespace-nowrap"
               >
                 <span>Book Consultation ✦</span>
                 <span>→</span>
               </Link>
               <Link
-                href="/portfolio"
-                className="inline-flex items-center justify-center gap-2 bg-[#141414] hover:bg-[#1C1C1C] text-[#E5C583] hover:text-white border border-[#C9A96E]/40 font-semibold text-xs uppercase tracking-[0.2em] px-6 py-3 rounded-full transition-all duration-300"
+                href="/services"
+                className="inline-flex items-center justify-center gap-2 bg-[#141414] hover:bg-[#1C1C1C] text-[#E5C583] hover:text-white border border-[#C9A96E]/40 font-semibold text-[13px] sm:text-[14px] uppercase tracking-[0.14em] px-7 py-3.5 rounded-full transition-all duration-300 hover:scale-[1.02] cursor-pointer whitespace-nowrap"
               >
-                <span>View Portfolio</span>
+                <span>Explore Services</span>
                 <span>→</span>
               </Link>
             </div>
@@ -215,7 +215,7 @@ export default function AboutContent() {
         <div className="pt-12 sm:pt-16 border-t border-[#1C1C1C] space-y-8 mt-12">
           
           <div className="text-center max-w-xl mx-auto space-y-1">
-            <span className="text-[9.5px] uppercase font-mono tracking-[0.28em] text-[#C9A96E] font-medium block">
+            <span className="text-[14px] uppercase font-mono tracking-[0.28em] text-[#C9A96E] font-medium block">
               ✦ Sartorial Signatures · Three Disciplines
             </span>
             <h3 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl font-bold text-white tracking-tight">
@@ -245,12 +245,12 @@ export default function AboutContent() {
                 </h4>
 
                 {/* Subtitle / Tagline */}
-                <span className="text-[9.5px] uppercase font-mono tracking-[0.2em] text-[#C9A96E] font-semibold mb-2.5 block">
+                <span className="text-[14px] uppercase font-mono tracking-[0.2em] text-[#C9A96E] font-semibold mb-2.5 block">
                   ✦ {sphere.tagline}
                 </span>
 
                 {/* Description */}
-                <p className="text-xs text-[#9CA3AF] font-light leading-relaxed max-w-xs mb-4 px-1">
+                <p className="text-[14px] text-[#9CA3AF] font-light leading-relaxed max-w-xs mb-4 px-1">
                   {sphere.desc}
                 </p>
 
@@ -349,8 +349,8 @@ export default function AboutContent() {
                       </div>
 
                       {/* Floating Subtitle in Image */}
-                      <div className="absolute bottom-4 left-4 right-4 z-10">
-                        <span className="text-[11px] uppercase tracking-[0.2em] font-medium text-[#C9A96E] bg-[#0A0A0A]/85 backdrop-blur-md px-3 py-1 rounded-full border border-[#333]">
+                      <div className="absolute bottom-4 left-4 z-10 max-w-fit">
+                        <span className="text-[11px] uppercase tracking-[0.2em] font-medium text-[#C9A96E] bg-[#0A0A0A]/85 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#333] inline-block whitespace-nowrap">
                           {pillar.tagline}
                         </span>
                       </div>
@@ -367,7 +367,7 @@ export default function AboutContent() {
                       </span>
                       
                       <div className="relative z-10 space-y-2">
-                        <span className="text-xs uppercase tracking-[0.25em] text-[#C9A96E] font-mono font-bold block">
+                        <span className="text-[14px] uppercase tracking-[0.25em] text-[#C9A96E] font-mono font-bold block">
                           Pillar {pillar.number} ✦ Architecture
                         </span>
                         <h3 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
@@ -386,25 +386,6 @@ export default function AboutContent() {
                       {pillar.description}
                     </p>
 
-                    {/* Color Palette Swatches (for Pillar 03) */}
-                    {pillar.palette && (
-                      <div className="pt-2 space-y-2">
-                        <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#A69C8E] block">
-                          Tonal Harmony Swatches:
-                        </span>
-                        <div className="flex flex-wrap items-center gap-3">
-                          {pillar.palette.map((swatch) => (
-                            <div key={swatch.name} className="flex items-center gap-2 bg-[#141414] px-3 py-1.5 rounded-full border border-[#2B2B2B]">
-                              <span
-                                className="w-3.5 h-3.5 rounded-full border border-black/40 shadow-inner"
-                                style={{ backgroundColor: swatch.hex }}
-                              />
-                              <span className="text-[11px] text-[#E5C583] font-medium">{swatch.name}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
 
                   </div>
 
