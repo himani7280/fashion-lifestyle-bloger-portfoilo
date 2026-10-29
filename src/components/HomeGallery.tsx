@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
-import { homeGalleryData, portfolioItems, PortfolioItem, fonts } from "@/data/fashionData";
+import { homeGalleryData, portfolioItems, PortfolioItem, fonts, getObjectPosClass, getColorBgClass } from "@/data/fashionData";
 
 export default function HomeGallery() {
   const portfolio = portfolioItems;
@@ -77,7 +77,7 @@ export default function HomeGallery() {
           <span className="text-[14px] uppercase tracking-[0.25em] text-[#C9A96E] font-semibold block mb-1">
             {homeGalleryData.badge}
           </span>
-          <h2 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
+          <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
             {homeGalleryData.titleStart}
             <em className="italic font-light text-[#E5C583]">
               {homeGalleryData.titleHighlight}
@@ -106,8 +106,7 @@ export default function HomeGallery() {
                       alt={item.title}
                       fill
                       sizes={spanClass.includes("col-span-2") ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
-                      style={{ objectPosition: item.objectPosition || "50% 20%" }}
-                      className="object-cover filter brightness-[0.92] contrast-[1.03] group-hover:brightness-105 group-hover:scale-106 transition-all duration-700 ease-out"
+                      className={`object-cover ${getObjectPosClass(item.objectPosition)} filter brightness-[0.92] contrast-[1.03] group-hover:brightness-105 group-hover:scale-106 transition-all duration-700 ease-out`}
                     />
                     
                     {/* Hover Vignette */}
@@ -119,13 +118,13 @@ export default function HomeGallery() {
                     </div>
 
                     {/* Index Tag */}
-                    <div style={{ fontFamily: fonts.mono }} className="absolute top-3.5 left-3.5 z-10 bg-[#0A0A0A]/80 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-[#333] text-[9px] font-normal text-[#E5C583]">
+                    <div className={`${fonts.mono} absolute top-3.5 left-3.5 z-10 bg-[#0A0A0A]/80 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-[#333] text-[9px] font-normal text-[#E5C583]`}>
                       0{idx + 1}
                     </div>
 
                     {/* Hover Title */}
                     <div className="absolute bottom-0 inset-x-0 p-5 text-center z-10 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
-                      <h3 style={{ fontFamily: fonts.heading }} className="text-base sm:text-lg md:text-xl font-bold text-white group-hover:text-[#E5C583] transition-colors leading-snug drop-shadow-md">
+                      <h3 className={`${fonts.heading} text-base sm:text-lg md:text-xl font-bold text-white group-hover:text-[#E5C583] transition-colors leading-snug drop-shadow-md`}>
                         {item.title}
                       </h3>
                     </div>
@@ -138,7 +137,7 @@ export default function HomeGallery() {
 
         {/* Bottom Action */}
         <ScrollReveal variant="fade-up" delay={150} className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#1C1C1C]">
-          <span style={{ fontFamily: fonts.mono }} className="text-[14px] font-normal uppercase tracking-[0.2em] text-[#888] hidden sm:inline-block">
+          <span className={`${fonts.mono} text-[14px] font-normal uppercase tracking-[0.2em] text-[#888] hidden sm:inline-block`}>
             {homeGalleryData.footerLeftText}
           </span>
           <Link
@@ -148,7 +147,7 @@ export default function HomeGallery() {
             <span>{homeGalleryData.buttonText}</span>
             <span>→</span>
           </Link>
-          <span style={{ fontFamily: fonts.mono }} className="text-[14px] font-normal uppercase tracking-[0.2em] text-[#888] hidden sm:inline-block">
+          <span className={`${fonts.mono} text-[14px] font-normal uppercase tracking-[0.2em] text-[#888] hidden sm:inline-block`}>
             {homeGalleryData.footerRightText}
           </span>
         </ScrollReveal>
@@ -176,8 +175,7 @@ export default function HomeGallery() {
                 fill
                 priority
                 sizes="(max-width: 1280px) 100vw, 1200px"
-                style={{ objectPosition: selectedItem.objectPosition || "50% 20%" }}
-                className="object-cover"
+                className={`object-cover ${getObjectPosClass(selectedItem.objectPosition)}`}
               />
             </div>
 
@@ -188,10 +186,10 @@ export default function HomeGallery() {
             {/* Top Bar */}
             <div className="absolute top-4 left-4 right-4 z-30 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span style={{ fontFamily: fonts.mono }} className="bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/50 text-[10px] font-normal uppercase tracking-widest text-[#E5C583]">
+                <span className={`${fonts.mono} bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/50 text-[10px] font-normal uppercase tracking-widest text-[#E5C583]`}>
                   ✦ {currentIndex + 1} / {galleryItems.length}
                 </span>
-                <span style={{ fontFamily: fonts.mono }} className="text-xs font-normal text-white/90 hidden sm:inline-block bg-[#0A0A0A]/70 px-3 py-1 rounded-full border border-white/10">
+                <span className={`${fonts.mono} text-xs font-normal text-white/90 hidden sm:inline-block bg-[#0A0A0A]/70 px-3 py-1 rounded-full border border-white/10`}>
                   {selectedItem.title}
                 </span>
               </div>
@@ -225,7 +223,7 @@ export default function HomeGallery() {
             </button>
 
             {/* Bottom Info Bar */}
-            <div style={{ fontFamily: fonts.mono }} className="absolute bottom-4 inset-x-4 z-30 flex items-center justify-between pointer-events-none text-[10px] font-normal text-[#888]">
+            <div className={`${fonts.mono} absolute bottom-4 inset-x-4 z-30 flex items-center justify-between pointer-events-none text-[10px] font-normal text-[#888]`}>
               <span className="bg-[#0A0A0A]/80 px-3 py-1 rounded-full border border-white/10 pointer-events-auto">
                 {homeGalleryData.lightboxNavigateHint}
               </span>
@@ -237,8 +235,7 @@ export default function HomeGallery() {
                       <span
                         key={i}
                         title={v.name}
-                        className="w-3 h-3 rounded-full border border-white/30"
-                        style={{ backgroundColor: v.color || "#C9A96E" }}
+                        className={`w-3 h-3 rounded-full border border-white/30 ${getColorBgClass(v.color)}`}
                       />
                     ))}
                   </div>

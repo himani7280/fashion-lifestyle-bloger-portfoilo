@@ -1,17 +1,17 @@
 {
   "Fashion": {
     "fonts": {
-      "heading": "'Playfair Display', serif",
-      "body": "'Poppins', sans-serif",
-      "mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+      "heading": "font-['Playfair_Display',serif]",
+      "body": "font-['Poppins',sans-serif]",
+      "mono": "font-mono",
       "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
     },
     "templateComponents": {
       "template-1": {
         "fonts": {
-          "heading": "'Playfair Display', serif",
-          "body": "'Poppins', sans-serif",
-          "mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+          "heading": "font-['Playfair_Display',serif]",
+          "body": "font-['Poppins',sans-serif]",
+          "mono": "font-mono",
           "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
         },
         "shared": {
@@ -205,8 +205,7 @@
             "spotlightQuote": "Fashion styling is the deliberate art of visual storytelling through cut, drape, and structural harmony.",
             "spotlightParagraphs": [
               "Over seven years of creative direction across Paris, Milan, and New Delhi, Tara Verma curates bespoke capsule wardrobes, red carpet appearances, and high-impact editorials defined by razor-sharp tailoring and timeless elegance.",
-              "Every bespoke engagement harmonizes sculptural couture silhouettes with tactile artisanal fabrics, creating an enduring aesthetic narrative tailored to each client’s personal presence and distinct public profile.",
-              "From private wardrobe consultations to global runway presentations, Tara balances classical atelier heritage with contemporary restraint—crafting an unmistakable signature of poise, intention, and quiet luxury."
+              "Every bespoke engagement harmonizes sculptural couture silhouettes with tactile artisanal fabrics, creating an enduring aesthetic narrative of poise, intention, and quiet luxury."
             ],
             "primaryButtonText": "Book Consultation ✦",
             "primaryButtonLink": "/contact",

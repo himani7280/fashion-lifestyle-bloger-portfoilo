@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { services, servicesHero, servicesPageData, PortraitPlate, fonts } from "@/data/fashionData";
@@ -12,6 +12,29 @@ const PORTRAIT_PLATES: PortraitPlate[] = servicesPageData.portraitArchives.items
 export default function ServicesContent() {
   const [selectedPlate, setSelectedPlate] = useState<PortraitPlate | null>(null);
   const marqueeList = [...PORTRAIT_PLATES, ...PORTRAIT_PLATES];
+  const portraitReelRef = useRef<HTMLDivElement>(null);
+  const portraitPausedRef = useRef(false);
+
+  useEffect(() => {
+    const el = portraitReelRef.current;
+    if (!el) return;
+    let rafId: number;
+    let pos = 0;
+
+    const tick = () => {
+      if (!portraitPausedRef.current && el) {
+        pos += 0.5;
+        if (pos >= el.scrollWidth / 2) {
+          pos = 0;
+        }
+        el.scrollLeft = pos;
+      }
+      rafId = requestAnimationFrame(tick);
+    };
+
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
+  }, []);
 
   const currentPlateIndex = selectedPlate
     ? PORTRAIT_PLATES.findIndex((p) => p.id === selectedPlate.id)
@@ -62,7 +85,7 @@ export default function ServicesContent() {
   const { intro, advantage, portraitArchives } = servicesPageData;
 
   return (
-    <div style={{ fontFamily: fonts.body }} className="bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden">
+    <div className={`${fonts.body} bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden`}>
       
       {/* Hero Banner */}
       <section className="relative w-full py-2 sm:py-3 border-b border-[#1A1A1A]">
@@ -74,8 +97,7 @@ export default function ServicesContent() {
               fill
               priority
               sizes="100vw"
-              style={{ objectPosition: "50% 20%" }}
-              className="object-cover filter brightness-[0.92] contrast-[1.04]"
+              className="object-cover object-[50%_20%] filter brightness-[0.92] contrast-[1.04]"
             />
             <div className="absolute inset-0 bg-black/40 pointer-events-none" />
             <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
@@ -88,7 +110,7 @@ export default function ServicesContent() {
               <span className="text-white font-semibold">{servicesHero.breadcrumb}</span>
             </div>
 
-            <h1 style={{ fontFamily: fonts.heading }} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+            <h1 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
               {servicesHero.titleStart}{" "}
               <em className="font-normal italic bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] bg-clip-text text-transparent">
                 {servicesHero.titleHighlight}
@@ -107,7 +129,7 @@ export default function ServicesContent() {
             <span className="text-[14px] uppercase tracking-[0.35em] text-[#C9A96E] font-bold block">
               {intro.badge}
             </span>
-            <h2 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
+            <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
               {intro.titleStart}
               <em className="italic font-light text-[#E5C583]">
                 {intro.titleHighlight}
@@ -145,19 +167,18 @@ export default function ServicesContent() {
                           alt={srv.title}
                           fill
                           sizes="(max-width: 1024px) 100vw, 45vw"
-                          style={{ objectPosition: "50% 20%" }}
-                          className="object-cover filter brightness-[0.92] contrast-[1.03] group-hover:scale-106 transition-transform duration-700 ease-out"
+                          className="object-cover object-[50%_20%] filter brightness-[0.92] contrast-[1.03] group-hover:scale-106 transition-transform duration-700 ease-out"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/85 via-transparent to-transparent pointer-events-none" />
 
                         {/* Suite Badge */}
-                        <div style={{ fontFamily: fonts.mono }} className="absolute top-3 right-3 z-10 bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/50 text-[13px] sm:text-[14px] font-normal uppercase tracking-wider text-[#E5C583] whitespace-nowrap">
+                        <div className={`${fonts.mono} absolute top-3 right-3 z-10 bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/50 text-[13px] sm:text-[14px] font-normal uppercase tracking-wider text-[#E5C583] whitespace-nowrap`}>
                           {servicesPageData.suitePrefix}{idx + 1}
                         </div>
 
                         {/* Bottom Tag */}
                         <div className="absolute bottom-3.5 inset-x-6 z-10 flex justify-center">
-                          <span style={{ fontFamily: fonts.mono }} className="text-[12px] sm:text-[13px] font-normal uppercase tracking-wider text-[#C9A96E] bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#333] whitespace-nowrap max-w-[85%] truncate shadow-lg">
+                          <span className={`${fonts.mono} text-[12px] sm:text-[13px] font-normal uppercase tracking-wider text-[#C9A96E] bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#333] whitespace-nowrap max-w-[85%] truncate shadow-lg`}>
                             {srv.subtitle}
                           </span>
                         </div>
@@ -172,12 +193,12 @@ export default function ServicesContent() {
                         <span className="text-3xl sm:text-4xl italic text-[#C9A96E] font-light">
                           {roman}.
                         </span>
-                        <span style={{ fontFamily: fonts.mono }} className="text-[13px] sm:text-[14px] uppercase tracking-[0.12em] text-[#C9A96E] font-bold bg-[#141414] px-4 py-1.5 rounded-full border border-[#C9A96E]/30 whitespace-nowrap">
+                        <span className={`${fonts.mono} text-[13px] sm:text-[14px] uppercase tracking-[0.12em] text-[#C9A96E] font-bold bg-[#141414] px-4 py-1.5 rounded-full border border-[#C9A96E]/30 whitespace-nowrap`}>
                           {srv.subtitle}
                         </span>
                       </div>
 
-                      <h3 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
+                      <h3 className={`${fonts.heading} text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight`}>
                         {srv.title}
                       </h3>
 
@@ -196,8 +217,7 @@ export default function ServicesContent() {
                         </Link>
                         <Link
                           href={`/contact?service=${srv.id}`}
-                          style={{ fontFamily: fonts.mono }}
-                          className="text-[14px] font-normal uppercase tracking-wider text-[#C9A96E] hover:text-white transition-colors underline underline-offset-4 py-2 px-1 whitespace-nowrap"
+                          className={`${fonts.mono} text-[14px] font-normal uppercase tracking-wider text-[#C9A96E] hover:text-white transition-colors underline underline-offset-4 py-2 px-1 whitespace-nowrap`}
                         >
                           {servicesPageData.directInquiryText}
                         </Link>
@@ -227,8 +247,7 @@ export default function ServicesContent() {
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 42vw"
-                style={{ objectPosition: "50% 15%" }}
-                className="object-cover filter brightness-[0.98] group-hover:brightness-105 group-hover:scale-105 transition-all duration-700 ease-out"
+                className="object-cover object-[50%_15%] filter brightness-[0.98] group-hover:brightness-105 group-hover:scale-105 transition-all duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/70 via-transparent to-transparent pointer-events-none" />
               
@@ -236,7 +255,7 @@ export default function ServicesContent() {
                 <span className="text-[14px] uppercase tracking-[0.25em] text-[#C9A96E] font-semibold block mb-0.5">
                   {advantage.philosophyLabel}
                 </span>
-                <p style={{ fontFamily: fonts.heading }} className="text-[14px] sm:text-base font-bold text-white italic">
+                <p className={`${fonts.heading} text-[14px] sm:text-base font-bold text-white italic`}>
                   &ldquo;{advantage.philosophyQuote}&rdquo;
                 </p>
               </div>
@@ -249,7 +268,7 @@ export default function ServicesContent() {
               {advantage.badge}
             </div>
 
-            <h2 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+            <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
               {advantage.titleStart}
               <em className="italic font-light text-[#E5C583]">
                 {advantage.titleHighlight}
@@ -267,9 +286,9 @@ export default function ServicesContent() {
             {/* Metrics */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2 border-t border-[#1C1C1C]">
               {advantage.stats.map((st) => (
-                <div key={st.label} className="bg-[#121212] p-3 rounded-xl border border-[#222222] text-center">
+                <div key={st.label} className="bg-[#121212] px-2.5 sm:px-3 py-3 rounded-xl border border-[#222222] text-center overflow-hidden">
                   <AnimatedCounter value={st.value} />
-                  <span className="text-[14px] uppercase tracking-wider text-[#888] font-medium block mt-0.5">
+                  <span className="text-[11px] sm:text-[12px] lg:text-[13px] uppercase tracking-wide sm:tracking-wider text-[#888] font-medium block mt-1 leading-snug">
                     {st.label}
                   </span>
                 </div>
@@ -292,26 +311,6 @@ export default function ServicesContent() {
 
       {/* Portrait Archives Reel */}
       <section className="relative w-full py-[12px] border-b border-[#1C1C1C] bg-[#070707] overflow-hidden">
-        {/* Marquee Keyframes */}
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `
-            @keyframes portraitLoopMarquee {
-              0% { transform: translateX(0%); }
-              100% { transform: translateX(-50%); }
-            }
-            .animate-portrait-loop {
-              display: flex;
-              width: max-content;
-              animation: portraitLoopMarquee 42s linear infinite;
-            }
-            .animate-portrait-loop:hover {
-              animation-play-state: paused;
-            }
-          `,
-          }}
-        />
-
         <ScrollReveal variant="fade-up" className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 my-[12px] py-[12px] space-y-4">
           
           {/* Header */}
@@ -320,7 +319,7 @@ export default function ServicesContent() {
               <span className="text-[14px] uppercase tracking-[0.25em] text-[#C9A96E] font-semibold block mb-1">
                 {portraitArchives.badge}
               </span>
-              <h2 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
+              <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
                 {portraitArchives.titleStart}
                 <em className="italic font-light text-[#E5C583]">
                   {portraitArchives.titleHighlight}
@@ -333,7 +332,7 @@ export default function ServicesContent() {
           </div>
 
           {/* Header Tape */}
-          <div style={{ fontFamily: fonts.mono }} className="flex items-center justify-between text-[13px] sm:text-[14px] font-normal uppercase tracking-[0.16em] text-[#777] px-2">
+          <div className={`${fonts.mono} flex items-center justify-between text-[13px] sm:text-[14px] font-normal uppercase tracking-[0.16em] text-[#777] px-2`}>
             <span>{portraitArchives.headerTapeLeft}</span>
             <span>{PORTRAIT_PLATES.length} {portraitArchives.headerTapeCenterSuffix}</span>
             <span>{portraitArchives.headerTapeRight}</span>
@@ -343,7 +342,12 @@ export default function ServicesContent() {
 
         {/* Marquee Reel */}
         <ScrollReveal variant="fade-up" delay={120} className="w-full overflow-hidden select-none py-3">
-          <div className="animate-portrait-loop gap-2.5 sm:gap-3 px-3">
+          <div
+            ref={portraitReelRef}
+            onMouseEnter={() => { portraitPausedRef.current = true; }}
+            onMouseLeave={() => { portraitPausedRef.current = false; }}
+            className="flex overflow-x-hidden gap-2.5 sm:gap-3 px-3"
+          >
             {marqueeList.map((plate, index) => (
               <div
                 key={`${plate.id}-${index}`}
@@ -358,12 +362,11 @@ export default function ServicesContent() {
                     alt={plate.title}
                     fill
                     sizes="(max-width: 768px) 210px, 240px"
-                    style={{ objectPosition: "50% 18%" }}
-                    className="object-cover filter grayscale contrast-[1.08] group-hover:grayscale-0 group-hover:scale-106 transition-all duration-700 ease-out"
+                    className="object-cover object-[50%_18%] filter grayscale contrast-[1.08] group-hover:grayscale-0 group-hover:scale-106 transition-all duration-700 ease-out"
                   />
 
                   {/* Plate Number */}
-                  <div style={{ fontFamily: fonts.mono }} className="absolute top-2.5 left-2.5 z-10 bg-[#0A0A0A]/90 backdrop-blur-md text-[#C9A96E] text-[13px] sm:text-[14px] font-normal tracking-wider px-2.5 py-0.5 rounded border border-[#C9A96E]/40 shadow-md">
+                  <div className={`${fonts.mono} absolute top-2.5 left-2.5 z-10 bg-[#0A0A0A]/90 backdrop-blur-md text-[#C9A96E] text-[13px] sm:text-[14px] font-normal tracking-wider px-2.5 py-0.5 rounded border border-[#C9A96E]/40 shadow-md`}>
                     {plate.plateNumber}
                   </div>
 
@@ -377,11 +380,11 @@ export default function ServicesContent() {
 
                 {/* Caption */}
                 <div className="px-1 space-y-1">
-                  <div style={{ fontFamily: fonts.mono }} className="flex items-center justify-between text-[13px] sm:text-[14px] font-normal uppercase tracking-wider text-[#999]">
+                  <div className={`${fonts.mono} flex items-center justify-between text-[13px] sm:text-[14px] font-normal uppercase tracking-wider text-[#999]`}>
                     <span>{plate.location}</span>
                     <span>{plate.year}</span>
                   </div>
-                  <h4 style={{ fontFamily: fonts.heading }} className="text-[14px] sm:text-[15px] font-bold text-white group-hover:text-[#E5C583] transition-colors line-clamp-1">
+                  <h4 className={`${fonts.heading} text-[14px] sm:text-[15px] font-bold text-white group-hover:text-[#E5C583] transition-colors line-clamp-1`}>
                     {plate.title}
                   </h4>
                 </div>
@@ -392,7 +395,7 @@ export default function ServicesContent() {
 
         {/* Footer Tape */}
         <ScrollReveal variant="fade-up" delay={180} className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-2 pb-1">
-          <div style={{ fontFamily: fonts.mono }} className="flex items-center justify-between text-[13px] sm:text-[14px] font-normal uppercase tracking-[0.16em] text-[#777] border-t border-[#1C1C1C] pt-2.5">
+          <div className={`${fonts.mono} flex items-center justify-between text-[13px] sm:text-[14px] font-normal uppercase tracking-[0.16em] text-[#777] border-t border-[#1C1C1C] pt-2.5`}>
             <span>{portraitArchives.footerTapeLeft}</span>
             <span>{portraitArchives.footerTapeCenter}</span>
             <span>{portraitArchives.footerTapeRight}</span>
@@ -422,8 +425,7 @@ export default function ServicesContent() {
                 fill
                 priority
                 sizes="(max-width: 1280px) 100vw, 1200px"
-                style={{ objectPosition: "50% 20%" }}
-                className="object-contain sm:object-cover"
+                className="object-contain sm:object-cover object-[50%_20%]"
               />
             </div>
 
@@ -434,10 +436,10 @@ export default function ServicesContent() {
             {/* Top Bar */}
             <div className="absolute top-4 left-4 right-4 z-30 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span style={{ fontFamily: fonts.mono }} className="bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/50 text-[13px] sm:text-[14px] font-normal uppercase tracking-wider text-[#E5C583]">
+                <span className={`${fonts.mono} bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/50 text-[13px] sm:text-[14px] font-normal uppercase tracking-wider text-[#E5C583]`}>
                   ✦ {currentPlateIndex + 1} / {PORTRAIT_PLATES.length}
                 </span>
-                <span style={{ fontFamily: fonts.mono }} className="text-[13px] sm:text-[14px] font-normal text-white/90 hidden sm:inline-block bg-[#0A0A0A]/70 px-3 py-1 rounded-full border border-white/10">
+                <span className={`${fonts.mono} text-[13px] sm:text-[14px] font-normal text-white/90 hidden sm:inline-block bg-[#0A0A0A]/70 px-3 py-1 rounded-full border border-white/10`}>
                   {selectedPlate.title}
                 </span>
               </div>
@@ -471,7 +473,7 @@ export default function ServicesContent() {
             </button>
 
             {/* Bottom Info Bar */}
-            <div style={{ fontFamily: fonts.mono }} className="absolute bottom-4 inset-x-4 z-30 flex items-center justify-between pointer-events-none text-[13px] sm:text-[14px] font-normal text-[#999]">
+            <div className={`${fonts.mono} absolute bottom-4 inset-x-4 z-30 flex items-center justify-between pointer-events-none text-[13px] sm:text-[14px] font-normal text-[#999]`}>
               <span className="bg-[#0A0A0A]/80 px-3 py-1 rounded-full border border-white/10 pointer-events-auto">
                 {portraitArchives.lightboxNavigateHint}
               </span>

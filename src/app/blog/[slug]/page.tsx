@@ -1,4 +1,5 @@
 
+import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -28,7 +29,15 @@ export async function generateMetadata({ params }: BlogPostProps) {
   };
 }
 
-export default async function BlogPostPage({ params }: BlogPostProps) {
+export default function BlogPostPage({ params }: BlogPostProps) {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#0A0A0A]" />}>
+      <BlogPostContent params={params} />
+    </Suspense>
+  );
+}
+
+async function BlogPostContent({ params }: BlogPostProps) {
   const { slug } = await params;
   const posts = blogPosts;
   const currentIndex = posts.findIndex((p) => p.id === slug);
@@ -40,7 +49,7 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
   const post = posts[currentIndex];
 
   return (
-    <div style={{ fontFamily: fonts.body }} className="bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden">
+    <div className={`${fonts.body} bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden`}>
       
       {/* Hero Banner */}
       <section className="relative w-full py-[12px] border-b border-[#1A1A1A] bg-[#0A0A0A]">
@@ -52,23 +61,22 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
               fill
               priority
               sizes="100vw"
-              style={{ objectPosition: "50% 15%" }}
-              className="object-cover filter brightness-[0.92] contrast-[1.04]"
+              className="object-cover object-[50%_15%] filter brightness-[0.92] contrast-[1.04]"
             />
             <div className="absolute inset-0 bg-black/40 pointer-events-none" />
             <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
           </div>
 
           <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 md:px-8 text-center space-y-2">
-            <div className="inline-flex items-center flex-wrap justify-center gap-2 text-[14px] uppercase tracking-[0.2em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#C9A96E]/40 shadow-lg max-w-full">
-              <Link href="/" className="hover:text-white transition-colors">{blogDetailData.homeText}</Link>
-              <span className="text-[#555]">/</span>
-              <Link href="/blog" className="hover:text-white transition-colors">{blogDetailData.journalBreadcrumb}</Link>
-              <span className="text-[#555]">/</span>
-              <span className="text-white font-semibold">{post.category}</span>
+            <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2 text-[10px] sm:text-[12px] md:text-[14px] uppercase tracking-[0.08em] sm:tracking-[0.15em] md:tracking-[0.2em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-3.5 sm:px-4 py-1.5 rounded-full border border-[#C9A96E]/40 shadow-lg max-w-full whitespace-nowrap overflow-hidden">
+              <Link href="/" className="hover:text-white transition-colors shrink-0">{blogDetailData.homeText}</Link>
+              <span className="text-[#555] shrink-0">/</span>
+              <Link href="/blog" className="hover:text-white transition-colors shrink-0">{blogDetailData.journalBreadcrumb}</Link>
+              <span className="text-[#555] shrink-0">/</span>
+              <span className="text-white font-semibold truncate">{post.category}</span>
             </div>
 
-            <h1 style={{ fontFamily: fonts.heading }} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+            <h1 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
               {post.title.split(" ").slice(0, -1).join(" ")}{" "}
               <em className="font-normal italic bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] bg-clip-text text-transparent">
                 {post.title.split(" ").slice(-1)[0]}
@@ -93,17 +101,16 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 42vw"
-                    style={{ objectPosition: "50% 15%" }}
-                    className="object-cover object-top filter brightness-[0.96] contrast-[1.03] group-hover:scale-105 transition-all duration-700"
+                    className="object-cover object-[50%_15%] filter brightness-[0.96] contrast-[1.03] group-hover:scale-105 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-85" />
 
                   {/* Bottom Metadata */}
                   <div className="absolute bottom-4 left-4 right-4 z-10 p-3 bg-[#0A0A0A]/90 backdrop-blur-md rounded-2xl border border-[#333] flex items-center justify-between">
-                    <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase text-[#C9A96E] font-semibold">
+                    <span className={`${fonts.mono} text-[14px] uppercase text-[#C9A96E] font-semibold`}>
                       {post.date}
                     </span>
-                    <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase text-[#888]">
+                    <span className={`${fonts.mono} text-[14px] uppercase text-[#888]`}>
                       ✦ {post.category}
                     </span>
                   </div>
@@ -114,10 +121,10 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
             {/* Right Prelude & Author */}
             <ScrollReveal variant="fade-right" delay={120} className="lg:col-span-7 space-y-4 sm:space-y-5 text-left">
               <div className="space-y-2">
-                <div style={{ fontFamily: fonts.mono }} className="inline-flex items-center gap-2 bg-[#141414] text-[#E5C583] text-[14px] uppercase tracking-widest px-4 py-1.5 rounded-full border border-[#C9A96E]/40">
+                <div className={`${fonts.mono} inline-flex items-center gap-2 bg-[#141414] text-[#E5C583] text-[14px] uppercase tracking-widest px-4 py-1.5 rounded-full border border-[#C9A96E]/40`}>
                   <span>{blogDetailData.preludeBadge}</span>
                 </div>
-                <h2 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+                <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
                   {post.title}
                 </h2>
               </div>
@@ -135,7 +142,7 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
                   <p className="text-base sm:text-lg italic text-[#DFC18A] leading-relaxed font-light">
                     &ldquo;{post.quote || post.excerpt}&rdquo;
                   </p>
-                  <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-widest text-[#888] block">
+                  <span className={`${fonts.mono} text-[14px] uppercase tracking-widest text-[#888] block`}>
                     {blogDetailData.quoteCredit}
                   </span>
                 </div>
@@ -154,7 +161,7 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
                 </div>
                 <div>
                   <span className="text-[14px] font-bold text-white block leading-tight">By {post.author}</span>
-                  <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-wider text-[#A69C8E] block">
+                  <span className={`${fonts.mono} text-[14px] uppercase tracking-wider text-[#A69C8E] block`}>
                     {blogDetailData.authorRole}
                   </span>
                 </div>
@@ -186,7 +193,7 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
                 
                 {/* Section Heading */}
                 <div className="space-y-1">
-                  <h3 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-snug">
+                  <h3 className={`${fonts.heading} text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-snug`}>
                     {section.heading}
                   </h3>
                   <div className="w-14 h-[2px] bg-[#C9A96E]" />
@@ -205,11 +212,10 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
                       alt={section.heading}
                       fill
                       sizes="(max-width: 1280px) 100vw, 1280px"
-                      style={{ objectPosition: "50% 18%" }}
-                      className="object-cover filter brightness-[0.96] transition-transform duration-700 hover:scale-105"
+                      className="object-cover object-[50%_18%] filter brightness-[0.96] transition-transform duration-700 hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-                    <div style={{ fontFamily: fonts.mono }} className="absolute bottom-3 left-4 text-[14px] tracking-widest text-white/80 uppercase">
+                    <div className={`${fonts.mono} absolute bottom-3 left-4 text-[14px] tracking-widest text-white/80 uppercase`}>
                       {blogDetailData.plateCaption}
                     </div>
                   </div>
@@ -224,8 +230,7 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
                         alt={section.heading}
                         fill
                         sizes="(max-width: 768px) 100vw, 640px"
-                        style={{ objectPosition: "50% 15%" }}
-                        className="object-cover filter brightness-[0.96] transition-transform duration-700 hover:scale-105"
+                        className="object-cover object-[50%_15%] filter brightness-[0.96] transition-transform duration-700 hover:scale-105"
                       />
                     </div>
                     <div className="relative aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden border border-[#262626] bg-[#141414] shadow-xl flex items-center justify-center">
@@ -234,8 +239,7 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
                         alt={section.heading}
                         fill
                         sizes="(max-width: 768px) 100vw, 640px"
-                        style={{ objectPosition: "50% 15%" }}
-                        className="object-cover filter brightness-[0.96] transition-transform duration-700 hover:scale-105"
+                        className="object-cover object-[50%_15%] filter brightness-[0.96] transition-transform duration-700 hover:scale-105"
                       />
                     </div>
                   </div>
@@ -253,18 +257,18 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
           <ScrollReveal variant="fade-up">
             <div className="bg-[#0E0E0E] rounded-3xl border border-[#262626] p-4 sm:p-6 space-y-3.5 shadow-2xl w-full">
               <div className="flex items-center justify-between border-b border-[#1E1E1E] pb-2.5">
-                <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-[0.28em] text-[#C9A96E] font-bold">
+                <span className={`${fonts.mono} text-[14px] uppercase tracking-[0.28em] text-[#C9A96E] font-bold`}>
                   {blogDetailData.principlesSection.badgeLeft}
                 </span>
-                <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-wider text-[#777]">
+                <span className={`${fonts.mono} text-[14px] uppercase tracking-wider text-[#777]`}>
                   {blogDetailData.principlesSection.badgeRight}
                 </span>
               </div>
 
               <div className="text-center max-w-xl mx-auto space-y-1">
-                <h3 style={{ fontFamily: fonts.heading }} className="text-xl sm:text-2xl font-bold text-white">
+                <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
                   {blogDetailData.principlesSection.title}
-                </h3>
+                </h2>
                 <p className="text-sm italic text-[#AAA]">
                   {blogDetailData.principlesSection.subtitle}
                 </p>
@@ -274,10 +278,10 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
                 {blogDetailData.principlesSection.items.map((item, idx) => (
                   <ScrollReveal key={idx} variant="zoom-in" delay={idx * 100}>
                     <div className="bg-[#141414] p-4 rounded-2xl border border-[#222] hover:border-[#C9A96E]/50 transition-colors space-y-1.5 h-full">
-                      <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-widest text-[#E5C583] block">
+                      <span className={`${fonts.mono} text-[14px] uppercase tracking-widest text-[#E5C583] block`}>
                         {item.rule}
                       </span>
-                      <h4 style={{ fontFamily: fonts.heading }} className="font-bold text-base text-white">
+                      <h4 className={`${fonts.heading} font-bold text-base text-white`}>
                         {item.title}
                       </h4>
                       <p className="text-[14px] text-[#999] leading-relaxed font-light">
@@ -297,9 +301,9 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
         <ScrollReveal variant="fade-up">
           <div className="max-w-7xl mx-auto w-full space-y-4 my-[12px]">
             <div className="flex items-center justify-between">
-              <h3 style={{ fontFamily: fonts.heading }} className="text-xl sm:text-2xl font-bold text-white">
+              <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
                 {blogDetailData.moreHeading}
-              </h3>
+              </h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -318,18 +322,17 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
                         alt={rp.title}
                         fill
                         sizes="80px"
-                        style={{ objectPosition: "50% 15%" }}
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="object-cover object-[50%_15%] group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
                     <div className="space-y-1">
-                      <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-wider text-[#C9A96E] block">
+                      <span className={`${fonts.mono} text-[14px] uppercase tracking-wider text-[#C9A96E] block`}>
                         ✦ {rp.category}
                       </span>
-                      <h4 style={{ fontFamily: fonts.heading }} className="text-sm sm:text-base font-bold text-white group-hover:text-[#E5C583] transition-colors line-clamp-2 leading-snug">
+                      <h4 className={`${fonts.heading} text-sm sm:text-base font-bold text-white group-hover:text-[#E5C583] transition-colors line-clamp-2 leading-snug`}>
                         {rp.title}
                       </h4>
-                      <span style={{ fontFamily: fonts.mono }} className="text-[14px] text-[#A69C8E] block">
+                      <span className={`${fonts.mono} text-[14px] text-[#A69C8E] block`}>
                         {rp.date}
                       </span>
                     </div>

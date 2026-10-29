@@ -22,6 +22,12 @@ export default function ScrollReveal({
     const el = ref.current;
     if (!el) return;
 
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      const raf = requestAnimationFrame(() => setIsVisible(true));
+      return () => cancelAnimationFrame(raf);
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -31,7 +37,7 @@ export default function ScrollReveal({
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.05, rootMargin: "0px 0px 0px 0px" }
     );
 
     observer.observe(el);
@@ -39,19 +45,27 @@ export default function ScrollReveal({
   }, []);
 
   const hiddenClasses = {
-    "fade-up": "opacity-0 translate-y-8",
-    "fade-left": "opacity-0 -translate-x-8",
-    "fade-right": "opacity-0 translate-x-8",
-    "zoom-in": "opacity-0 scale-95",
+    "fade-up": "opacity-0 translate-y-5",
+    "fade-left": "opacity-0 -translate-x-5",
+    "fade-right": "opacity-0 translate-x-5",
+    "zoom-in": "opacity-0 scale-[0.97]",
   }[variant];
 
   const visibleClasses = "opacity-100 translate-y-0 translate-x-0 scale-100";
 
+  const delayClass =
+    delay >= 300
+      ? "delay-300"
+      : delay >= 200
+      ? "delay-200"
+      : delay >= 100
+      ? "delay-100"
+      : "";
+
   return (
     <div
       ref={ref}
-      style={{ transitionDelay: `${delay}ms` }}
-      className={`transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform ${
+      className={`transition-all duration-600 ease-out ${delayClass} ${
         isVisible ? visibleClasses : hiddenClasses
       } ${className}`}
     >

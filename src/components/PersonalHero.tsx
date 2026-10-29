@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { homeHero, HeroSlide, fonts } from "@/data/fashionData";
+import { homeHero, HeroSlide, fonts, getObjectPosClass } from "@/data/fashionData";
 
 const HERO_SLIDES: HeroSlide[] = homeHero.slides;
 
@@ -44,8 +44,7 @@ export default function PersonalHero() {
                 fill
                 priority={idx === 0}
                 sizes="100vw"
-                style={{ objectPosition: slide.objectPosition }}
-                className={`object-cover w-full h-full transition-transform duration-7000 ease-out ${
+                className={`object-cover ${getObjectPosClass(slide.objectPosition)} w-full h-full transition-transform duration-7000 ease-out ${
                   isActive ? "scale-105" : "scale-100"
                 }`}
               />
@@ -80,8 +79,7 @@ export default function PersonalHero() {
         <div className="relative z-30 max-w-7xl mx-auto w-full px-6 sm:px-12 md:px-16 pb-6 sm:pb-10 md:pb-12 flex items-end justify-start pointer-events-none">
           <h1
             key={currentIdx}
-            style={{ fontFamily: fonts.heading }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.96] text-left select-none pointer-events-auto bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] bg-clip-text text-transparent drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)] animate-fade-in transition-all duration-700"
+            className={`${fonts.heading} text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.96] text-left select-none pointer-events-auto bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] bg-clip-text text-transparent drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)] animate-fade-in transition-all duration-700`}
           >
             {activeSlide.line1}<br />
             {activeSlide.line2}

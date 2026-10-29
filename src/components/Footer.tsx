@@ -53,7 +53,7 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer style={{ fontFamily: fonts.body }} className="w-full max-w-full overflow-hidden bg-[#080808] text-[#F5EDE5] border-t border-[#1C1C1C] py-6 sm:py-8 px-4 sm:px-6 md:px-8 text-[14px] font-normal">
+    <footer className={`${fonts.body} w-full max-w-full overflow-hidden bg-[#080808] text-[#F5EDE5] border-t border-[#1C1C1C] py-6 sm:py-8 px-4 sm:px-6 md:px-8 text-[14px] font-normal`}>
       <div className="max-w-7xl mx-auto space-y-5 sm:space-y-6">
         
         {/* Main Footer Grid */}
@@ -65,7 +65,7 @@ export default function Footer() {
             <p className="text-[14px] text-[#A69C8E] font-light leading-relaxed max-w-sm">
               {footerData.description}
             </p>
-            <div style={{ fontFamily: fonts.mono }} className="pt-0.5 flex flex-wrap items-center gap-2.5 text-[14px] font-normal uppercase tracking-wider text-[#C9A96E]">
+            <div className={`${fonts.mono} pt-0.5 flex flex-wrap items-center gap-2.5 text-[14px] font-normal uppercase tracking-wider text-[#C9A96E]`}>
               {footerData.locations.map((loc, idx) => (
                 <span key={loc} className="inline-flex items-center gap-2.5">
                   <span>{idx === 0 ? `✦ ${loc}` : loc}</span>
@@ -77,7 +77,7 @@ export default function Footer() {
 
           {/* Atelier Address */}
           <ScrollReveal variant="fade-up" delay={100} className="sm:col-span-1 md:col-span-4 space-y-2">
-            <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-[0.2em] font-semibold text-[#C9A96E] block">
+            <span className={`${fonts.mono} text-[14px] uppercase tracking-[0.2em] font-semibold text-[#C9A96E] block`}>
               {footerData.address.title}
             </span>
             <div className="space-y-1 text-[14px] text-[#C4BCB3] font-light">
@@ -97,7 +97,7 @@ export default function Footer() {
 
           {/* Social Links */}
           <ScrollReveal variant="fade-up" delay={200} className="sm:col-span-1 md:col-span-3 space-y-2.5 sm:text-left md:text-right">
-            <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-[0.2em] font-semibold text-[#C9A96E] block">
+            <span className={`${fonts.mono} text-[14px] uppercase tracking-[0.2em] font-semibold text-[#C9A96E] block`}>
               {footerData.connectTitle}
             </span>
             <p className="text-[#888] text-[14px] font-light">
@@ -125,18 +125,18 @@ export default function Footer() {
         </div>
 
         {/* Navigation Links */}
-        <ScrollReveal variant="fade-up" delay={120} className="py-2 border-b border-[#1A1A1A] flex flex-wrap items-center justify-center gap-x-6 sm:gap-x-8 gap-y-2 text-[14px] uppercase tracking-[0.14em] text-[#A69C8E] text-center font-medium">
+        <div className="py-2 border-b border-[#1A1A1A] flex flex-wrap items-center justify-center gap-x-6 sm:gap-x-8 gap-y-2 text-[14px] uppercase tracking-[0.14em] text-[#A69C8E] text-center font-medium">
           {FOOTER_LINKS.map((item) => (
             <Link key={item.href} href={item.href} className="hover:text-[#C9A96E] transition-colors">
               {item.name}
             </Link>
           ))}
-        </ScrollReveal>
+        </div>
 
         {/* Copyright */}
-        <ScrollReveal variant="fade-up" delay={180} className="flex items-center justify-center text-[14px] text-[#888] text-center">
+        <div className="flex items-center justify-center text-[14px] text-[#888] text-center">
           <p>{footerData.copyright}</p>
-        </ScrollReveal>
+        </div>
 
       </div>
     </footer>

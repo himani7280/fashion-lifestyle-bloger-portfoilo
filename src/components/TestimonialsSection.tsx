@@ -1,6 +1,6 @@
 "use client";
 
-
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import { testimonials, testimonialsSectionData, fonts } from "@/data/fashionData";
@@ -8,29 +8,32 @@ import { testimonials, testimonialsSectionData, fonts } from "@/data/fashionData
 export default function TestimonialsSection() {
   // Duplicate list for seamless marquee
   const endorsementMarqueeList = [...testimonials, ...testimonials];
+  const reelRef = useRef<HTMLDivElement>(null);
+  const pausedRef = useRef(false);
+
+  useEffect(() => {
+    const el = reelRef.current;
+    if (!el) return;
+    let rafId: number;
+    let pos = 0;
+
+    const tick = () => {
+      if (!pausedRef.current && el) {
+        pos += 0.6;
+        if (pos >= el.scrollWidth / 2) {
+          pos = 0;
+        }
+        el.scrollLeft = pos;
+      }
+      rafId = requestAnimationFrame(tick);
+    };
+
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
+  }, []);
 
   return (
     <section className="relative w-full py-10 sm:py-12 md:py-14 px-4 sm:px-6 md:px-8 border-b border-[#1C1C1C] bg-[#070707] overflow-hidden select-none">
-      {/* Marquee Keyframes */}
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-          @keyframes endorsementLoopMarquee {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
-          }
-          .animate-endorsement-loop {
-            display: flex;
-            width: max-content;
-            animation: endorsementLoopMarquee 36s linear infinite;
-          }
-          .animate-endorsement-loop:hover {
-            animation-play-state: paused;
-          }
-        `,
-        }}
-      />
-
       <ScrollReveal variant="fade-up" className="max-w-7xl mx-auto w-full space-y-3 mb-6">
         
         {/* Header */}
@@ -39,7 +42,7 @@ export default function TestimonialsSection() {
             <span className="text-[14px] sm:text-[15px] uppercase tracking-[0.22em] text-[#C9A96E] font-semibold block mb-0.5">
               {testimonialsSectionData.badge}
             </span>
-            <h2 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
+            <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
               {testimonialsSectionData.titleStart}
               <em className="italic font-light text-[#E5C583]">
                 {testimonialsSectionData.titleHighlight}
@@ -52,7 +55,7 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Header Tape */}
-        <div style={{ fontFamily: fonts.mono }} className="flex items-center justify-between text-[14px] font-normal uppercase tracking-[0.2em] text-[#666] px-1">
+        <div className={`${fonts.mono} flex items-center justify-between text-[14px] font-normal uppercase tracking-[0.2em] text-[#666] px-1`}>
           <span>{testimonialsSectionData.headerTapeLeft}</span>
           <span className="hidden sm:inline">{testimonialsSectionData.headerTapeCenter}</span>
           <span>{testimonialsSectionData.headerTapeRight}</span>
@@ -62,7 +65,13 @@ export default function TestimonialsSection() {
 
       {/* Marquee Reel */}
       <ScrollReveal variant="fade-up" delay={120} className="w-full overflow-hidden select-none py-1 sm:py-2">
-        <div className="animate-endorsement-loop gap-3.5 sm:gap-4 px-4" title="Continuous Marquee Reel (Hover to pause)">
+        <div
+          ref={reelRef}
+          onMouseEnter={() => { pausedRef.current = true; }}
+          onMouseLeave={() => { pausedRef.current = false; }}
+          className="flex overflow-x-hidden gap-3.5 sm:gap-4 px-4"
+          title="Continuous Marquee Reel (Hover to pause)"
+        >
           {endorsementMarqueeList.map((t, index) => (
             <div
               key={`${t.id}-${index}`}
@@ -71,7 +80,7 @@ export default function TestimonialsSection() {
               <div>
                 {/* Rating Stars */}
                 <div className="flex items-center justify-between mb-1.5">
-                  <span style={{ fontFamily: fonts.heading }} className="text-xl sm:text-2xl font-normal text-[#C9A96E]/40 leading-none">
+                  <span className={`${fonts.heading} text-xl sm:text-2xl font-normal text-[#C9A96E]/40 leading-none`}>
                     &ldquo;
                   </span>
                   <div className="flex items-center gap-0.5 text-[#C9A96E] text-[14px]">
@@ -101,14 +110,14 @@ export default function TestimonialsSection() {
                   />
                 </div>
                 <div className="min-w-0">
-                  <h4 style={{ fontFamily: fonts.heading }} className="text-[15px] sm:text-[16px] font-bold text-white group-hover:text-[#E5C583] transition-colors leading-tight truncate">
+                  <h4 className={`${fonts.heading} text-[15px] sm:text-[16px] font-bold text-white group-hover:text-[#E5C583] transition-colors leading-tight truncate`}>
                     {t.author}
                   </h4>
                   <p className="text-[14px] uppercase tracking-wider text-[#C9A96E] font-medium leading-tight truncate">
                     {t.role}
                   </p>
                   {t.city && (
-                    <p style={{ fontFamily: fonts.mono }} className="text-[14px] font-normal uppercase tracking-wider text-[#888] leading-none mt-1">
+                    <p className={`${fonts.mono} text-[14px] font-normal uppercase tracking-wider text-[#888] leading-none mt-1`}>
                       {t.city}
                     </p>
                   )}
@@ -122,7 +131,7 @@ export default function TestimonialsSection() {
 
       {/* Footer Tape */}
       <ScrollReveal variant="fade-up" delay={200} className="max-w-7xl mx-auto w-full pt-3">
-        <div style={{ fontFamily: fonts.mono }} className="flex items-center justify-between text-[14px] font-normal uppercase tracking-[0.3em] text-[#777] border-t border-[#1C1C1C] pt-2">
+        <div className={`${fonts.mono} flex items-center justify-between text-[14px] font-normal uppercase tracking-[0.3em] text-[#777] border-t border-[#1C1C1C] pt-2`}>
           <span>{testimonialsSectionData.footerTapeLeft}</span>
           <span>{testimonialsSectionData.footerTapeCenter}</span>
           <span>{testimonialsSectionData.footerTapeRight}</span>

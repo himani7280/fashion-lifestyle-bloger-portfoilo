@@ -149,6 +149,50 @@ export const thankYouData = sections.ThankYou.variants.FashionThankYou1;
 export const fonts = fashionDataJson.Fashion.fonts;
 export const fashionTemplateData = fashionDataJson.Fashion;
 
+const OBJECT_POS_CLASSES: Record<string, string> = {
+  "50% 15%": "object-[50%_15%]",
+  "50% 18%": "object-[50%_18%]",
+  "50% 20%": "object-[50%_20%]",
+  "50% 25%": "object-[50%_25%]",
+  "50% 28%": "object-[50%_28%]",
+  "64% 4%": "object-[64%_4%]",
+};
+
+export function getObjectPosClass(pos?: string): string {
+  return (pos && OBJECT_POS_CLASSES[pos]) || "object-[50%_20%]";
+}
+
+const COLOR_BG_CLASSES: Record<string, string> = {
+  "#0A0A0A": "bg-[#0A0A0A]",
+  "#0D1B2A": "bg-[#0D1B2A]",
+  "#0F0F0F": "bg-[#0F0F0F]",
+  "#0F382A": "bg-[#0F382A]",
+  "#111111": "bg-[#111111]",
+  "#141414": "bg-[#141414]",
+  "#162846": "bg-[#162846]",
+  "#242526": "bg-[#242526]",
+  "#7A1C24": "bg-[#7A1C24]",
+  "#8B1E2E": "bg-[#8B1E2E]",
+  "#9E6D38": "bg-[#9E6D38]",
+  "#9E9E9E": "bg-[#9E9E9E]",
+  "#B85D6C": "bg-[#B85D6C]",
+  "#BF5700": "bg-[#BF5700]",
+  "#C4A482": "bg-[#C4A482]",
+  "#C9A96E": "bg-[#C9A96E]",
+  "#D4AF37": "bg-[#D4AF37]",
+  "#D9C9B4": "bg-[#D9C9B4]",
+  "#DFC18A": "bg-[#DFC18A]",
+  "#E0DED9": "bg-[#E0DED9]",
+  "#E5C583": "bg-[#E5C583]",
+  "#EDE6D6": "bg-[#EDE6D6]",
+  "#F0EBE1": "bg-[#F0EBE1]",
+  "#F7F5F0": "bg-[#F7F5F0]",
+};
+
+export function getColorBgClass(color?: string): string {
+  return (color && COLOR_BG_CLASSES[color]) || "bg-[#C9A96E]";
+}
+
 export function getSectionVariant<T = Record<string, unknown>>(sectionKey: string, variantKey: string): T | undefined {
   const s = (fashionDataJson as unknown as { Fashion: { sections: Record<string, { variants: Record<string, T> }> } })?.Fashion?.sections;
   return s?.[sectionKey]?.variants?.[variantKey];

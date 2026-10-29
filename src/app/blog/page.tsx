@@ -15,7 +15,7 @@ export default function BlogPage() {
   const posts = blogPosts;
 
   return (
-    <div style={{ fontFamily: fonts.body }} className="bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden">
+    <div className={`${fonts.body} bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden`}>
       
       {/* Hero Banner */}
       <section className="relative w-full py-[12px] border-b border-[#1A1A1A] bg-[#0A0A0A]">
@@ -27,8 +27,7 @@ export default function BlogPage() {
               fill
               priority
               sizes="100vw"
-              style={{ objectPosition: "50% 20%" }}
-              className="object-cover filter brightness-[0.92] contrast-[1.04]"
+              className="object-cover object-[50%_20%] filter brightness-[0.92] contrast-[1.04]"
             />
             <div className="absolute inset-0 bg-black/40 pointer-events-none" />
             <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
@@ -41,7 +40,7 @@ export default function BlogPage() {
               <span className="text-white font-semibold">{blogHero.breadcrumb}</span>
             </div>
 
-            <h1 style={{ fontFamily: fonts.heading }} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+            <h1 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
               {blogHero.titleStart}{" "}
               <em className="font-normal italic bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] bg-clip-text text-transparent">
                 {blogHero.titleHighlight}
@@ -72,14 +71,13 @@ export default function BlogPage() {
                     alt={post.title}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    style={{ objectPosition: "50% 15%" }}
-                    className="object-cover object-top filter brightness-[0.94] contrast-[1.03] group-hover:scale-106 group-hover:brightness-105 transition-all duration-700 ease-out"
+                    className="object-cover object-[50%_15%] filter brightness-[0.94] contrast-[1.03] group-hover:scale-106 group-hover:brightness-105 transition-all duration-700 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/85 via-transparent to-transparent pointer-events-none" />
 
                   {/* Post Date Badge */}
                   <div className="absolute bottom-4 left-4 z-10 flex items-center">
-                    <span style={{ fontFamily: fonts.mono }} className="bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/10 text-[14px] font-normal text-[#C4BCB3] whitespace-nowrap">
+                    <span className={`${fonts.mono} bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/10 text-[14px] font-normal text-[#C4BCB3] whitespace-nowrap`}>
                       {post.date}
                     </span>
                   </div>
@@ -90,16 +88,16 @@ export default function BlogPage() {
                 <div className="space-y-4">
                   {/* Category & Date */}
                   <div className="flex items-center flex-wrap gap-2.5 sm:gap-3">
-                    <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-[0.14em] text-[#C9A96E] font-bold bg-[#141414] px-3.5 py-1 rounded-full border border-[#C9A96E]/30 whitespace-nowrap inline-block">
+                    <span className={`${fonts.mono} text-[14px] uppercase tracking-[0.14em] text-[#C9A96E] font-bold bg-[#141414] px-3.5 py-1 rounded-full border border-[#C9A96E]/30 whitespace-nowrap inline-block`}>
                       ✦ {post.category}
                     </span>
-                    <span style={{ fontFamily: fonts.mono }} className="text-[14px] font-normal text-[#A69C8E] whitespace-nowrap">
+                    <span className={`${fonts.mono} text-[14px] font-normal text-[#A69C8E] whitespace-nowrap`}>
                       {post.date}
                     </span>
                   </div>
 
                   <Link href={`/blog/${post.id}`} className="group block">
-                    <h2 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-4xl md:text-5xl font-bold text-white group-hover:text-[#E5C583] transition-colors leading-tight">
+                    <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white group-hover:text-[#E5C583] transition-colors leading-tight`}>
                       {post.title}
                     </h2>
                   </Link>
@@ -118,7 +116,7 @@ export default function BlogPage() {
                       <span>→</span>
                     </Link>
 
-                    <div style={{ fontFamily: fonts.mono }} className="flex items-center gap-2 text-[14px] font-normal text-[#888] whitespace-nowrap">
+                    <div className={`${fonts.mono} flex items-center gap-2 text-[14px] font-normal text-[#888] whitespace-nowrap`}>
                       <span>{blogPageData.byPrefix} {post.author}</span>
                     </div>
                   </div>
@@ -160,10 +158,10 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto w-full my-[12px]">
           <ScrollReveal variant="zoom-in">
             <div className="bg-[#0E0E0E] rounded-3xl border border-[#222] p-5 sm:p-8 text-center space-y-3.5 shadow-2xl">
-              <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-[0.25em] text-[#C9A96E] block font-semibold">
+              <span className={`${fonts.mono} text-[14px] uppercase tracking-[0.25em] text-[#C9A96E] block font-semibold`}>
                 {blogPageData.consultationBanner.badge}
               </span>
-              <h2 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
+              <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
                 {blogPageData.consultationBanner.titleStart}{" "}
                 <em className="italic font-light text-[#E5C583]">
                   {blogPageData.consultationBanner.titleHighlight}

@@ -69,7 +69,7 @@ export default function AnimatedCounter({
   }, [hasAnimated, targetNumber, prefix, suffix, value, duration]);
 
   return (
-    <span ref={elementRef} style={{ fontFamily: fonts.heading }} className={className}>
+    <span ref={elementRef} className={`${fonts.heading} lining-nums tabular-nums ${className}`}>
       {hasAnimated ? displayValue : `${prefix}0${suffix}`}
     </span>
   );

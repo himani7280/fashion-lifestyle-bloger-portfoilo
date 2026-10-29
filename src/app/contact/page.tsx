@@ -52,7 +52,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div style={{ fontFamily: fonts.body }} className="bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden">
+    <div className={`${fonts.body} bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden`}>
       
       {/* Hero Banner */}
       <section className="relative w-full py-2 sm:py-3 border-b border-[#1C1C1C]">
@@ -64,8 +64,7 @@ export default function ContactPage() {
               fill
               priority
               sizes="100vw"
-              style={{ objectPosition: "50% 20%" }}
-              className="object-cover filter brightness-[0.92] contrast-[1.04]"
+              className="object-cover object-[50%_20%] filter brightness-[0.92] contrast-[1.04]"
             />
             <div className="absolute inset-0 bg-black/40 pointer-events-none" />
             <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
@@ -78,7 +77,7 @@ export default function ContactPage() {
               <span className="text-white font-semibold">{contactHero.breadcrumb}</span>
             </div>
 
-            <h1 style={{ fontFamily: fonts.heading }} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight tracking-wide">
+            <h1 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
               {contactHero.title}
             </h1>
           </div>
@@ -94,7 +93,7 @@ export default function ContactPage() {
             <span className="text-[14px] uppercase tracking-[0.3em] text-[#C9A96E] font-semibold block">
               {contact.sectionBadge}
             </span>
-            <h2 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
+            <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
               {contact.sectionTitleStart}{" "}
               <em className="italic font-light text-[#E5C583]">
                 {contact.sectionTitleHighlight}
@@ -115,7 +114,7 @@ export default function ContactPage() {
               <span className="text-[9.5px] uppercase tracking-[0.25em] text-[#C9A96E] font-semibold block">
                 {contact.formBadge}
               </span>
-              <h3 style={{ fontFamily: fonts.heading }} className="text-xl sm:text-2xl font-bold text-white">
+              <h3 className={`${fonts.heading} text-xl sm:text-2xl font-bold text-white`}>
                 {contact.formTitle}
               </h3>
             </div>
@@ -253,8 +252,7 @@ export default function ContactPage() {
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                style={{ objectPosition: "50% 15%" }}
-                className="object-cover filter brightness-[0.98] contrast-[1.02] group-hover:scale-105 transition-all duration-700 ease-out"
+                className="object-cover object-[50%_15%] filter brightness-[0.98] contrast-[1.02] group-hover:scale-105 transition-all duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/30 via-transparent to-transparent opacity-60 pointer-events-none" />
             </div>
@@ -271,17 +269,17 @@ export default function ContactPage() {
         <ScrollReveal variant="fade-up">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-4 pb-3 border-b border-[#1C1C1C]">
             <div>
-              <span style={{ fontFamily: fonts.mono }} className="text-[14px] uppercase tracking-[0.3em] text-[#C9A96E] font-semibold block mb-0.5">
+              <span className={`${fonts.mono} text-[14px] uppercase tracking-[0.3em] text-[#C9A96E] font-semibold block mb-0.5`}>
                 {contact.mapBadge}
               </span>
-              <h2 style={{ fontFamily: fonts.heading }} className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">
+              <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
                 {contact.mapTitleStart}{" "}
                 <em className="italic font-light text-[#E5C583]">
                   {contact.mapTitleHighlight}
                 </em>
               </h2>
             </div>
-            <div style={{ fontFamily: fonts.mono }} className="flex items-center gap-2 text-[14px] text-[#AAA]">
+            <div className={`${fonts.mono} flex items-center gap-2 text-[14px] text-[#AAA]`}>
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
               <span>{contact.flagshipCity}</span>
             </div>
@@ -296,20 +294,19 @@ export default function ContactPage() {
               src={contact.mapEmbedUrl}
               width="100%"
               height="100%"
-              style={{ border: 0, filter: "invert(90%) hue-rotate(180deg) contrast(95%) brightness(90%)" }}
               allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-full"
+              className="w-full h-full border-0 invert-[.90] hue-rotate-180 contrast-95 brightness-90"
             />
 
             {/* Floating Map Pin Badge */}
             <div className="absolute bottom-3 left-3 right-3 sm:left-5 sm:right-auto sm:max-w-md p-3.5 bg-[#0A0A0A]/95 backdrop-blur-md rounded-2xl border border-[#C9A96E]/50 shadow-2xl flex items-center justify-between gap-4">
               <div>
-                <span style={{ fontFamily: fonts.mono }} className="text-[9.5px] uppercase tracking-[0.2em] text-[#C9A96E] font-bold block">
+                <span className={`${fonts.mono} text-[9.5px] uppercase tracking-[0.2em] text-[#C9A96E] font-bold block`}>
                   {contact.pinBadge}
                 </span>
-                <p style={{ fontFamily: fonts.heading }} className="text-sm font-bold text-white">
+                <p className={`${fonts.heading} text-sm font-bold text-white`}>
                   {contact.flagshipAddress}
                 </p>
               </div>
