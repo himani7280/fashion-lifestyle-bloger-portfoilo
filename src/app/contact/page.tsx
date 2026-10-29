@@ -245,7 +245,7 @@ export default function ContactPage() {
 
           {/* Right Portrait */}
           <ScrollReveal variant="fade-right" delay={120} className="lg:col-span-6 relative group flex flex-col">
-            <div className="relative w-full h-full min-h-[380px] lg:min-h-full rounded-3xl overflow-hidden border border-[#C9A96E]/40 bg-[#141414] shadow-2xl flex-1">
+            <div className="relative w-full h-full min-h-[380px] lg:min-h-0 rounded-3xl overflow-hidden border border-[#C9A96E]/40 bg-[#141414] shadow-2xl flex-1">
               <Image
                 src={contact.contactImage}
                 alt={contact.contactImageAlt}

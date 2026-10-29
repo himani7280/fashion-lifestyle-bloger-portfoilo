@@ -122,7 +122,7 @@ export default function ServicesContent() {
 
       {/* Atelier Services */}
       <section className="relative w-full py-[12px] px-4 sm:px-6 md:px-8 border-b border-[#1C1C1C] bg-[#0A0A0A]">
-        <div className="max-w-7xl mx-auto my-[12px] py-[12px] space-y-12 sm:space-y-16">
+        <div className="max-w-7xl mx-auto my-[12px] py-[12px] space-y-6 sm:space-y-8">
           
           {/* Section Header */}
           <ScrollReveal variant="fade-up" className="text-center max-w-3xl mx-auto space-y-2">
@@ -141,7 +141,7 @@ export default function ServicesContent() {
           </ScrollReveal>
 
           {/* Alternating Service Spreads */}
-          <div className="space-y-12 sm:space-y-16">
+          <div className="space-y-5 sm:space-y-6">
             {services.map((srv, idx) => {
               const isEven = idx % 2 === 1;
               const romanNums = ["I", "II", "III", "IV"];
@@ -157,7 +157,7 @@ export default function ServicesContent() {
                     
                     {/* Image Column */}
                     <div className={`lg:col-span-5 relative flex flex-col ${isEven ? "lg:order-2" : "lg:order-1"}`}>
-                      <div className="relative w-full h-[280px] sm:h-[320px] lg:h-full min-h-[280px] rounded-2xl overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.85)] border border-[#C9A96E]/30 group bg-[#161616] flex-1">
+                      <div className="relative w-full h-[280px] sm:h-[320px] lg:h-full min-h-[280px] lg:min-h-0 rounded-2xl overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.85)] border border-[#C9A96E]/30 group bg-[#161616] flex-1">
                         {/* Corner Accents */}
                         <div className="absolute top-2.5 left-2.5 w-4 h-4 border-t-2 border-l-2 border-[#C9A96E] z-20 pointer-events-none" />
                         <div className="absolute bottom-2.5 right-2.5 w-4 h-4 border-b-2 border-r-2 border-[#C9A96E] z-20 pointer-events-none" />
@@ -186,7 +186,7 @@ export default function ServicesContent() {
                     </div>
 
                     {/* Content Column */}
-                    <div className={`lg:col-span-7 space-y-4 relative ${isEven ? "lg:order-1" : "lg:order-2"}`}>
+                    <div className={`lg:col-span-7 flex flex-col justify-between space-y-4 relative ${isEven ? "lg:order-1" : "lg:order-2"}`}>
                       
                       {/* Roman Numeral & Subtitle */}
                       <div className="flex items-center gap-3 flex-wrap">
@@ -236,11 +236,11 @@ export default function ServicesContent() {
 
       {/* Why Partner With Us */}
       <section className="py-[12px] px-4 sm:px-6 md:px-8 max-w-7xl mx-auto my-[12px] border-b border-[#1C1C1C]">
-        <div className="my-[12px] py-[12px] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        <div className="my-[12px] py-[12px] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
           
           {/* Stylist Portrait */}
-          <ScrollReveal variant="fade-left" className="lg:col-span-5 relative group">
-            <div className="relative aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] rounded-3xl overflow-hidden border border-[#2B2B2B] group-hover:border-[#C9A96E]/80 transition-colors shadow-[0_10px_35px_rgba(0,0,0,0.85)] bg-[#121212]">
+          <ScrollReveal variant="fade-left" className="lg:col-span-5 relative group flex flex-col">
+            <div className="relative w-full aspect-[4/5] sm:aspect-[1/1] lg:aspect-auto lg:h-full flex-1 min-h-[340px] lg:min-h-0 rounded-3xl overflow-hidden border border-[#2B2B2B] group-hover:border-[#C9A96E]/80 transition-colors shadow-[0_10px_35px_rgba(0,0,0,0.85)] bg-[#121212]">
               <Image
                 src={advantage.image}
                 alt={advantage.philosophyLabel}
@@ -263,8 +263,8 @@ export default function ServicesContent() {
           </ScrollReveal>
 
           {/* Narrative & Metrics */}
-          <ScrollReveal variant="fade-right" delay={120} className="lg:col-span-7 space-y-4">
-            <div className="inline-block bg-[#141414] text-[#E5C583] text-[14px] uppercase tracking-[0.22em] font-semibold px-3.5 py-1 rounded-full border border-[#C9A96E]/30">
+          <ScrollReveal variant="fade-right" delay={120} className="lg:col-span-7 flex flex-col justify-between space-y-4">
+            <div className="inline-block w-fit self-start bg-[#141414] text-[#E5C583] text-[14px] uppercase tracking-[0.22em] font-semibold px-3.5 py-1 rounded-full border border-[#C9A96E]/30">
               {advantage.badge}
             </div>
 

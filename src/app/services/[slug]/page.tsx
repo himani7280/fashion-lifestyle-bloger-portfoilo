@@ -88,12 +88,12 @@ async function ServiceDetailContent({ params }: ServicePageProps) {
       {/* Editorial Feature Split */}
       <section className="w-full py-[12px] px-4 sm:px-6 md:px-8 border-b border-[#1A1A1A] bg-[#0A0A0A]">
         <div className="max-w-7xl mx-auto w-full my-[12px]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-stretch">
             
             {/* Left Portrait */}
-            <ScrollReveal variant="fade-left" className="lg:col-span-5 relative group">
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-[#C9A96E]/50 bg-[#121212] shadow-[0_20px_50px_rgba(0,0,0,0.9)] p-2.5">
-                <div className="relative w-full h-full rounded-2xl overflow-hidden bg-[#161616]">
+            <ScrollReveal variant="fade-left" className="lg:col-span-5 relative group flex flex-col">
+              <div className="relative w-full aspect-[4/5] lg:aspect-auto lg:h-full flex-1 min-h-[340px] lg:min-h-0 flex flex-col rounded-3xl overflow-hidden border border-[#C9A96E]/50 bg-[#121212] shadow-[0_20px_50px_rgba(0,0,0,0.9)] p-2.5">
+                <div className="relative w-full h-full flex-1 rounded-2xl overflow-hidden bg-[#161616]">
                   <Image
                     src={detail.heroImage}
                     alt={detail.title}
@@ -118,7 +118,7 @@ async function ServiceDetailContent({ params }: ServicePageProps) {
             </ScrollReveal>
 
             {/* Right Prelude & Specs */}
-            <ScrollReveal variant="fade-right" delay={120} className="lg:col-span-7 space-y-4 sm:space-y-5 text-left">
+            <ScrollReveal variant="fade-right" delay={120} className="lg:col-span-7 flex flex-col justify-between space-y-4 sm:space-y-5 text-left">
               <div className="space-y-2">
                 <div className={`${fonts.mono} inline-flex items-center gap-2 bg-[#141414] text-[#E5C583] text-[14px] uppercase tracking-widest px-4 py-1.5 rounded-full border border-[#C9A96E]/40`}>
                   <span>{serviceDetailsData.preludeBadge}</span>

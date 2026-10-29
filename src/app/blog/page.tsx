@@ -64,7 +64,7 @@ export default function BlogPage() {
               const imageCard = (
                 <Link
                   href={`/blog/${post.id}`}
-                  className="group block relative aspect-[16/11] sm:aspect-[16/10] w-full rounded-3xl overflow-hidden bg-[#141414] border border-[#262626] hover:border-[#C9A96E] transition-all duration-700 shadow-2xl hover:shadow-[0_20px_50px_rgba(201,169,110,0.25)] cursor-pointer"
+                  className="group block relative aspect-[16/11] sm:aspect-[16/10] md:aspect-auto md:h-full flex-1 min-h-[260px] md:min-h-0 w-full rounded-3xl overflow-hidden bg-[#141414] border border-[#262626] hover:border-[#C9A96E] transition-all duration-700 shadow-2xl hover:shadow-[0_20px_50px_rgba(201,169,110,0.25)] cursor-pointer"
                 >
                   <Image
                     src={post.image}
@@ -85,7 +85,7 @@ export default function BlogPage() {
               );
 
               const contentCard = (
-                <div className="space-y-4">
+                <div className="flex flex-col justify-between h-full space-y-4">
                   {/* Category & Date */}
                   <div className="flex items-center flex-wrap gap-2.5 sm:gap-3">
                     <span className={`${fonts.mono} text-[14px] uppercase tracking-[0.14em] text-[#C9A96E] font-bold bg-[#141414] px-3.5 py-1 rounded-full border border-[#C9A96E]/30 whitespace-nowrap inline-block`}>
@@ -126,7 +126,7 @@ export default function BlogPage() {
               return (
                 <div
                   key={post.id}
-                  className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 lg:gap-16 items-center relative"
+                  className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 lg:gap-16 items-stretch relative"
                 >
                   {/* Timeline Node */}
                   <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-20 w-7 h-7 rounded-full bg-[#0A0A0A] border border-[#C9A96E] items-center justify-center text-[#E5C583] text-[14px] shadow-[0_0_15px_rgba(201,169,110,0.5)]">
@@ -136,13 +136,13 @@ export default function BlogPage() {
                   {/* Alternating Columns */}
                   {isEven ? (
                     <>
-                      <ScrollReveal variant="fade-left" className="order-1 md:order-1">{imageCard}</ScrollReveal>
-                      <ScrollReveal variant="fade-right" delay={120} className="order-2 md:order-2">{contentCard}</ScrollReveal>
+                      <ScrollReveal variant="fade-left" className="order-1 md:order-1 flex flex-col">{imageCard}</ScrollReveal>
+                      <ScrollReveal variant="fade-right" delay={120} className="order-2 md:order-2 flex flex-col">{contentCard}</ScrollReveal>
                     </>
                   ) : (
                     <>
-                      <ScrollReveal variant="fade-left" delay={120} className="order-2 md:order-1">{contentCard}</ScrollReveal>
-                      <ScrollReveal variant="fade-right" className="order-1 md:order-2">{imageCard}</ScrollReveal>
+                      <ScrollReveal variant="fade-left" delay={120} className="order-2 md:order-1 flex flex-col">{contentCard}</ScrollReveal>
+                      <ScrollReveal variant="fade-right" className="order-1 md:order-2 flex flex-col">{imageCard}</ScrollReveal>
                     </>
                   )}
                 </div>

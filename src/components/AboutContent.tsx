@@ -60,11 +60,11 @@ export default function AboutContent() {
         </ScrollReveal>
 
         {/* Mission Split */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 xl:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 xl:gap-20 items-stretch">
           
           {/* Left Portrait */}
-          <ScrollReveal variant="fade-left" className="lg:col-span-5 flex justify-start">
-            <div className="relative w-full aspect-[4/3] sm:aspect-[1/1] overflow-hidden rounded-2xl bg-[#111111] border border-[#262626] shadow-[0_16px_50px_rgba(0,0,0,0.85)] group">
+          <ScrollReveal variant="fade-left" className="lg:col-span-5 flex flex-col">
+            <div className="relative w-full aspect-[4/3] sm:aspect-[1/1] lg:aspect-auto lg:h-full flex-1 min-h-[320px] lg:min-h-0 overflow-hidden rounded-2xl bg-[#111111] border border-[#262626] shadow-[0_16px_50px_rgba(0,0,0,0.85)] group">
               <Image
                 src={aboutPageData.image}
                 alt={aboutPageData.imageAlt}
@@ -78,7 +78,7 @@ export default function AboutContent() {
           </ScrollReveal>
 
           {/* Right Narrative */}
-          <ScrollReveal variant="fade-right" delay={120} className="lg:col-span-7 space-y-5 text-left">
+          <ScrollReveal variant="fade-right" delay={120} className="lg:col-span-7 flex flex-col justify-between space-y-5 text-left">
             <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
               {aboutPageData.missionTitle}
             </h2>
@@ -231,7 +231,7 @@ export default function AboutContent() {
               return (
                 <div
                   key={pillar.id}
-                  className={`grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center ${
+                  className={`grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-stretch ${
                     isEven ? "lg:flex-row-reverse" : ""
                   }`}
                 >
@@ -239,9 +239,9 @@ export default function AboutContent() {
                   {/* Image Column */}
                   <ScrollReveal
                     variant={isEven ? "fade-right" : "fade-left"}
-                    className={`lg:col-span-6 relative ${isEven ? "lg:order-2" : "lg:order-1"}`}
+                    className={`lg:col-span-6 relative flex flex-col ${isEven ? "lg:order-2" : "lg:order-1"}`}
                   >
-                    <div className="relative aspect-[16/11] sm:aspect-[16/10] lg:aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,0.8)] border border-[#C9A96E]/30 group">
+                    <div className="relative aspect-[16/11] sm:aspect-[16/10] lg:aspect-auto lg:h-full flex-1 min-h-[280px] lg:min-h-0 w-full overflow-hidden rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,0.8)] border border-[#C9A96E]/30 group">
                       <Image
                         src={pillar.image}
                         alt={pillar.title}
@@ -269,7 +269,7 @@ export default function AboutContent() {
                   <ScrollReveal
                     variant={isEven ? "fade-left" : "fade-right"}
                     delay={120}
-                    className={`lg:col-span-6 space-y-5 relative ${isEven ? "lg:order-1" : "lg:order-2"}`}
+                    className={`lg:col-span-6 flex flex-col justify-between space-y-5 relative ${isEven ? "lg:order-1" : "lg:order-2"}`}
                   >
                     
                     {/* Roman Numeral Watermark */}
