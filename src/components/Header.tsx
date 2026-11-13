@@ -51,13 +51,13 @@ export default function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 transition-all duration-300 w-full max-w-full overflow-x-clip py-1 sm:py-1.5 px-4 sm:px-6 md:px-8 ${
+        className={`sticky top-0 z-50 transition-all duration-300 w-full max-w-full overflow-x-hidden py-1 sm:py-1.5 ${
           isScrolled
             ? "bg-[#0A0A0A]/95 backdrop-blur-md border-b border-[#222222] shadow-[0_4px_30px_rgba(0,0,0,0.9)]"
             : "bg-[#0A0A0A] border-b border-[#1A1A1A]"
         }`}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between w-full">
+        <div className="w-full flex items-center justify-between min-w-0 px-2 sm:px-3 md:px-5 gap-2 sm:gap-3">
           
           {/* Brand Logo */}
           <div className="shrink-0 flex items-center">
@@ -65,7 +65,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className={`${fonts.body} hidden xl:flex items-center gap-8 xl:gap-9 2xl:gap-12 text-[14px] uppercase tracking-[0.14em] font-medium`}>
+          <nav className={`${fonts.body} hidden xl:flex items-center gap-6 xl:gap-8 2xl:gap-10 text-[13px] sm:text-[14px] uppercase tracking-[0.12em] font-medium`}>
             {NAV_LINKS.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -93,7 +93,7 @@ export default function Header() {
             <Link
               href={navigation.button.link}
               onClick={handleNavClick}
-              className={`${fonts.body} inline-flex items-center justify-center bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] px-5 sm:px-6 py-2 rounded-full text-[13px] sm:text-[14px] uppercase tracking-[0.14em] font-bold transition-all duration-300 shadow-[0_4px_15px_rgba(201,169,110,0.25)] hover:shadow-[0_6px_25px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer`}
+              className={`${fonts.body} inline-flex items-center justify-center bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] px-3 sm:px-3.5 py-1.5 rounded-full text-[12px] sm:text-[13px] uppercase tracking-[0.08em] font-bold transition-all duration-300 shadow-[0_4px_15px_rgba(201,169,110,0.25)] hover:shadow-[0_6px_25px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer whitespace-nowrap`}
             >
               {navigation.button.text}
             </Link>
@@ -102,7 +102,7 @@ export default function Header() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="xl:hidden p-2 text-[#C9A96E] hover:text-[#E5C583] transition-colors focus:outline-none shrink-0 cursor-pointer"
+            className="xl:hidden p-1.5 text-[#C9A96E] hover:text-[#E5C583] transition-colors focus:outline-none shrink-0 cursor-pointer"
             aria-label="Toggle Navigation Menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -148,14 +148,13 @@ export default function Header() {
                     key={item.href}
                     href={item.href}
                     onClick={handleNavClick}
-                    className={`py-3.5 border-b border-[#1A1A1A] flex items-center justify-between transition-colors ${
+                    className={`py-3.5 border-b border-[#1A1A1A] block transition-colors ${
                       pathname === item.href
                         ? "text-[#C9A96E] font-bold"
                         : "text-[#C4BCB3] hover:text-[#E5C583]"
                     }`}
                   >
-                    <span>{item.name}</span>
-                    <span className="text-sm text-[#C9A96E]">→</span>
+                    {item.name}
                   </Link>
                 ))}
               </nav>

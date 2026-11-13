@@ -52,8 +52,8 @@ async function BlogPostContent({ params }: BlogPostProps) {
     <div className={`${fonts.body} bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden`}>
       
       {/* Hero Banner */}
-      <section className="relative w-full py-[12px] border-b border-[#1A1A1A] bg-[#0A0A0A]">
-        <div className="relative w-full overflow-hidden h-[280px] sm:h-[340px] md:h-[380px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
+      <section className="relative w-full overflow-hidden py-[12px] border-b border-[#1A1A1A] bg-[#0A0A0A]">
+        <div className="relative w-full overflow-hidden h-[170px] min-[420px]:h-[210px] sm:h-[280px] md:h-[340px] lg:h-[380px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
           <div className="absolute inset-0 z-0">
             <Image
               src={post.image}
@@ -67,8 +67,8 @@ async function BlogPostContent({ params }: BlogPostProps) {
             <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
           </div>
 
-          <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 md:px-8 text-center space-y-2">
-            <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2 text-[10px] sm:text-[12px] md:text-[14px] uppercase tracking-[0.08em] sm:tracking-[0.15em] md:tracking-[0.2em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-3.5 sm:px-4 py-1.5 rounded-full border border-[#C9A96E]/40 shadow-lg max-w-full whitespace-nowrap overflow-hidden">
+          <div className="relative z-10 w-full px-2 sm:px-3 md:px-5 text-center space-y-1.5 sm:space-y-2">
+            <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2 text-[10px] sm:text-[12px] md:text-[14px] uppercase tracking-[0.08em] sm:tracking-[0.15em] md:tracking-[0.2em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-[#C9A96E]/40 shadow-lg max-w-full whitespace-nowrap overflow-hidden">
               <Link href="/" className="hover:text-white transition-colors shrink-0">{blogDetailData.homeText}</Link>
               <span className="text-[#555] shrink-0">/</span>
               <Link href="/blog" className="hover:text-white transition-colors shrink-0">{blogDetailData.journalBreadcrumb}</Link>
@@ -87,8 +87,8 @@ async function BlogPostContent({ params }: BlogPostProps) {
       </section>
 
       {/* Editorial Feature Split */}
-      <section className="w-full py-[12px] px-4 sm:px-6 md:px-8 border-b border-[#1A1A1A] bg-[#0A0A0A]">
-        <div className="max-w-7xl mx-auto w-full my-[12px]">
+      <section className="w-full overflow-hidden py-[12px] px-2 sm:px-3 md:px-5 border-b border-[#1A1A1A] bg-[#0A0A0A]">
+        <div className="w-full my-[12px]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-stretch">
             
             {/* Left Portrait */}
@@ -111,7 +111,7 @@ async function BlogPostContent({ params }: BlogPostProps) {
                       {post.date}
                     </span>
                     <span className={`${fonts.mono} text-[14px] uppercase text-[#888]`}>
-                      ✦ {post.category}
+                      {post.category}
                     </span>
                   </div>
                 </div>
@@ -171,7 +171,7 @@ async function BlogPostContent({ params }: BlogPostProps) {
               <div className="pt-2">
                 <Link
                   href={blogDetailData.ctaButtonLink}
-                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-[14px] uppercase tracking-[0.12em] px-6 sm:px-7 py-3 sm:py-3.5 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer whitespace-nowrap max-w-full"
+                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-[14px] uppercase tracking-[0.1em] px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer whitespace-nowrap max-w-full"
                 >
                   <span>{blogDetailData.ctaButtonText}</span>
                   <span>→</span>
@@ -186,8 +186,8 @@ async function BlogPostContent({ params }: BlogPostProps) {
 
       {/* Article Sections */}
       {post.sections && post.sections.length > 0 && (
-        <section className="w-full py-[12px] px-4 sm:px-6 md:px-8 border-b border-[#1A1A1A] bg-[#0A0A0A]">
-          <div className="max-w-7xl mx-auto w-full space-y-4 my-[12px]">
+        <section className="w-full overflow-hidden py-[12px] px-2 sm:px-3 md:px-5 border-b border-[#1A1A1A] bg-[#0A0A0A]">
+          <div className="w-full space-y-4 my-[12px]">
             {post.sections.map((section, sIdx) => (
               <ScrollReveal key={sIdx} variant="fade-up" className="space-y-2.5 w-full">
                 
@@ -252,8 +252,8 @@ async function BlogPostContent({ params }: BlogPostProps) {
       )}
 
       {/* Core Principles */}
-      <section className="w-full py-[12px] px-4 sm:px-6 md:px-8 border-b border-[#1A1A1A] bg-[#0A0A0A]">
-        <div className="max-w-7xl mx-auto w-full my-[12px]">
+      <section className="w-full overflow-hidden py-[12px] px-2 sm:px-3 md:px-5 border-b border-[#1A1A1A] bg-[#0A0A0A]">
+        <div className="w-full my-[12px]">
           <ScrollReveal variant="fade-up">
             <div className="bg-[#0E0E0E] rounded-3xl border border-[#262626] p-4 sm:p-6 space-y-3.5 shadow-2xl w-full">
               <div className="flex items-center justify-between border-b border-[#1E1E1E] pb-2.5">
@@ -297,9 +297,9 @@ async function BlogPostContent({ params }: BlogPostProps) {
       </section>
 
       {/* Related Articles */}
-      <section className="w-full py-[12px] px-4 sm:px-6 md:px-8 bg-[#0A0A0A]">
+      <section className="w-full overflow-hidden py-[12px] px-2 sm:px-3 md:px-5 bg-[#0A0A0A]">
         <ScrollReveal variant="fade-up">
-          <div className="max-w-7xl mx-auto w-full space-y-4 my-[12px]">
+          <div className="w-full space-y-4 my-[12px]">
             <div className="flex items-center justify-between">
               <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
                 {blogDetailData.moreHeading}
@@ -327,7 +327,7 @@ async function BlogPostContent({ params }: BlogPostProps) {
                     </div>
                     <div className="space-y-1">
                       <span className={`${fonts.mono} text-[14px] uppercase tracking-wider text-[#C9A96E] block`}>
-                        ✦ {rp.category}
+                        {rp.category}
                       </span>
                       <h4 className={`${fonts.heading} text-sm sm:text-base font-bold text-white group-hover:text-[#E5C583] transition-colors line-clamp-2 leading-snug`}>
                         {rp.title}

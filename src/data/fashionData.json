@@ -132,25 +132,25 @@
           "FashionHomeHero1": {
             "slides": [
               {
-                "image": "/images/model-hero.webp",
-                "alt": "Tara Verma — Midnight Noir Off-Shoulder Gown",
+                "image": "/images/hero-slide-new-1.jpg",
+                "alt": "Tara Verma — Parisian Beret & Riviera Blue Silhouette",
                 "line1": "Hi,",
-                "line2": "I'm Tara",
-                "objectPosition": "64% 4%"
+                "line2": "I'm Tara Verma",
+                "objectPosition": "50% 15%"
               },
               {
-                "image": "/images/model-red-gown-clean.webp",
-                "alt": "Tara Verma — Crimson Haute Couture Gown",
+                "image": "/images/hero-slide-new-2.jpg",
+                "alt": "Tara Verma — Haute Couture Noir & Chromatics",
                 "line1": "Haute",
                 "line2": "Couture",
-                "objectPosition": "50% 25%"
+                "objectPosition": "50% 50%"
               },
               {
-                "image": "/hero-slide-1.webp",
-                "alt": "Tara Verma — Emerald Green Silk Parisian Gown",
+                "image": "/images/hero-slide-new-3.jpg",
+                "alt": "Tara Verma — Metropolitan Night Glow & Cashmere",
                 "line1": "Gala",
                 "line2": "Opulence",
-                "objectPosition": "50% 15%"
+                "objectPosition": "65% 30%"
               }
             ]
           },
@@ -159,12 +159,14 @@
             "subtitle": "Editorial Stylist & Creative Director",
             "image": "/images/model-hero.webp",
             "homeText": "Home",
-            "breadcrumb": "About Tara",
+            "breadcrumb": "About Tara Verma",
             "titleStart": "About",
-            "titleHighlight": "Tara Verma"
+            "titleHighlight": "Tara Verma",
+            "objectPosition": "50% 12%"
           },
           "FashionPortfolioHero1": {
             "image": "/images/tara-pillar-global.webp",
+            "objectPosition": "50% 32%",
             "homeText": "Home",
             "breadcrumb": "Gallery",
             "titleStart": "Fashion & Lifestyle",
@@ -174,6 +176,7 @@
             "title": "Bespoke Services",
             "subtitle": "High-Fashion Styling & Brand Direction",
             "image": "/images/model-suit.webp",
+            "objectPosition": "50% 8%",
             "homeText": "Home",
             "breadcrumb": "Services",
             "titleStart": "Fashion Styling &",
@@ -199,7 +202,8 @@
           "FashionAbout1": {
             "name": "TARA VERMA",
             "heroImage": "/images/model-hero.webp",
-            "badge": "✦ Editorial Stylist",
+            "objectPosition": "50% 28%",
+            "badge": "",
             "spotlightTitleStart": "The Journey of ",
             "spotlightTitleHighlight": "Sartorial Storytelling",
             "spotlightQuote": "Fashion styling is the deliberate art of visual storytelling through cut, drape, and structural harmony.",
@@ -207,7 +211,7 @@
               "Over seven years of creative direction across Paris, Milan, and New Delhi, Tara Verma curates bespoke capsule wardrobes, red carpet appearances, and high-impact editorials defined by razor-sharp tailoring and timeless elegance.",
               "Every bespoke engagement harmonizes sculptural couture silhouettes with tactile artisanal fabrics, creating an enduring aesthetic narrative of poise, intention, and quiet luxury."
             ],
-            "primaryButtonText": "Book Consultation ✦",
+            "primaryButtonText": "Book Consultation",
             "primaryButtonLink": "/contact",
             "secondaryButtonText": "View Portfolio",
             "secondaryButtonLink": "/portfolio",
@@ -235,8 +239,8 @@
       "AboutPage": {
         "variants": {
           "FashionAboutPage1": {
-            "sectionBadge": "✦ Haute Couture Atelier · The Stylist",
-            "sectionTitle": "About Me",
+            "sectionBadge": "",
+            "sectionTitle": "About Tara Verma",
             "image": "/images/model-blazer.webp",
             "imageAlt": "Tara Verma — Fashion Stylist & Atelier Creative Director",
             "missionTitle": "My Mission",
@@ -245,12 +249,12 @@
               "Bridging European haute couture ateliers with handcrafted artisanal textiles, I curate bespoke capsule wardrobes and red-carpet appearances for discerning clientele worldwide, elevating everyday presence into an effortless work of art.",
               "Every collaboration is underpinned by bespoke fabric sourcing, precise silhouette architecture, and a commitment to timeless elegance that transcends fleeting seasonal fads."
             ],
-            "primaryButtonText": "Book Consultation ✦",
+            "primaryButtonText": "Book Consultation",
             "primaryButtonLink": "/contact",
             "secondaryButtonText": "Explore Services",
             "secondaryButtonLink": "/services",
             "spheresSection": {
-              "badge": "✦ Sartorial Signatures · Three Disciplines",
+              "badge": "",
               "title": "The Tara Verma Atelier",
               "items": [
                 {
@@ -274,13 +278,13 @@
               ]
             },
             "pillarsSection": {
-              "badge": "✦ Aesthetic Architecture · Lookbook Philosophy",
+              "badge": "",
               "titleStart": "The Four Style ",
               "titleHighlight": "Pillars",
               "subtitle": "Every outfit, wardrobe curation, and creative direction is anchored in four foundational design codes.",
-              "codePrefix": "✦ CODE",
+              "codePrefix": "CODE",
               "pillarPrefix": "Pillar",
-              "pillarSuffix": "✦ Architecture",
+              "pillarSuffix": "Architecture",
               "items": [
                 {
                   "id": "minimalist",
@@ -300,7 +304,8 @@
                   "tagline": "Fluid Feminine Movement",
                   "description": "A deliberate dialogue between masculine sharpness and feminine fluidity. Pairing razor-sharp double-breasted blazers with liquid silk slip drapes creates an unforgettable sartorial tension.",
                   "quote": "Contrast creates character: structured strength softened by fluid grace.",
-                  "image": "/images/model-suit.webp"
+                  "image": "/images/model-suit.webp",
+                  "objectPosition": "50% 8%"
                 },
                 {
                   "id": "chromatics",
@@ -310,7 +315,8 @@
                   "tagline": "Timeless Chromatic Dialogue",
                   "description": "Obsidian noir forms the timeless canvas, brought to life through luminous champagne golds, warm ivory, and rich desert neutrals that flatter every skin tone in any lighting.",
                   "quote": "Color is psychological; the right tonal harmony gives commanding presence.",
-                  "image": "/images/tara-pillar-chromatics.webp"
+                  "image": "/images/tara-pillar-chromatics.webp",
+                  "objectPosition": "50% 10%"
                 },
                 {
                   "id": "global",
@@ -330,19 +336,19 @@
       "Gallery": {
         "variants": {
           "FashionGallery1": {
-            "badge": "✦ SARTORIAL ARCHIVE · 2026",
+            "badge": "",
             "titleStart": "Curated Style ",
             "titleHighlight": "Gallery",
-            "buttonText": "View All Archives ✦",
+            "buttonText": "View All Archives",
             "buttonLink": "/portfolio",
-            "footerLeftText": "✦ SARTORIAL ARCHIVE",
+            "footerLeftText": "SARTORIAL ARCHIVE",
             "footerRightText": "2026 EDITION",
             "lightboxNavigateHint": "Use ← / → keys to navigate",
             "lightboxPaletteLabel": "Palette:",
             "lightboxCloseHint": "ESC to close"
           },
           "FashionGalleryPage1": {
-            "archiveTapeLeft": "✦ TARA VERMA SARTORIAL ARCHIVE",
+            "archiveTapeLeft": "TARA VERMA SARTORIAL ARCHIVE",
             "archiveTapeCenter": "CURATED PORTFOLIO · 2026",
             "archiveTapeRight": "CLICK ANY FRAME TO EXPAND",
             "lightboxNavigateHint": "Use ← / → keys to navigate",
@@ -402,7 +408,7 @@
                 "id": "port-4",
                 "title": "Milanese Tailored Silk Suiting",
                 "image": "/images/model-suit.webp",
-                "objectPosition": "50% 20%",
+                "objectPosition": "50% 8%",
                 "variants": [
                   {
                     "name": "Haute Sapphire",
@@ -550,21 +556,21 @@
         "variants": {
           "FashionServicesPage1": {
             "intro": {
-              "badge": "✦ HAUTE ATELIER SUITES · CURATED STYLING SERVICES",
+              "badge": "",
               "titleStart": "Bespoke Sartorial ",
               "titleHighlight": "Offerings",
               "description": "Four tailored creative engagements sculpted to elevate personal presence, brand visibility, and visual storytelling."
             },
-            "suitePrefix": "✦ SUITE 0",
+            "suitePrefix": "SUITE 0",
             "exploreSuitePrefix": "Explore Suite 0",
             "directInquiryText": "Direct Inquiry →",
-            "bottomCtaText": "Book Appointment ✦",
+            "bottomCtaText": "Book Appointment",
             "bottomCtaLink": "/contact",
             "advantage": {
               "image": "/images/model-contact.webp",
               "philosophyLabel": "Tara Verma Philosophy",
               "philosophyQuote": "True fashion is the harmony of silhouette, confidence, and soulful living.",
-              "badge": "✦ The Tara Verma Advantage",
+              "badge": "",
               "titleStart": "Authentic High-Fashion & ",
               "titleHighlight": "Lifestyle Direction",
               "quote": "With commanding aesthetic presence, international front-row exposure, and intuitive mastery of silhouettes, Tara transforms every collaboration into a timeless work of art.",
@@ -587,11 +593,11 @@
                   "value": "14+"
                 }
               ],
-              "buttonText": "Inquire Collaboration ✦",
+              "buttonText": "Inquire Collaboration",
               "buttonLink": "/contact"
             },
             "portraitArchives": {
-              "badge": "✦ Archival Fine Art Portraiture · Continuous Exhibition Reel",
+              "badge": "",
               "titleStart": "Personal Portrait ",
               "titleHighlight": "Archives",
               "description": "Continuous 35mm archival loop. Hover to pause the reel, click any plate to open full-screen viewer.",
@@ -704,16 +710,16 @@
           "FashionServiceDetail1": {
             "homeText": "Home",
             "servicesBreadcrumb": "Services",
-            "floatingBadge": "✦ BESPOKE DIRECTION",
-            "preludeBadge": "✦ CURATORIAL PRELUDE",
+            "floatingBadge": "BESPOKE DIRECTION",
+            "preludeBadge": "CURATORIAL PRELUDE",
             "quoteCredit": "— Tara Verma · Fashion Stylist",
             "authorName": "By Tara Verma",
             "authorRole": "Fashion Stylist & Atelier Creative Director",
             "authorAvatar": "/images/tara-contact-hero.webp",
-            "ctaButtonText": "Curate Look with Stylist ✦",
-            "plateCaption": "✦ Editorial Plate · Styled by Tara Verma",
+            "ctaButtonText": "Curate Look with Stylist",
+            "plateCaption": "Editorial Plate · Styled by Tara Verma",
             "principlesSection": {
-              "badgeLeft": "✦ Tara Verma Editorial Notes",
+              "badgeLeft": "Tara Verma Editorial Notes",
               "badgeRight": "CURATORIAL CHECKLIST",
               "title": "Core Sartorial Principles",
               "subtitle": "Key architectural rules distilled from this styling study:",
@@ -860,10 +866,10 @@
       "Testimonials": {
         "variants": {
           "FashionTestimonials1": {
-            "badge": "✦ Industry Endorsements · Continuous Exhibition Reel",
+            "badge": "",
             "titleStart": "What Visionary ",
             "titleHighlight": "Houses Say",
-            "description": "Testimonials from creative directors across Paris, Milan, London, and New Delhi. Hover to pause reel.",
+            "description": "Voices from visionary fashion houses and creative directors worldwide.",
             "headerTapeLeft": "PREMIER FASHION HOUSES",
             "headerTapeCenter": "PARIS · MILAN · LONDON · NEW DELHI",
             "headerTapeRight": "VERIFIED ENDORSEMENTS",
@@ -873,41 +879,41 @@
             "items": [
               {
                 "id": "test-1",
-                "quote": "Tara's poise, effortless posture, and ability to embody the spirit of haute couture make her an absolute dream to direct on the runway.",
+                "quote": "Tara's poise and elegance make her a true dream to direct on the runway.",
                 "author": "Henri Moreau",
-                "role": "Haute Couture Creative Director",
+                "role": "Haute Couture Director",
                 "avatar": "/images/model-suit.webp",
                 "city": "Paris, France"
               },
               {
                 "id": "test-2",
-                "quote": "Working with Tara Verma was an incredible experience. She brought our entire editorial campaign to life with stunning emotional depth and micro-precision.",
+                "quote": "She brought our entire editorial campaign to life with stunning artistic depth.",
                 "author": "Marco Bellini",
-                "role": "Fashion Photographer & Vogue Contributor",
+                "role": "Fashion Photographer",
                 "avatar": "/images/model-contact.webp",
                 "city": "Milan, Italy"
               },
               {
                 "id": "test-3",
-                "quote": "Tara possesses an innate architectural understanding of garments. Her wardrobe styling for our Milan runway redefined what contemporary quiet luxury means.",
+                "quote": "Her styling redefined what contemporary quiet luxury means on the runway.",
                 "author": "Sophie Laurent",
-                "role": "Senior Fashion Editor, Harper's Bazaar",
+                "role": "Senior Fashion Editor",
                 "avatar": "/images/model-hero.webp",
                 "city": "Milan, Italy"
               },
               {
                 "id": "test-4",
-                "quote": "Her creative direction brings an effortless global perspective. Every silhouette, tonal palette, and texture she selects feels intentional and timeless.",
+                "quote": "Every silhouette and tonal palette she curates feels effortless and timeless.",
                 "author": "Alexander Ward",
-                "role": "Global Luxury Brand Director, Atelier Sartorial",
+                "role": "Luxury Brand Director",
                 "avatar": "/images/model-blazer.webp",
                 "city": "London, UK"
               },
               {
                 "id": "test-5",
-                "quote": "Tara bridges European haute couture with India's rich artisanal heritage with breathtaking authenticity and unmatched red carpet glamour.",
+                "quote": "Tara bridges haute couture with artisanal craft with unmatched glamour.",
                 "author": "Vikramaditya Seth",
-                "role": "Editorial Director & Fashion Week Curator",
+                "role": "Editorial Director",
                 "avatar": "/images/model-hero.webp",
                 "city": "New Delhi, India"
               }
@@ -918,14 +924,14 @@
       "Blog": {
         "variants": {
           "FashionBlogPage1": {
-            "readMoreText": "Read Chronicle ✦",
+            "readMoreText": "Read Chronicle",
             "byPrefix": "By",
             "consultationBanner": {
-              "badge": "✦ Private Wardrobe Styling & Consultation",
+              "badge": "",
               "titleStart": "Curate Your Signature ",
               "titleHighlight": "Sartorial Identity",
               "description": "Collaborate directly with Tara Verma on personal wardrobe capsules, red-carpet appearances, or brand creative direction.",
-              "buttonText": "Connect with Stylist ✦",
+              "buttonText": "Connect with Stylist",
               "buttonLink": "/contact"
             },
             "items": [
@@ -1028,14 +1034,14 @@
             "authorAvatar": "/images/tara-contact-hero.webp",
             "homeText": "Home",
             "journalBreadcrumb": "Journal",
-            "preludeBadge": "✦ CURATORIAL PRELUDE",
+            "preludeBadge": "CURATORIAL PRELUDE",
             "quoteCredit": "— Tara Verma · Fashion Stylist",
             "authorRole": "Fashion Stylist & Atelier Creative Director",
-            "ctaButtonText": "Curate Look with Stylist ✦",
+            "ctaButtonText": "Curate Look with Stylist",
             "ctaButtonLink": "/contact",
-            "plateCaption": "✦ Editorial Plate · Styled by Tara Verma",
+            "plateCaption": "Editorial Plate · Styled by Tara Verma",
             "principlesSection": {
-              "badgeLeft": "✦ Tara Verma Editorial Notes",
+              "badgeLeft": "Tara Verma Editorial Notes",
               "badgeRight": "CURATORIAL CHECKLIST",
               "title": "Core Sartorial Principles",
               "subtitle": "Key architectural rules distilled from this styling study:",
@@ -1086,11 +1092,11 @@
                 "subject": "General Collaboration & Press Inquiry"
               }
             ],
-            "sectionBadge": "✦ Direct Collaboration Desk",
+            "sectionBadge": "",
             "sectionTitleStart": "Send an Inquiry to ",
             "sectionTitleHighlight": "Tara Verma",
             "sectionSubtitle": "Directly connect with Tara Verma for wardrobe styling, red-carpet appearances, or campaign direction.",
-            "formBadge": "✦ Project Specification",
+            "formBadge": "",
             "formTitle": "Collaboration Brief",
             "scopeLabel": "Select Scope:",
             "successTitle": "Inquiry Successfully Dispatched",
@@ -1103,15 +1109,15 @@
             "subjectPlaceholder": "e.g. Red Carpet Wardrobe Styling / Editorial Campaign",
             "messageLabel": "Project Scope & Dates",
             "messagePlaceholder": "Share aesthetic vision, dates, location, and key deliverables...",
-            "submitButtonText": "Submit Inquiry ✦",
+            "submitButtonText": "Submit Inquiry",
             "submittingText": "Dispatching...",
             "contactImage": "/images/model-contact.webp",
             "contactImageAlt": "Tara Verma — Direct Atelier Booking",
-            "mapBadge": "✦ Global Atelier Presence · USA Flagship",
+            "mapBadge": "",
             "mapTitleStart": "Flagship Atelier & ",
             "mapTitleHighlight": "Showroom",
             "flagshipCity": "SoHo, New York",
-            "pinBadge": "✦ Flagship Atelier",
+            "pinBadge": "",
             "flagshipAddress": "520 Broadway, SoHo · New York, NY 10012",
             "directionsText": "Directions ↗",
             "mapEmbedUrl": "https://maps.google.com/maps?q=520%20Broadway%2C%20SoHo%2C%20New%20York%2C%20NY%2010012%2C%20USA&t=&z=15&ie=UTF8&iwloc=&output=embed",
@@ -1171,7 +1177,7 @@
               }
             ],
             "button": {
-              "text": "Contact Us ✦",
+              "text": "Contact Us",
               "link": "/contact"
             },
             "locationsText": "PARIS · MILAN · NEW YORK"
@@ -1185,7 +1191,7 @@
               "NEW DELHI"
             ],
             "address": {
-              "title": "✦ Flagship Showroom & Atelier",
+              "title": "Flagship Showroom & Atelier",
               "line1": "520 Broadway, SoHo",
               "line2": "New York, NY 10012, United States",
               "emailLabel": "Email:",
@@ -1193,7 +1199,7 @@
               "phoneLabel": "Phone:",
               "phone": "+1 00000 00000"
             },
-            "connectTitle": "✦ Connect & Follow",
+            "connectTitle": "Connect & Follow",
             "connectDescription": "Follow Tara Verma for daily front-row lookbooks & styling chronicles.",
             "socialLinks": {
               "instagram": "https://instagram.com",

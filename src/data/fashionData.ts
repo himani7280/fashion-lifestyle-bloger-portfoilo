@@ -21,6 +21,7 @@ export interface PersonalBrand {
   secondaryButtonText: string;
   secondaryButtonLink: string;
   spotlightStats: { label: string; value: string }[];
+  objectPosition?: string;
 }
 
 export interface VariantItem {
@@ -80,6 +81,7 @@ export interface Pillar {
   description: string;
   quote: string;
   image: string;
+  objectPosition?: string;
 }
 
 export interface CuratedSphere {
@@ -150,12 +152,26 @@ export const fonts = fashionDataJson.Fashion.fonts;
 export const fashionTemplateData = fashionDataJson.Fashion;
 
 const OBJECT_POS_CLASSES: Record<string, string> = {
+  "50% 0%": "object-[50%_0%]",
+  "50% 2%": "object-[50%_2%]",
+  "50% 8%": "object-[50%_8%]",
+  "50% 12%": "object-[50%_12%]",
   "50% 15%": "object-[50%_15%]",
   "50% 18%": "object-[50%_18%]",
   "50% 20%": "object-[50%_20%]",
+  "50% 22%": "object-[50%_22%]",
+  "50% 24%": "object-[50%_24%]",
   "50% 25%": "object-[50%_25%]",
   "50% 28%": "object-[50%_28%]",
+  "50% 30%": "object-[50%_30%]",
+  "50% 32%": "object-[50%_32%]",
+  "50% 50%": "object-[50%_50%]",
   "64% 4%": "object-[64%_4%]",
+  "64% 10%": "object-[64%_10%]",
+  "64% 12%": "object-[64%_12%]",
+  "64% 18%": "object-[64%_18%]",
+  "64% 20%": "object-[64%_20%]",
+  "65% 30%": "object-[65%_30%]",
 };
 
 export function getObjectPosClass(pos?: string): string {

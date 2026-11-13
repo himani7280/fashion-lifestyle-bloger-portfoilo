@@ -12,16 +12,15 @@ export default function ContactPage() {
 
   const categories = contact.categories;
 
-  const [formData, setFormData] = useState({
+  const initialFormState = {
     name: "",
     email: "",
     category: categories[0]?.label || "",
     subject: categories[0]?.subject || "",
     message: "",
-  });
+  };
 
-  const [submitted, setSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState(initialFormState);
 
   const handleSelectCategory = (cat: { label: string; subject: string }) => {
     setFormData((prev) => ({
@@ -42,13 +41,8 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitted(true);
-
-    setTimeout(() => {
-      setIsSubmitting(false);
-      router.push("/thank-you");
-    }, 400);
+    setFormData(initialFormState);
+    router.push("/thank-you");
   };
 
   return (
@@ -56,7 +50,7 @@ export default function ContactPage() {
       
       {/* Hero Banner */}
       <section className="relative w-full py-2 sm:py-3 border-b border-[#1C1C1C]">
-        <div className="relative w-full overflow-hidden h-[280px] sm:h-[340px] md:h-[380px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
+        <div className="relative w-full overflow-hidden h-[170px] min-[420px]:h-[210px] sm:h-[280px] md:h-[340px] lg:h-[380px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
           <div className="absolute inset-0 z-0">
             <Image
               src={contactHero.image}
@@ -70,8 +64,8 @@ export default function ContactPage() {
             <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
           </div>
 
-          <div className="relative z-10 max-w-4xl mx-auto w-full px-6 text-center space-y-2">
-            <div className="inline-flex items-center gap-2 text-[14px] uppercase tracking-[0.2em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#C9A96E]/40 shadow-lg">
+          <div className="relative z-10 w-full px-2 sm:px-3 md:px-5 text-center space-y-1.5 sm:space-y-2">
+            <div className="inline-flex items-center gap-2 text-[11px] sm:text-[14px] uppercase tracking-[0.16em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-[#C9A96E]/40 shadow-lg">
               <Link href="/" className="hover:text-white transition-colors">{contactHero.homeText}</Link>
               <span className="text-[#555]">/</span>
               <span className="text-white font-semibold">{contactHero.breadcrumb}</span>
@@ -85,14 +79,11 @@ export default function ContactPage() {
       </section>
 
       {/* Collaboration Form Section */}
-      <section id="collaboration-form" className="py-6 md:py-8 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 border-b border-[#1C1C1C]">
+      <section id="collaboration-form" className="py-6 md:py-8 w-full px-2 sm:px-3 md:px-5 border-b border-[#1C1C1C] overflow-hidden">
         
         {/* Section Header */}
         <ScrollReveal variant="fade-up">
           <div className="text-center max-w-3xl mx-auto mb-5 space-y-1">
-            <span className="text-[14px] uppercase tracking-[0.3em] text-[#C9A96E] font-semibold block">
-              {contact.sectionBadge}
-            </span>
             <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
               {contact.sectionTitleStart}{" "}
               <em className="italic font-light text-[#E5C583]">
@@ -111,51 +102,10 @@ export default function ContactPage() {
           <ScrollReveal variant="fade-left" className="lg:col-span-6 bg-[#111111] border border-[#222222] rounded-3xl p-6 sm:p-8 shadow-2xl flex flex-col justify-between space-y-4">
             
             <div className="space-y-1 border-b border-[#1C1C1C] pb-3">
-              <span className="text-[9.5px] uppercase tracking-[0.25em] text-[#C9A96E] font-semibold block">
-                {contact.formBadge}
-              </span>
               <h3 className={`${fonts.heading} text-xl sm:text-2xl font-bold text-white`}>
                 {contact.formTitle}
               </h3>
             </div>
-
-            {/* Category Pills */}
-            <div className="space-y-1.5">
-              <label className="block text-[10px] uppercase tracking-wider font-semibold text-[#D8CCA8]">
-                {contact.scopeLabel}
-              </label>
-              <div className="flex flex-wrap gap-1.5">
-                {categories.map((cat) => (
-                  <button
-                    key={cat.label}
-                    type="button"
-                    onClick={() => handleSelectCategory(cat)}
-                    className={`px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-medium transition-all cursor-pointer ${
-                      formData.category === cat.label
-                        ? "bg-gradient-to-r from-[#C9A96E] to-[#E5C583] text-[#0A0A0A] font-bold shadow-md"
-                        : "bg-[#161616] border border-[#2B2B2B] text-[#A69C8E] hover:border-[#C9A96E] hover:text-white"
-                    }`}
-                  >
-                    {cat.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Submission Alert */}
-            {submitted && (
-              <div className="p-4 bg-[#161616] border border-[#C9A96E] rounded-2xl space-y-1 animate-fade-in shadow-[0_0_20px_rgba(201,169,110,0.25)]">
-                <div className="flex items-center gap-2 text-white font-bold text-[14px]">
-                  <span className="w-5 h-5 rounded-full bg-[#C9A96E] text-[#0A0A0A] flex items-center justify-center text-[14px] font-black">
-                    ✓
-                  </span>
-                  <span className="text-[#E5C583]">{contact.successTitle}</span>
-                </div>
-                <p className="text-[14px] text-[#A69C8E]">
-                  {contact.successMessage}
-                </p>
-              </div>
-            )}
 
             {/* Inquiry Form */}
             <form onSubmit={handleSubmit} className="space-y-3">
@@ -232,10 +182,9 @@ export default function ContactPage() {
               {/* Submit Button */}
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] disabled:opacity-50 text-[#0A0A0A] py-3.5 px-6 rounded-full text-[14px] uppercase tracking-[0.2em] font-bold transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.55)] hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] py-3.5 px-6 rounded-full text-[14px] uppercase tracking-[0.2em] font-bold transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.55)] hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
               >
-                <span>{isSubmitting ? contact.submittingText : contact.submitButtonText}</span>
+                <span>{contact.submitButtonText}</span>
                 <span>→</span>
               </button>
 
@@ -263,15 +212,12 @@ export default function ContactPage() {
       </section>
 
       {/* Flagship Studio Map */}
-      <section className="py-8 md:py-12 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+      <section className="py-6 md:py-10 w-full px-2 sm:px-3 md:px-5 overflow-hidden">
         
         {/* Header */}
         <ScrollReveal variant="fade-up">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-4 pb-3 border-b border-[#1C1C1C]">
             <div>
-              <span className={`${fonts.mono} text-[14px] uppercase tracking-[0.3em] text-[#C9A96E] font-semibold block mb-0.5`}>
-                {contact.mapBadge}
-              </span>
               <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
                 {contact.mapTitleStart}{" "}
                 <em className="italic font-light text-[#E5C583]">

@@ -53,7 +53,7 @@ function PortfolioContent() {
     }
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "";
     };
   }, [selectedItem, currentIndex, portfolio]);
 
@@ -80,7 +80,7 @@ function PortfolioContent() {
       
       {/* Hero Banner */}
       <section className="relative w-full py-2 sm:py-3 border-b border-[#1A1A1A]">
-        <div className="relative w-full overflow-hidden h-[280px] sm:h-[340px] md:h-[380px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
+        <div className="relative w-full overflow-hidden h-[170px] min-[420px]:h-[210px] sm:h-[280px] md:h-[340px] lg:h-[380px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
           <div className="absolute inset-0 z-0">
             <Image
               src={portfolioHero.image}
@@ -88,14 +88,15 @@ function PortfolioContent() {
               fill
               priority
               sizes="100vw"
-              className="object-cover object-[50%_20%] filter brightness-[0.92] contrast-[1.04]"
+              style={{ objectPosition: portfolioHero.objectPosition || "50% 32%" }}
+              className={`object-cover ${getObjectPosClass(portfolioHero.objectPosition || "50% 32%")} filter brightness-[0.92] contrast-[1.04]`}
             />
             <div className="absolute inset-0 bg-black/40 pointer-events-none" />
             <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
           </div>
 
-          <div className="relative z-10 max-w-4xl mx-auto w-full px-6 text-center space-y-2">
-            <div className="inline-flex items-center gap-2 text-[14px] uppercase tracking-[0.2em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#C9A96E]/40">
+          <div className="relative z-10 w-full px-2 sm:px-3 md:px-5 text-center space-y-1.5 sm:space-y-2">
+            <div className="inline-flex items-center gap-2 text-[11px] sm:text-[14px] uppercase tracking-[0.16em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-[#C9A96E]/40">
               <Link href="/" className="hover:text-white transition-colors">{portfolioHero.homeText}</Link>
               <span className="text-[#555]">/</span>
               <span className="text-white font-semibold">{portfolioHero.breadcrumb}</span>
@@ -112,7 +113,7 @@ function PortfolioContent() {
       </section>
 
       {/* Bento Gallery Grid */}
-      <div className="max-w-7xl mx-auto py-10 sm:py-12 md:py-14 px-4 sm:px-6 md:px-8">
+      <div className="w-full py-8 sm:py-10 md:py-12 px-2 sm:px-3 md:px-5">
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4">
           {portfolio.map((item, idx) => {
@@ -134,6 +135,7 @@ function PortfolioContent() {
                         alt={item.title}
                         fill
                         sizes={layout.colSpan.includes("col-span-2") ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
+                        style={{ objectPosition: item.objectPosition }}
                         className={`object-cover ${getObjectPosClass(item.objectPosition)} filter brightness-[0.92] contrast-[1.03] group-hover:brightness-105 group-hover:scale-106 transition-all duration-700 ease-out`}
                       />
                       
@@ -159,15 +161,6 @@ function PortfolioContent() {
             })}
           </div>
 
-        {/* Archive Tape */}
-        <ScrollReveal variant="fade-up">
-          <div className={`${fonts.mono} mt-8 pt-4 border-t border-[#1C1C1C] flex items-center justify-between text-[13px] sm:text-[14px] font-normal uppercase tracking-[0.18em] text-[#888]`}>
-            <span>{portfolioPageData.archiveTapeLeft}</span>
-            <span>{portfolioPageData.archiveTapeCenter}</span>
-            <span className="hidden sm:inline-block">{portfolioPageData.archiveTapeRight}</span>
-          </div>
-        </ScrollReveal>
-
       </div>
 
       {/* Lightbox Modal */}
@@ -191,6 +184,7 @@ function PortfolioContent() {
                 fill
                 priority
                 sizes="(max-width: 1280px) 100vw, 1200px"
+                style={{ objectPosition: selectedItem.objectPosition }}
                 className={`object-cover ${getObjectPosClass(selectedItem.objectPosition)}`}
               />
             </div>
@@ -203,7 +197,7 @@ function PortfolioContent() {
             <div className="absolute top-4 left-4 right-4 z-30 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <span className={`${fonts.mono} bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/50 text-[10px] font-normal uppercase tracking-widest text-[#E5C583]`}>
-                  ✦ {currentIndex + 1} / {portfolio.length}
+                  {currentIndex + 1} / {portfolio.length}
                 </span>
                 <span className={`${fonts.mono} text-xs font-normal text-white/90 hidden sm:inline-block bg-[#0A0A0A]/70 px-3 py-1 rounded-full border border-white/10`}>
                   {selectedItem.title}

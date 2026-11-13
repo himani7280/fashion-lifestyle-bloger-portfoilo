@@ -15,7 +15,7 @@ export default function ThankYouPage() {
       
       {/* Hero Banner */}
       <section className="relative w-full py-[12px] border-b border-[#1A1A1A]">
-        <div className="relative w-full overflow-hidden h-[140px] sm:h-[180px] md:h-[220px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
+        <div className="relative w-full overflow-hidden h-[105px] min-[420px]:h-[135px] sm:h-[175px] md:h-[220px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
           <div className="absolute inset-0 z-0">
             <Image
               src={thankYouData.bannerImage}
@@ -28,8 +28,8 @@ export default function ThankYouPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/50 to-[#0A0A0A]/60" />
           </div>
 
-          <div className="relative z-10 max-w-4xl mx-auto w-full px-6 text-center space-y-2">
-            <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/40 shadow-lg">
+          <div className="relative z-10 w-full px-2 sm:px-3 md:px-5 text-center space-y-1.5 sm:space-y-2">
+            <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-3 sm:px-3.5 py-1 rounded-full border border-[#C9A96E]/40 shadow-lg">
               <Link href="/" className="hover:text-white transition-colors">{thankYouData.homeText}</Link>
               <span className="text-[#555]">/</span>
               <span className="text-white font-semibold">{thankYouData.bannerTitle}</span>
@@ -43,7 +43,7 @@ export default function ThankYouPage() {
       </section>
 
       {/* Confirmation Card */}
-      <section className="py-14 sm:py-20 max-w-3xl mx-auto px-4 sm:px-6 md:px-8">
+      <section className="py-12 sm:py-16 max-w-3xl mx-auto px-2 sm:px-3 md:px-5 overflow-hidden">
         <ScrollReveal variant="zoom-in">
           <div className="relative bg-[#111111] border border-[#222222] rounded-3xl p-8 sm:p-14 text-center shadow-[0_20px_60px_rgba(0,0,0,0.85)] space-y-6 overflow-hidden">
             
@@ -79,7 +79,7 @@ export default function ThankYouPage() {
             <div className="relative z-10 pt-3 flex items-center justify-center">
               <Link
                 href={thankYouData.buttonLink}
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-[14px] uppercase tracking-[0.2em] px-9 py-3.5 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.55)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-[14px] uppercase tracking-[0.14em] px-6 sm:px-7 py-3 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.55)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
               >
                 <span>{thankYouData.buttonText}</span>
                 <span>→</span>

@@ -45,9 +45,9 @@ export default function ScrollReveal({
   }, []);
 
   const hiddenClasses = {
-    "fade-up": "opacity-0 translate-y-5",
-    "fade-left": "opacity-0 -translate-x-5",
-    "fade-right": "opacity-0 translate-x-5",
+    "fade-up": "opacity-0 translate-y-4",
+    "fade-left": "opacity-0 translate-y-4",
+    "fade-right": "opacity-0 translate-y-4",
     "zoom-in": "opacity-0 scale-[0.97]",
   }[variant];
 
@@ -65,7 +65,7 @@ export default function ScrollReveal({
   return (
     <div
       ref={ref}
-      className={`transition-all duration-600 ease-out ${delayClass} ${
+      className={`transition-all duration-600 ease-out max-w-full min-w-0 ${delayClass} ${
         isVisible ? visibleClasses : hiddenClasses
       } ${className}`}
     >

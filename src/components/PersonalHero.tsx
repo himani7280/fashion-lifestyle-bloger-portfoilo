@@ -24,9 +24,9 @@ export default function PersonalHero() {
   const activeSlide = HERO_SLIDES[currentIdx];
 
   return (
-    <section className="relative w-full">
+    <section className="relative w-full overflow-hidden">
       {/* Hero Container */}
-      <div className="relative w-full overflow-hidden bg-black shadow-2xl h-[380px] sm:h-[440px] md:h-[490px] flex items-end">
+      <div className="relative w-full overflow-hidden bg-black shadow-2xl h-[220px] min-[420px]:h-[260px] sm:h-[320px] md:h-[380px] lg:h-[440px] xl:h-[490px] flex items-end">
         
         {/* Carousel Slides */}
         {HERO_SLIDES.map((slide, idx) => {
@@ -44,6 +44,7 @@ export default function PersonalHero() {
                 fill
                 priority={idx === 0}
                 sizes="100vw"
+                style={{ objectPosition: slide.objectPosition }}
                 className={`object-cover ${getObjectPosClass(slide.objectPosition)} w-full h-full transition-transform duration-7000 ease-out ${
                   isActive ? "scale-105" : "scale-100"
                 }`}
@@ -56,30 +57,30 @@ export default function PersonalHero() {
         })}
 
         {/* Bottom Shadow */}
-        <div className="absolute inset-x-0 bottom-0 h-14 sm:h-16 md:h-20 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent pointer-events-none z-20" />
+        <div className="absolute inset-x-0 bottom-0 h-10 sm:h-12 md:h-16 lg:h-20 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent pointer-events-none z-20" />
 
         {/* Slide Indicators */}
-        <div className="absolute bottom-6 right-6 sm:bottom-10 sm:right-12 z-30 flex items-center gap-2">
+        <div className="absolute bottom-3 right-2.5 sm:bottom-4 sm:right-3 md:bottom-6 md:right-4 lg:bottom-8 lg:right-6 z-30 flex items-center gap-1.5 sm:gap-2">
           {HERO_SLIDES.map((_, i) => (
             <button
               key={i}
               type="button"
               onClick={() => setCurrentIdx(i)}
               aria-label={`Switch to slide ${i + 1}`}
-              className={`h-2 rounded-full transition-all duration-500 cursor-pointer ${
+              className={`h-1.5 sm:h-2 rounded-full transition-all duration-500 cursor-pointer ${
                 currentIdx === i
-                  ? "w-8 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] shadow-[0_0_12px_rgba(201,169,110,0.8)]"
-                  : "w-2 bg-white/40 hover:bg-white/70"
+                  ? "w-6 sm:w-8 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] shadow-[0_0_12px_rgba(201,169,110,0.8)]"
+                  : "w-1.5 sm:w-2 bg-white/40 hover:bg-white/70"
               }`}
             />
           ))}
         </div>
 
         {/* Slide Title */}
-        <div className="relative z-30 max-w-7xl mx-auto w-full px-6 sm:px-12 md:px-16 pb-6 sm:pb-10 md:pb-12 flex items-end justify-start pointer-events-none">
+        <div className="relative z-30 w-full px-2 sm:px-3 md:px-5 pb-3 sm:pb-5 md:pb-8 lg:pb-10 flex items-end justify-start pointer-events-none">
           <h1
             key={currentIdx}
-            className={`${fonts.heading} text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.96] text-left select-none pointer-events-auto bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] bg-clip-text text-transparent drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)] animate-fade-in transition-all duration-700`}
+            className={`${fonts.heading} text-2xl min-[420px]:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.1] pb-1.5 sm:pb-2 text-left select-none pointer-events-auto bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] bg-clip-text text-transparent drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)] animate-fade-in transition-all duration-700 max-w-full break-words`}
           >
             {activeSlide.line1}<br />
             {activeSlide.line2}

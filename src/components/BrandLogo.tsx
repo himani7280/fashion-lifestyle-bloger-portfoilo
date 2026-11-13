@@ -21,8 +21,8 @@ export default function BrandLogo({
   className = "",
 }: BrandLogoProps) {
   const sizeClasses = {
-    sm: "h-10 sm:h-11 w-auto",
-    md: "h-12 sm:h-14 md:h-16 w-auto",
+    sm: "h-9 sm:h-10 w-auto",
+    md: "h-11 sm:h-12 md:h-13 xl:h-14 w-auto",
     lg: "h-16 sm:h-20 md:h-24 w-auto",
     xl: "h-24 sm:h-28 md:h-32 w-auto",
   }[size];

@@ -54,7 +54,7 @@ export default function HomeGallery() {
     }
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "";
     };
   }, [selectedItem, currentIndex, galleryItems]);
 
@@ -69,14 +69,11 @@ export default function HomeGallery() {
   };
 
   return (
-    <section className="py-10 sm:py-12 md:py-14 px-4 sm:px-6 md:px-8 border-t border-[#1C1C1C] bg-[#0A0A0A]">
-      <div className="max-w-7xl mx-auto space-y-4 sm:space-y-5">
+    <section className="w-full overflow-hidden py-8 sm:py-10 md:py-12 px-2 sm:px-3 md:px-5 border-t border-[#1C1C1C] bg-[#0A0A0A]">
+      <div className="w-full space-y-4 sm:space-y-5">
         
         {/* Section Header */}
         <ScrollReveal variant="fade-up" className="border-b border-[#1C1C1C] pb-2.5">
-          <span className="text-[14px] uppercase tracking-[0.25em] text-[#C9A96E] font-semibold block mb-1">
-            {homeGalleryData.badge}
-          </span>
           <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
             {homeGalleryData.titleStart}
             <em className="italic font-light text-[#E5C583]">
@@ -106,6 +103,7 @@ export default function HomeGallery() {
                       alt={item.title}
                       fill
                       sizes={spanClass.includes("col-span-2") ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
+                      style={{ objectPosition: item.objectPosition }}
                       className={`object-cover ${getObjectPosClass(item.objectPosition)} filter brightness-[0.92] contrast-[1.03] group-hover:brightness-105 group-hover:scale-106 transition-all duration-700 ease-out`}
                     />
                     
@@ -136,20 +134,14 @@ export default function HomeGallery() {
         </div>
 
         {/* Bottom Action */}
-        <ScrollReveal variant="fade-up" delay={150} className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#1C1C1C]">
-          <span className={`${fonts.mono} text-[14px] font-normal uppercase tracking-[0.2em] text-[#888] hidden sm:inline-block`}>
-            {homeGalleryData.footerLeftText}
-          </span>
+        <ScrollReveal variant="fade-up" delay={150} className="pt-6 flex justify-center border-t border-[#1C1C1C]">
           <Link
             href={homeGalleryData.buttonLink}
-            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-[14px] uppercase tracking-[0.16em] px-8 py-3.5 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.55)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-[13px] sm:text-[14px] uppercase tracking-[0.12em] px-6 py-2.5 sm:py-3 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.55)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
           >
             <span>{homeGalleryData.buttonText}</span>
             <span>→</span>
           </Link>
-          <span className={`${fonts.mono} text-[14px] font-normal uppercase tracking-[0.2em] text-[#888] hidden sm:inline-block`}>
-            {homeGalleryData.footerRightText}
-          </span>
         </ScrollReveal>
 
       </div>
@@ -175,6 +167,7 @@ export default function HomeGallery() {
                 fill
                 priority
                 sizes="(max-width: 1280px) 100vw, 1200px"
+                style={{ objectPosition: selectedItem.objectPosition }}
                 className={`object-cover ${getObjectPosClass(selectedItem.objectPosition)}`}
               />
             </div>
@@ -187,7 +180,7 @@ export default function HomeGallery() {
             <div className="absolute top-4 left-4 right-4 z-30 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <span className={`${fonts.mono} bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/50 text-[10px] font-normal uppercase tracking-widest text-[#E5C583]`}>
-                  ✦ {currentIndex + 1} / {galleryItems.length}
+                  {currentIndex + 1} / {galleryItems.length}
                 </span>
                 <span className={`${fonts.mono} text-xs font-normal text-white/90 hidden sm:inline-block bg-[#0A0A0A]/70 px-3 py-1 rounded-full border border-white/10`}>
                   {selectedItem.title}

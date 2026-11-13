@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { services, servicesHero, servicesPageData, PortraitPlate, fonts } from "@/data/fashionData";
+import { services, servicesHero, servicesPageData, PortraitPlate, fonts, getObjectPosClass } from "@/data/fashionData";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -78,7 +78,7 @@ export default function ServicesContent() {
     }
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "";
     };
   }, [selectedPlate, currentPlateIndex]);
 
@@ -88,8 +88,8 @@ export default function ServicesContent() {
     <div className={`${fonts.body} bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden`}>
       
       {/* Hero Banner */}
-      <section className="relative w-full py-2 sm:py-3 border-b border-[#1A1A1A]">
-        <div className="relative w-full overflow-hidden h-[280px] sm:h-[340px] md:h-[380px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
+      <section className="relative w-full overflow-hidden py-2 sm:py-3 border-b border-[#1A1A1A]">
+        <div className="relative w-full overflow-hidden h-[170px] min-[420px]:h-[210px] sm:h-[280px] md:h-[340px] lg:h-[380px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
           <div className="absolute inset-0 z-0">
             <Image
               src={servicesHero.image}
@@ -97,14 +97,15 @@ export default function ServicesContent() {
               fill
               priority
               sizes="100vw"
-              className="object-cover object-[50%_20%] filter brightness-[0.92] contrast-[1.04]"
+              style={{ objectPosition: servicesHero.objectPosition || "50% 8%" }}
+              className={`object-cover ${getObjectPosClass(servicesHero.objectPosition || "50% 8%")} filter brightness-[0.92] contrast-[1.04]`}
             />
             <div className="absolute inset-0 bg-black/40 pointer-events-none" />
             <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
           </div>
 
-          <div className="relative z-10 max-w-4xl mx-auto w-full px-6 text-center space-y-2">
-            <div className="inline-flex items-center gap-2 text-[14px] uppercase tracking-[0.2em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#C9A96E]/40">
+          <div className="relative z-10 w-full px-2 sm:px-3 md:px-5 text-center space-y-1.5 sm:space-y-2">
+            <div className="inline-flex items-center gap-2 text-[11px] sm:text-[14px] uppercase tracking-[0.16em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-[#C9A96E]/40">
               <Link href="/" className="hover:text-white transition-colors">{servicesHero.homeText}</Link>
               <span className="text-[#555]">/</span>
               <span className="text-white font-semibold">{servicesHero.breadcrumb}</span>
@@ -121,14 +122,11 @@ export default function ServicesContent() {
       </section>
 
       {/* Atelier Services */}
-      <section className="relative w-full py-[12px] px-4 sm:px-6 md:px-8 border-b border-[#1C1C1C] bg-[#0A0A0A]">
-        <div className="max-w-7xl mx-auto my-[12px] py-[12px] space-y-6 sm:space-y-8">
+      <section className="relative w-full overflow-hidden py-8 sm:py-10 md:py-12 px-2 sm:px-3 md:px-5 border-b border-[#1C1C1C] bg-[#0A0A0A]">
+        <div className="w-full space-y-10 sm:space-y-14">
           
           {/* Section Header */}
           <ScrollReveal variant="fade-up" className="text-center max-w-3xl mx-auto space-y-2">
-            <span className="text-[14px] uppercase tracking-[0.35em] text-[#C9A96E] font-bold block">
-              {intro.badge}
-            </span>
             <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
               {intro.titleStart}
               <em className="italic font-light text-[#E5C583]">
@@ -141,7 +139,7 @@ export default function ServicesContent() {
           </ScrollReveal>
 
           {/* Alternating Service Spreads */}
-          <div className="space-y-5 sm:space-y-6">
+          <div className="space-y-8 sm:space-y-10 md:space-y-12">
             {services.map((srv, idx) => {
               const isEven = idx % 2 === 1;
               const romanNums = ["I", "II", "III", "IV"];
@@ -210,9 +208,9 @@ export default function ServicesContent() {
                       <div className="pt-3 flex flex-wrap items-center gap-3">
                         <Link
                           href={`/services/${srv.id}`}
-                          className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-[13px] sm:text-[14px] uppercase tracking-[0.12em] px-6 sm:px-7 py-3 sm:py-3.5 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer whitespace-nowrap"
+                          className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-[13px] sm:text-[14px] uppercase tracking-[0.1em] px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer whitespace-nowrap"
                         >
-                          <span>{servicesPageData.exploreSuitePrefix}{idx + 1} ✦</span>
+                          <span>{servicesPageData.exploreSuitePrefix}{idx + 1}</span>
                           <span>→</span>
                         </Link>
                         <Link
@@ -235,7 +233,7 @@ export default function ServicesContent() {
       </section>
 
       {/* Why Partner With Us */}
-      <section className="py-[12px] px-4 sm:px-6 md:px-8 max-w-7xl mx-auto my-[12px] border-b border-[#1C1C1C]">
+      <section className="w-full overflow-hidden py-8 sm:py-10 md:py-12 px-2 sm:px-3 md:px-5 my-[12px] border-b border-[#1C1C1C]">
         <div className="my-[12px] py-[12px] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
           
           {/* Stylist Portrait */}
@@ -264,10 +262,6 @@ export default function ServicesContent() {
 
           {/* Narrative & Metrics */}
           <ScrollReveal variant="fade-right" delay={120} className="lg:col-span-7 flex flex-col justify-between space-y-4">
-            <div className="inline-block w-fit self-start bg-[#141414] text-[#E5C583] text-[14px] uppercase tracking-[0.22em] font-semibold px-3.5 py-1 rounded-full border border-[#C9A96E]/30">
-              {advantage.badge}
-            </div>
-
             <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
               {advantage.titleStart}
               <em className="italic font-light text-[#E5C583]">
@@ -284,11 +278,11 @@ export default function ServicesContent() {
             </p>
 
             {/* Metrics */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2 border-t border-[#1C1C1C]">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 pt-3 border-t border-[#1C1C1C]">
               {advantage.stats.map((st) => (
-                <div key={st.label} className="bg-[#121212] px-2.5 sm:px-3 py-3 rounded-xl border border-[#222222] text-center overflow-hidden">
-                  <AnimatedCounter value={st.value} />
-                  <span className="text-[11px] sm:text-[12px] lg:text-[13px] uppercase tracking-wide sm:tracking-wider text-[#888] font-medium block mt-1 leading-snug">
+                <div key={st.label} className="bg-[#121212] px-2.5 sm:px-3 py-4 sm:py-5 min-h-[90px] sm:min-h-[105px] flex flex-col justify-center items-center rounded-xl border border-[#222222] text-center overflow-hidden">
+                  <AnimatedCounter value={st.value} className="text-2xl sm:text-3xl font-extrabold text-[#E5C583] group-hover:text-white transition-colors block leading-none" />
+                  <span className="text-[11px] sm:text-[12px] lg:text-[13px] uppercase tracking-wide sm:tracking-wider text-[#888] font-medium block mt-1.5 leading-snug">
                     {st.label}
                   </span>
                 </div>
@@ -298,7 +292,7 @@ export default function ServicesContent() {
             <div className="pt-2">
               <Link
                 href={advantage.buttonLink}
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-[13px] sm:text-[14px] uppercase tracking-[0.12em] px-6 sm:px-7 py-3.5 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-[13px] sm:text-[14px] uppercase tracking-[0.1em] px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer whitespace-nowrap"
               >
                 <span>{advantage.buttonText}</span>
                 <span>→</span>
@@ -311,14 +305,11 @@ export default function ServicesContent() {
 
       {/* Portrait Archives Reel */}
       <section className="relative w-full py-[12px] border-b border-[#1C1C1C] bg-[#070707] overflow-hidden">
-        <ScrollReveal variant="fade-up" className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 my-[12px] py-[12px] space-y-4">
+        <ScrollReveal variant="fade-up" className="w-full px-2 sm:px-3 md:px-5 my-[12px] py-[12px] space-y-4">
           
           {/* Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 pb-3 border-b border-[#1C1C1C]">
             <div>
-              <span className="text-[14px] uppercase tracking-[0.25em] text-[#C9A96E] font-semibold block mb-1">
-                {portraitArchives.badge}
-              </span>
               <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
                 {portraitArchives.titleStart}
                 <em className="italic font-light text-[#E5C583]">
@@ -331,13 +322,6 @@ export default function ServicesContent() {
             </p>
           </div>
 
-          {/* Header Tape */}
-          <div className={`${fonts.mono} flex items-center justify-between text-[13px] sm:text-[14px] font-normal uppercase tracking-[0.16em] text-[#777] px-2`}>
-            <span>{portraitArchives.headerTapeLeft}</span>
-            <span>{PORTRAIT_PLATES.length} {portraitArchives.headerTapeCenterSuffix}</span>
-            <span>{portraitArchives.headerTapeRight}</span>
-          </div>
-
         </ScrollReveal>
 
         {/* Marquee Reel */}
@@ -346,7 +330,7 @@ export default function ServicesContent() {
             ref={portraitReelRef}
             onMouseEnter={() => { portraitPausedRef.current = true; }}
             onMouseLeave={() => { portraitPausedRef.current = false; }}
-            className="flex overflow-x-hidden gap-2.5 sm:gap-3 px-3"
+            className="flex overflow-x-hidden overflow-y-hidden gap-2.5 sm:gap-3 px-3 py-3 w-full max-w-full"
           >
             {marqueeList.map((plate, index) => (
               <div
@@ -393,15 +377,6 @@ export default function ServicesContent() {
           </div>
         </ScrollReveal>
 
-        {/* Footer Tape */}
-        <ScrollReveal variant="fade-up" delay={180} className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-2 pb-1">
-          <div className={`${fonts.mono} flex items-center justify-between text-[13px] sm:text-[14px] font-normal uppercase tracking-[0.16em] text-[#777] border-t border-[#1C1C1C] pt-2.5`}>
-            <span>{portraitArchives.footerTapeLeft}</span>
-            <span>{portraitArchives.footerTapeCenter}</span>
-            <span>{portraitArchives.footerTapeRight}</span>
-          </div>
-        </ScrollReveal>
-
       </section>
 
       {/* Lightbox Modal */}
@@ -437,7 +412,7 @@ export default function ServicesContent() {
             <div className="absolute top-4 left-4 right-4 z-30 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <span className={`${fonts.mono} bg-[#0A0A0A]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C9A96E]/50 text-[13px] sm:text-[14px] font-normal uppercase tracking-wider text-[#E5C583]`}>
-                  ✦ {currentPlateIndex + 1} / {PORTRAIT_PLATES.length}
+                  {currentPlateIndex + 1} / {PORTRAIT_PLATES.length}
                 </span>
                 <span className={`${fonts.mono} text-[13px] sm:text-[14px] font-normal text-white/90 hidden sm:inline-block bg-[#0A0A0A]/70 px-3 py-1 rounded-full border border-white/10`}>
                   {selectedPlate.title}
@@ -486,11 +461,11 @@ export default function ServicesContent() {
       )}
 
       {/* Bottom CTA */}
-      <section className="py-[12px] px-4 sm:px-6 md:px-8 max-w-7xl mx-auto my-[12px] text-center">
+      <section className="w-full overflow-hidden py-[12px] px-2 sm:px-3 md:px-5 my-[12px] text-center">
         <ScrollReveal variant="zoom-in" className="py-4">
           <Link
             href={servicesPageData.bottomCtaLink}
-            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-[13px] sm:text-[14px] uppercase tracking-[0.12em] font-bold transition-all duration-300 shadow-[0_4px_25px_rgba(201,169,110,0.35)] hover:shadow-[0_6px_35px_rgba(201,169,110,0.6)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer whitespace-nowrap max-w-[calc(100vw-32px)]"
+            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-[13px] sm:text-[14px] uppercase tracking-[0.1em] font-bold transition-all duration-300 shadow-[0_4px_25px_rgba(201,169,110,0.35)] hover:shadow-[0_6px_35px_rgba(201,169,110,0.6)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer whitespace-nowrap max-w-full text-center"
           >
             <span>{servicesPageData.bottomCtaText}</span>
             <span>→</span>

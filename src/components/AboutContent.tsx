@@ -4,18 +4,19 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
-import { aboutHero, aboutPageData, contact, Pillar, CuratedSphere, fonts } from "@/data/fashionData";
+import { aboutHero, aboutPageData, contact, Pillar, CuratedSphere, fonts, getObjectPosClass } from "@/data/fashionData";
 
 const PILLARS: Pillar[] = aboutPageData.pillarsSection.items;
 const TARA_SPHERES: CuratedSphere[] = aboutPageData.spheresSection.items;
 
 export default function AboutContent() {
+  const heroObjectPos = aboutHero.objectPosition || "50% 12%";
   return (
     <div className={`${fonts.body} bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden`}>
       
       {/* Hero Banner */}
-      <section className="relative w-full py-2 sm:py-3 border-b border-[#1A1A1A]">
-        <div className="relative w-full overflow-hidden h-[280px] sm:h-[340px] md:h-[380px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
+      <section className="relative w-full overflow-hidden py-2 sm:py-3 border-b border-[#1A1A1A]">
+        <div className="relative w-full overflow-hidden h-[170px] min-[420px]:h-[210px] sm:h-[280px] md:h-[340px] lg:h-[380px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
           <div className="absolute inset-0 z-0">
             <Image
               src={aboutHero.image}
@@ -23,14 +24,15 @@ export default function AboutContent() {
               fill
               priority
               sizes="100vw"
-              className="object-cover object-[50%_28%] filter brightness-[0.92] contrast-[1.04]"
+              style={{ objectPosition: heroObjectPos }}
+              className={`object-cover ${getObjectPosClass(heroObjectPos)} filter brightness-[0.92] contrast-[1.04]`}
             />
             <div className="absolute inset-0 bg-black/40 pointer-events-none" />
             <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
           </div>
 
-          <div className="relative z-10 max-w-4xl mx-auto w-full px-6 text-center space-y-2">
-            <div className="inline-flex items-center gap-2 text-[14px] uppercase tracking-[0.2em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#C9A96E]/40">
+          <div className="relative z-10 w-full px-2 sm:px-3 md:px-5 text-center space-y-1.5 sm:space-y-2">
+            <div className="inline-flex items-center gap-2 text-[11px] sm:text-[14px] uppercase tracking-[0.16em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-[#C9A96E]/40">
               <Link href="/" className="hover:text-white transition-colors">{aboutHero.homeText}</Link>
               <span className="text-[#555]">/</span>
               <span className="text-white font-semibold">{aboutHero.breadcrumb}</span>
@@ -47,18 +49,8 @@ export default function AboutContent() {
       </section>
 
       {/* About & Mission */}
-      <section className="relative py-10 sm:py-12 md:py-14 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto border-b border-[#1C1C1C]">
+      <section className="relative w-full overflow-hidden py-8 sm:py-10 md:py-12 px-2 sm:px-3 md:px-5 border-b border-[#1C1C1C]">
         
-        {/* Section Header */}
-        <ScrollReveal variant="fade-up" className="text-center mb-10 sm:mb-14 space-y-1.5">
-          <span className={`${fonts.mono} text-[14px] uppercase tracking-[0.22em] text-[#C9A96E] font-medium block`}>
-            {aboutPageData.sectionBadge}
-          </span>
-          <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
-            {aboutPageData.sectionTitle}
-          </h2>
-        </ScrollReveal>
-
         {/* Mission Split */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 xl:gap-20 items-stretch">
           
@@ -90,17 +82,17 @@ export default function AboutContent() {
             ))}
 
             {/* CTA Buttons */}
-            <div className="pt-2 flex flex-wrap items-center gap-3.5">
+            <div className="pt-2 flex flex-wrap items-center gap-3">
               <Link
                 href={aboutPageData.primaryButtonLink}
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-[13px] sm:text-[14px] uppercase tracking-[0.14em] px-7 py-3.5 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] font-semibold text-[13px] sm:text-[14px] uppercase tracking-[0.1em] px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-300 shadow-[0_4px_20px_rgba(201,169,110,0.3)] hover:shadow-[0_6px_30px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer whitespace-nowrap"
               >
                 <span>{aboutPageData.primaryButtonText}</span>
                 <span>→</span>
               </Link>
               <Link
                 href={aboutPageData.secondaryButtonLink}
-                className="inline-flex items-center justify-center gap-2 bg-[#141414] hover:bg-[#1C1C1C] text-[#E5C583] hover:text-white border border-[#C9A96E]/40 font-semibold text-[13px] sm:text-[14px] uppercase tracking-[0.14em] px-7 py-3.5 rounded-full transition-all duration-300 hover:scale-[1.02] cursor-pointer whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 bg-[#141414] hover:bg-[#1C1C1C] text-[#E5C583] hover:text-white border border-[#C9A96E]/40 font-semibold text-[13px] sm:text-[14px] uppercase tracking-[0.1em] px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-300 hover:scale-[1.02] cursor-pointer whitespace-nowrap"
               >
                 <span>{aboutPageData.secondaryButtonText}</span>
                 <span>→</span>
@@ -115,9 +107,6 @@ export default function AboutContent() {
         <div className="pt-12 sm:pt-16 border-t border-[#1C1C1C] space-y-8 mt-12">
           
           <ScrollReveal variant="fade-up" className="text-center max-w-xl mx-auto space-y-1">
-            <span className={`${fonts.mono} text-[14px] uppercase tracking-[0.28em] text-[#C9A96E] font-medium block`}>
-              {aboutPageData.spheresSection.badge}
-            </span>
             <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
               {aboutPageData.spheresSection.title}
             </h2>
@@ -145,14 +134,9 @@ export default function AboutContent() {
                 </div>
 
                 {/* Title */}
-                <h4 className={`${fonts.heading} text-xl sm:text-2xl font-bold text-white mt-5 mb-1.5 tracking-tight group-hover:text-[#E5C583] transition-colors`}>
+                <h4 className={`${fonts.heading} text-xl sm:text-2xl font-bold text-white mt-5 mb-2.5 tracking-tight group-hover:text-[#E5C583] transition-colors`}>
                   {sphere.title}
                 </h4>
-
-                {/* Tagline */}
-                <span className={`${fonts.mono} text-[14px] uppercase tracking-[0.2em] text-[#C9A96E] font-semibold mb-2.5 block`}>
-                  ✦ {sphere.tagline}
-                </span>
 
                 {/* Description */}
                 <p className="text-[14px] text-[#9CA3AF] font-light leading-relaxed max-w-xs mb-4 px-1">
@@ -205,14 +189,11 @@ export default function AboutContent() {
       </section>
 
       {/* Four Style Pillars */}
-      <section className="relative w-full py-10 sm:py-12 md:py-14 px-4 sm:px-6 md:px-8 border-b border-[#1C1C1C] bg-[#0A0A0A]">
-        <div className="max-w-7xl mx-auto space-y-10 sm:space-y-14">
+      <section className="relative w-full overflow-hidden py-8 sm:py-10 md:py-12 px-2 sm:px-3 md:px-5 border-b border-[#1C1C1C] bg-[#0A0A0A]">
+        <div className="w-full space-y-10 sm:space-y-14">
           
           {/* Section Header */}
           <ScrollReveal variant="fade-up" className="text-center max-w-3xl mx-auto space-y-2">
-            <span className="text-[9.5px] uppercase tracking-[0.3em] text-[#C9A96E] font-bold block">
-              {aboutPageData.pillarsSection.badge}
-            </span>
             <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
               {aboutPageData.pillarsSection.titleStart}
               <em className="italic font-light text-[#E5C583]">
@@ -225,9 +206,10 @@ export default function AboutContent() {
           </ScrollReveal>
 
           {/* Alternating Pillar Spreads */}
-          <div className="space-y-10 sm:space-y-14">
+          <div className="space-y-14 sm:space-y-16 md:space-y-20">
             {PILLARS.map((pillar, idx) => {
               const isEven = idx % 2 === 1;
+              const pillarObjectPos = pillar.objectPosition || "50% 20%";
               return (
                 <div
                   key={pillar.id}
@@ -247,7 +229,8 @@ export default function AboutContent() {
                         alt={pillar.title}
                         fill
                         sizes="(max-width: 1024px) 100vw, 50vw"
-                        className="object-cover filter brightness-[0.92] contrast-[1.04] group-hover:scale-105 transition-transform duration-700 ease-out"
+                        style={{ objectPosition: pillarObjectPos }}
+                        className={`object-cover ${getObjectPosClass(pillarObjectPos)} filter brightness-[0.92] contrast-[1.04] group-hover:scale-105 transition-transform duration-700 ease-out`}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/70 via-transparent to-transparent opacity-80" />
                       
@@ -279,9 +262,6 @@ export default function AboutContent() {
                       </span>
                       
                       <div className="relative z-10 space-y-2">
-                        <span className={`${fonts.mono} text-[14px] uppercase tracking-[0.25em] text-[#C9A96E] font-bold block`}>
-                          {aboutPageData.pillarsSection.pillarPrefix} {pillar.number} {aboutPageData.pillarsSection.pillarSuffix}
-                        </span>
                         <h3 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
                           {pillar.title}
                         </h3>

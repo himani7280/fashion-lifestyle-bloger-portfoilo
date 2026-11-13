@@ -2,6 +2,7 @@
 
 
 import Link from "next/link";
+import { MapPin } from "lucide-react";
 import BrandLogo from "@/components/BrandLogo";
 import ScrollReveal from "@/components/ScrollReveal";
 import { footerData, fonts } from "@/data/fashionData";
@@ -53,8 +54,8 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className={`${fonts.body} w-full max-w-full overflow-hidden bg-[#080808] text-[#F5EDE5] border-t border-[#1C1C1C] py-6 sm:py-8 px-4 sm:px-6 md:px-8 text-[14px] font-normal`}>
-      <div className="max-w-7xl mx-auto space-y-5 sm:space-y-6">
+    <footer className={`${fonts.body} w-full max-w-full overflow-hidden bg-[#080808] text-[#F5EDE5] border-t border-[#1C1C1C] py-6 sm:py-8 px-2 sm:px-3 md:px-5 text-[14px] font-normal`}>
+      <div className="w-full space-y-5 sm:space-y-6">
         
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-6 md:gap-8 items-start pb-5 md:pb-6 border-b border-[#1C1C1C]">
@@ -68,7 +69,10 @@ export default function Footer() {
             <div className={`${fonts.mono} pt-0.5 flex flex-wrap items-center gap-2.5 text-[14px] font-normal uppercase tracking-wider text-[#C9A96E]`}>
               {footerData.locations.map((loc, idx) => (
                 <span key={loc} className="inline-flex items-center gap-2.5">
-                  <span>{idx === 0 ? `✦ ${loc}` : loc}</span>
+                  <span className="inline-flex items-center gap-1.5">
+                    {idx === 0 && <MapPin className="w-3.5 h-3.5 text-[#C9A96E]" />}
+                    {loc}
+                  </span>
                   {idx < footerData.locations.length - 1 && <span>·</span>}
                 </span>
               ))}
@@ -105,7 +109,7 @@ export default function Footer() {
             </p>
             
             {/* Social Icons */}
-            <div className="flex items-center sm:justify-start md:justify-end gap-2.5 pt-1 flex-nowrap overflow-x-visible">
+            <div className="flex items-center sm:justify-start md:justify-end gap-2.5 pt-1 flex-wrap">
               {SOCIAL_LINKS.map((s) => (
                 <a
                   key={s.name}
