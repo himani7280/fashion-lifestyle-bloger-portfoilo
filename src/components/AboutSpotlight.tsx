@@ -10,11 +10,11 @@ import { personalBrand, fonts, getObjectPosClass } from "@/data/fashionData";
 export default function AboutSpotlight() {
   const objectPos = personalBrand.objectPosition || "50% 28%";
   return (
-    <section className="w-full py-3.5 sm:py-5 md:py-6 lg:py-7 px-2 sm:px-3 md:px-5 border-t border-[#1C1C1C] bg-[#0A0A0A] text-[#F5F0E8] overflow-hidden">
+    <section className="w-full pt-8 sm:pt-10 md:pt-12 lg:pt-14 pb-3.5 sm:pb-5 md:pb-6 lg:pb-7 px-2 sm:px-3 md:px-5 border-t border-[#1C1C1C] bg-[#0A0A0A] text-[#F5F0E8] overflow-hidden">
       <div className="w-full">
         
         {/* Spotlight Split */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 lg:gap-8 xl:gap-10 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 lg:gap-8 xl:gap-10 items-stretch pb-4 sm:pb-6 md:pb-8">
           
           {/* Left Portrait */}
           <ScrollReveal variant="fade-left" className="lg:col-span-5 relative group flex flex-col">

@@ -93,7 +93,7 @@ export default function Header() {
             <Link
               href={navigation.button.link}
               onClick={handleNavClick}
-              className={`${fonts.body} inline-flex items-center justify-center bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] px-3 sm:px-3.5 py-1.5 rounded-full text-[12px] sm:text-[13px] uppercase tracking-[0.08em] font-bold transition-all duration-300 shadow-[0_4px_15px_rgba(201,169,110,0.25)] hover:shadow-[0_6px_25px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer whitespace-nowrap`}
+              className={`${fonts.body} inline-flex items-center justify-center bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] hover:from-[#DFC18A] hover:to-[#E5C583] text-[#0A0A0A] px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[12px] sm:text-[13px] uppercase tracking-[0.08em] font-bold transition-all duration-300 shadow-[0_4px_15px_rgba(201,169,110,0.25)] hover:shadow-[0_6px_25px_rgba(201,169,110,0.5)] hover:scale-[1.03] active:scale-[0.98] cursor-pointer whitespace-nowrap`}
             >
               {navigation.button.text}
             </Link>

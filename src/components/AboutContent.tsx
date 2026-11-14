@@ -10,13 +10,13 @@ const PILLARS: Pillar[] = aboutPageData.pillarsSection.items;
 const TARA_SPHERES: CuratedSphere[] = aboutPageData.spheresSection.items;
 
 export default function AboutContent() {
-  const heroObjectPos = aboutHero.objectPosition || "50% 12%";
+  const heroObjectPos = aboutHero.objectPosition || "50% 20%";
   return (
     <div className={`${fonts.body} bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden`}>
       
       {/* Hero Banner */}
       <section className="relative w-full overflow-hidden py-2 sm:py-3 border-b border-[#1A1A1A]">
-        <div className="relative w-full overflow-hidden h-[170px] min-[420px]:h-[210px] sm:h-[280px] md:h-[340px] lg:h-[380px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
+        <div className="relative w-full overflow-hidden h-[clamp(155px,calc(85px+18vw),340px)] flex items-end justify-start bg-[#0A0A0A] shadow-xl">
           <div className="absolute inset-0 z-0">
             <Image
               src={aboutHero.image}
@@ -27,11 +27,11 @@ export default function AboutContent() {
               style={{ objectPosition: heroObjectPos }}
               className={`object-cover ${getObjectPosClass(heroObjectPos)} filter brightness-[0.92] contrast-[1.04]`}
             />
-            <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+            <div className="absolute inset-0 bg-black/35 pointer-events-none" />
             <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
           </div>
 
-          <div className="relative z-10 w-full px-2 sm:px-3 md:px-5 text-center space-y-1.5 sm:space-y-2">
+          <div className="relative z-10 w-full px-3 sm:px-5 md:px-7 pb-3 sm:pb-5 md:pb-7 text-left space-y-1.5 sm:space-y-2">
             <div className="inline-flex items-center gap-2 text-[11px] sm:text-[14px] uppercase tracking-[0.16em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-[#C9A96E]/40">
               <Link href="/" className="hover:text-white transition-colors">{aboutHero.homeText}</Link>
               <span className="text-[#555]">/</span>

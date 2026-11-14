@@ -16,10 +16,10 @@ export default function BlogPage() {
 
   return (
     <div className={`${fonts.body} bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden`}>
-      
+
       {/* Hero Banner */}
       <section className="relative w-full overflow-hidden py-[12px] border-b border-[#1A1A1A] bg-[#0A0A0A]">
-        <div className="relative w-full overflow-hidden h-[170px] min-[420px]:h-[210px] sm:h-[280px] md:h-[340px] lg:h-[380px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
+        <div className="relative w-full overflow-hidden h-[clamp(155px,calc(85px+18vw),340px)] flex items-end justify-start bg-[#0A0A0A] shadow-xl">
           <div className="absolute inset-0 z-0">
             <Image
               src={blogHero.image}
@@ -29,31 +29,36 @@ export default function BlogPage() {
               sizes="100vw"
               className="object-cover object-[50%_20%] filter brightness-[0.92] contrast-[1.04]"
             />
-            <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+            <div className="absolute inset-0 bg-black/35 pointer-events-none" />
             <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
           </div>
 
-          <div className="relative z-10 w-full px-2 sm:px-3 md:px-5 text-center space-y-1.5 sm:space-y-2">
-            <div className="inline-flex items-center flex-wrap justify-center gap-2 text-[11px] sm:text-[14px] uppercase tracking-[0.16em] sm:tracking-[0.2em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-[#C9A96E]/40 shadow-lg max-w-full">
+          <div className="relative z-10 w-full px-3 sm:px-5 md:px-7 pb-3 sm:pb-5 md:pb-7 text-left space-y-1.5 sm:space-y-2">
+            <div className="inline-flex items-center flex-wrap gap-2 text-[11px] sm:text-[14px] uppercase tracking-[0.16em] sm:tracking-[0.2em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-[#C9A96E]/40 shadow-lg max-w-full">
               <Link href="/" className="hover:text-white transition-colors">{blogHero.homeText}</Link>
               <span className="text-[#555]">/</span>
               <span className="text-white font-semibold">{blogHero.breadcrumb}</span>
             </div>
 
             <h1 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
-              {blogHero.titleStart}{" "}
-              <em className="font-normal italic bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] bg-clip-text text-transparent">
-                {blogHero.titleHighlight}
-              </em>
+              {blogHero.titleStart}
+              {blogHero.titleHighlight && (
+                <>
+                  {" "}
+                  <em className="font-normal italic bg-gradient-to-r from-[#C9A96E] via-[#DFC18A] to-[#E5C583] bg-clip-text text-transparent">
+                    {blogHero.titleHighlight}
+                  </em>
+                </>
+              )}
             </h1>
           </div>
         </div>
       </section>
 
       {/* Editorial Timeline */}
-      <section className="w-full overflow-hidden py-[12px] px-2 sm:px-3 md:px-5 border-b border-[#1A1A1A] bg-[#0A0A0A] relative">
-        <div className="w-full relative my-[12px]">
-          
+      <section className="w-full overflow-hidden py-8 sm:py-10 md:py-12 lg:py-14 px-2 sm:px-3 md:px-5 border-b border-[#1A1A1A] bg-[#0A0A0A] relative">
+        <div className="w-full relative">
+
           {/* Center Axis Line */}
           <div className="hidden md:block absolute top-8 bottom-8 left-1/2 -translate-x-1/2 w-[1px] bg-gradient-to-b from-[#C9A96E]/10 via-[#C9A96E]/40 to-[#C9A96E]/10 z-0 pointer-events-none" />
 
@@ -152,8 +157,8 @@ export default function BlogPage() {
       </section>
 
       {/* Consultation Banner */}
-      <section className="w-full overflow-hidden py-[12px] px-2 sm:px-3 md:px-5 bg-[#0A0A0A]">
-        <div className="w-full my-[12px]">
+      <section className="w-full overflow-hidden py-8 sm:py-10 md:py-12 px-2 sm:px-3 md:px-5 bg-[#0A0A0A]">
+        <div className="w-full">
           <ScrollReveal variant="zoom-in">
             <div className="bg-[#0E0E0E] rounded-3xl border border-[#222] p-5 sm:p-8 text-center space-y-3.5 shadow-2xl">
               <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>

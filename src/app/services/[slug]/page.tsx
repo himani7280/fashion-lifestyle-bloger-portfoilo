@@ -49,10 +49,10 @@ async function ServiceDetailContent({ params }: ServicePageProps) {
 
   return (
     <div className={`${fonts.body} bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden`}>
-      
+
       {/* Hero Banner */}
       <section className="relative w-full overflow-hidden py-[12px] border-b border-[#1A1A1A] bg-[#0A0A0A]">
-        <div className="relative w-full overflow-hidden h-[170px] min-[420px]:h-[210px] sm:h-[280px] md:h-[340px] lg:h-[380px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
+        <div className="relative w-full overflow-hidden h-[clamp(155px,calc(85px+18vw),340px)] flex items-end justify-start bg-[#0A0A0A] shadow-xl">
           <div className="absolute inset-0 z-0">
             <Image
               src={detail.heroImage}
@@ -62,11 +62,11 @@ async function ServiceDetailContent({ params }: ServicePageProps) {
               sizes="100vw"
               className="object-cover object-[50%_15%] filter brightness-[0.92] contrast-[1.04]"
             />
-            <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+            <div className="absolute inset-0 bg-black/35 pointer-events-none" />
             <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none" />
           </div>
 
-          <div className="relative z-10 w-full px-2 sm:px-3 md:px-5 text-center space-y-1.5 sm:space-y-2">
+          <div className="relative z-10 w-full px-3 sm:px-5 md:px-7 pb-3 sm:pb-5 md:pb-7 text-left space-y-1.5 sm:space-y-2">
             <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2 text-[10px] sm:text-[12px] md:text-[14px] uppercase tracking-[0.08em] sm:tracking-[0.15em] md:tracking-[0.2em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-[#C9A96E]/40 shadow-lg max-w-full whitespace-nowrap overflow-hidden">
               <Link href="/" className="hover:text-white transition-colors shrink-0">{serviceDetailsData.homeText}</Link>
               <span className="text-[#555] shrink-0">/</span>
@@ -86,10 +86,10 @@ async function ServiceDetailContent({ params }: ServicePageProps) {
       </section>
 
       {/* Editorial Feature Split */}
-      <section className="w-full overflow-hidden py-[12px] px-2 sm:px-3 md:px-5 border-b border-[#1A1A1A] bg-[#0A0A0A]">
-        <div className="w-full my-[12px]">
+      <section className="w-full overflow-hidden py-10 sm:py-12 md:py-14 lg:py-16 px-2 sm:px-3 md:px-5 border-b border-[#1A1A1A] bg-[#0A0A0A]">
+        <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-stretch">
-            
+
             {/* Left Portrait */}
             <ScrollReveal variant="fade-left" className="lg:col-span-5 relative group flex flex-col">
               <div className="relative w-full aspect-[4/5] lg:aspect-auto lg:h-full flex-1 min-h-[340px] lg:min-h-0 flex flex-col rounded-3xl overflow-hidden border border-[#C9A96E]/50 bg-[#121212] shadow-[0_20px_50px_rgba(0,0,0,0.9)] p-2.5">
@@ -175,11 +175,11 @@ async function ServiceDetailContent({ params }: ServicePageProps) {
 
       {/* Service Detail Sections */}
       {detail.sections && detail.sections.length > 0 && (
-        <section className="w-full overflow-hidden py-[12px] px-2 sm:px-3 md:px-5 border-b border-[#1A1A1A] bg-[#0A0A0A]">
-          <div className="w-full space-y-4 my-[12px]">
+        <section className="w-full overflow-hidden py-6 sm:py-8 md:py-10 px-2 sm:px-3 md:px-5 border-b border-[#1A1A1A] bg-[#0A0A0A]">
+          <div className="w-full space-y-8 sm:space-y-10 md:space-y-12">
             {detail.sections.map((section, sIdx) => (
-              <ScrollReveal key={sIdx} variant="fade-up" className="space-y-2.5 w-full">
-                
+              <ScrollReveal key={sIdx} variant="fade-up" className="space-y-3.5 sm:space-y-4 w-full">
+
                 {/* Section Heading */}
                 <div className="space-y-1">
                   <h3 className={`${fonts.heading} text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-snug`}>
@@ -241,10 +241,10 @@ async function ServiceDetailContent({ params }: ServicePageProps) {
       )}
 
       {/* Core Principles */}
-      <section className="w-full overflow-hidden py-[12px] px-2 sm:px-3 md:px-5 border-b border-[#1A1A1A] bg-[#0A0A0A]">
-        <div className="w-full my-[12px]">
+      <section className="w-full overflow-hidden py-6 sm:py-8 md:py-10 px-2 sm:px-3 md:px-5 border-b border-[#1A1A1A] bg-[#0A0A0A]">
+        <div className="w-full">
           <ScrollReveal variant="fade-up">
-            <div className="bg-[#0E0E0E] rounded-3xl border border-[#262626] p-4 sm:p-6 space-y-3.5 shadow-2xl w-full">
+            <div className="bg-[#0E0E0E] rounded-3xl border border-[#262626] p-5 sm:p-7 md:p-8 space-y-4 sm:space-y-5 shadow-2xl w-full">
               <div className="flex items-center justify-between border-b border-[#1E1E1E] pb-2.5">
                 <span className={`${fonts.mono} text-[14px] uppercase tracking-[0.28em] text-[#C9A96E] font-bold`}>
                   {serviceDetailsData.principlesSection.badgeLeft}
@@ -286,9 +286,9 @@ async function ServiceDetailContent({ params }: ServicePageProps) {
       </section>
 
       {/* Related Services */}
-      <section className="w-full overflow-hidden py-[12px] px-2 sm:px-3 md:px-5 bg-[#0A0A0A]">
+      <section className="w-full overflow-hidden py-6 sm:py-8 md:py-10 px-2 sm:px-3 md:px-5 bg-[#0A0A0A]">
         <ScrollReveal variant="fade-up">
-          <div className="w-full space-y-4 my-[12px]">
+          <div className="w-full space-y-5 sm:space-y-6">
             <div className="flex items-center justify-between">
               <h2 className={`${fonts.heading} text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight`}>
                 {serviceDetailsData.moreHeading}

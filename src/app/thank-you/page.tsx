@@ -15,7 +15,7 @@ export default function ThankYouPage() {
       
       {/* Hero Banner */}
       <section className="relative w-full py-[12px] border-b border-[#1A1A1A]">
-        <div className="relative w-full overflow-hidden h-[105px] min-[420px]:h-[135px] sm:h-[175px] md:h-[220px] flex items-center justify-center bg-[#0A0A0A] shadow-xl">
+        <div className="relative w-full overflow-hidden h-[clamp(105px,calc(55px+12vw),200px)] flex items-end justify-start bg-[#0A0A0A] shadow-xl">
           <div className="absolute inset-0 z-0">
             <Image
               src={thankYouData.bannerImage}
@@ -28,7 +28,7 @@ export default function ThankYouPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/50 to-[#0A0A0A]/60" />
           </div>
 
-          <div className="relative z-10 w-full px-2 sm:px-3 md:px-5 text-center space-y-1.5 sm:space-y-2">
+          <div className="relative z-10 w-full px-3 sm:px-5 md:px-7 pb-3 sm:pb-4 md:pb-5 text-left space-y-1.5 sm:space-y-2">
             <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-[#C9A96E] font-medium bg-[#0A0A0A]/85 backdrop-blur-md px-3 sm:px-3.5 py-1 rounded-full border border-[#C9A96E]/40 shadow-lg">
               <Link href="/" className="hover:text-white transition-colors">{thankYouData.homeText}</Link>
               <span className="text-[#555]">/</span>

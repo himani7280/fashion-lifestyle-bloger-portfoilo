@@ -155,45 +155,47 @@
             ]
           },
           "FashionAboutHero1": {
-            "title": "About Tara Verma",
+            "title": "About Me",
             "subtitle": "Editorial Stylist & Creative Director",
             "image": "/images/model-hero.webp",
             "homeText": "Home",
-            "breadcrumb": "About Tara Verma",
+            "breadcrumb": "About Me",
             "titleStart": "About",
-            "titleHighlight": "Tara Verma",
-            "objectPosition": "50% 12%"
+            "titleHighlight": "Me",
+            "objectPosition": "50% 20%"
           },
           "FashionPortfolioHero1": {
             "image": "/images/tara-pillar-global.webp",
             "objectPosition": "50% 32%",
             "homeText": "Home",
-            "breadcrumb": "Gallery",
-            "titleStart": "Fashion & Lifestyle",
-            "titleHighlight": "Gallery"
+            "breadcrumb": "Portfolio",
+            "titleStart": "Portfolio",
+            "titleHighlight": ""
           },
           "FashionServicesHero1": {
-            "title": "Bespoke Services",
+            "title": "Services",
             "subtitle": "High-Fashion Styling & Brand Direction",
             "image": "/images/model-suit.webp",
             "objectPosition": "50% 8%",
             "homeText": "Home",
             "breadcrumb": "Services",
-            "titleStart": "Fashion Styling &",
-            "titleHighlight": "Creative Direction"
+            "titleStart": "Services",
+            "titleHighlight": ""
           },
           "FashionBlogHero1": {
             "image": "/images/model-roses.webp",
             "homeText": "Home",
-            "breadcrumb": "Journal",
-            "titleStart": "Style Chronicles &",
-            "titleHighlight": "Lifestyle Journal"
+            "breadcrumb": "Blog",
+            "titleStart": "Blog",
+            "titleHighlight": ""
           },
           "FashionContactHero1": {
-            "title": "Contact",
+            "title": "Contact Us",
             "image": "/images/model-blazer.webp",
             "homeText": "Home",
-            "breadcrumb": "Contact"
+            "breadcrumb": "Contact Us",
+            "titleStart": "Contact",
+            "titleHighlight": "Us"
           }
         }
       },
@@ -1033,7 +1035,7 @@
           "FashionBlogDetail1": {
             "authorAvatar": "/images/tara-contact-hero.webp",
             "homeText": "Home",
-            "journalBreadcrumb": "Journal",
+            "journalBreadcrumb": "Blog",
             "preludeBadge": "CURATORIAL PRELUDE",
             "quoteCredit": "— Tara Verma · Fashion Stylist",
             "authorRole": "Fashion Stylist & Atelier Creative Director",
@@ -1160,7 +1162,7 @@
                 "path": "/"
               },
               {
-                "name": "About",
+                "name": "About Me",
                 "path": "/about"
               },
               {
@@ -1214,7 +1216,7 @@
                 "href": "/"
               },
               {
-                "name": "About",
+                "name": "About Me",
                 "href": "/about"
               },
               {
