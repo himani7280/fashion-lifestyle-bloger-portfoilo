@@ -88,7 +88,7 @@ export default function ServicesContent() {
     <div className={`${fonts.body} bg-[#0A0A0A] text-[#F5F0E8] font-normal min-h-screen overflow-x-hidden`}>
       
       {/* Hero Banner */}
-      <section className="relative w-full overflow-hidden py-2 sm:py-3 border-b border-[#1A1A1A]">
+      <section className="relative w-full overflow-hidden border-b border-[#1A1A1A]">
         <div className="relative w-full overflow-hidden h-[clamp(155px,calc(85px+18vw),340px)] flex items-end justify-start bg-[#0A0A0A] shadow-xl">
           <div className="absolute inset-0 z-0">
             <Image

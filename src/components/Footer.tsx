@@ -2,7 +2,7 @@
 
 
 import Link from "next/link";
-import { MapPin } from "lucide-react";
+import { MapPin, ArrowUp } from "lucide-react";
 import BrandLogo from "@/components/BrandLogo";
 import ScrollReveal from "@/components/ScrollReveal";
 import { footerData, fonts } from "@/data/fashionData";
@@ -137,9 +137,18 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Copyright */}
-        <div className="flex items-center justify-center text-[14px] text-[#888] text-center">
+        {/* Copyright & Scroll to Top */}
+        <div className="relative flex flex-col sm:flex-row items-center justify-center gap-3 text-[14px] text-[#888] text-center">
           <p>{footerData.copyright}</p>
+          <button
+            type="button"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            aria-label="Scroll to top"
+            title="Scroll to top"
+            className="sm:absolute sm:right-0 w-10 h-10 shrink-0 rounded-full bg-[#141414] border border-[#C9A96E]/50 hover:border-[#C9A96E] text-[#C9A96E] hover:text-[#0A0A0A] hover:bg-gradient-to-r hover:from-[#C9A96E] hover:via-[#DFC18A] hover:to-[#E5C583] flex items-center justify-center transition-all duration-300 shadow-[0_4px_15px_rgba(201,169,110,0.2)] hover:shadow-[0_6px_25px_rgba(201,169,110,0.45)] hover:scale-105 active:scale-95 cursor-pointer"
+          >
+            <ArrowUp className="w-4 h-4" />
+          </button>
         </div>
 
       </div>
